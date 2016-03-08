@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RangeInitializedArray Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/RangeInitializedArray" class="dashAnchor"></a>
+    <a title="RangeInitializedArray Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Revolver Docs</a> (75% documented)</p>
+        <p class="header-right"><a href="https://github.com/petrmanek/Revolver"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Revolver Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RangeInitializedArray Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ArcGenerator.html">ArcGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DrandGenerator.html">DrandGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MersenneTwister.html">MersenneTwister</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RangeInitializedArray.html">RangeInitializedArray</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Float.html">Float</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Discrete.html">Discrete</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EntropyGenerator.html">EntropyGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Randomizable.html">Randomizable</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RangeInitializedArray</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RangeInitializedArray</span><span class="o">&lt;</span><span class="kt">Element</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Array of elements which is initialized to size within a specific range.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8Revolver21RangeInitializedArray5arrayGSaq__"></a>
+                    <a name="//apple_ref/swift/Property/array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8Revolver21RangeInitializedArray5arrayGSaq__">array</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides direct access to the generated values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/RangeInitializedArray.swift#L4">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8Revolver21RangeInitializedArraycuRq_S_12Randomizable_FMGS0_q__FT9generatorPS_16EntropyGenerator__GS0_q__"></a>
+                    <a name="//apple_ref/swift/Method/init(generator:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8Revolver21RangeInitializedArraycuRq_S_12Randomizable_FMGS0_q__FT9generatorPS_16EntropyGenerator__GS0_q__">init(generator:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes new array with pseudorandom values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="nv">generator</span><span class="p">:</span> <span class="kt">EntropyGenerator</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>generator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Provider of randomness.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>New instance of array.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/RangeInitializedArray.swift#L13-L21">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8Revolver21RangeInitializedArray22getInitializationRangeuRq_S_12Randomizable_FGS0_q__FT_GVSs5RangeSi_"></a>
+                    <a name="//apple_ref/swift/Method/getInitializationRange()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8Revolver21RangeInitializedArray22getInitializationRangeuRq_S_12Randomizable_FGS0_q__FT_GVSs5RangeSi_">getInitializationRange()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method determining the size range of new array.
+This method <strong>must</strong> be implemented in subclasses.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getInitializationRange</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Constant range from which the size is chosen at random.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/RangeInitializedArray.swift#L29-L31">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="http://petrmanek.cz" target="_blank" rel="external">Petr Mánek</a>. All rights reserved. (Last updated: 2016-03-08)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

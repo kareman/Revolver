@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Build-Date: @BUILD_DATE@
+Main-Class: com.slowfrog.qwop.ui.Main
+

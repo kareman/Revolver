@@ -1,0 +1,15 @@
+Discrete+Randomizable.swift
+	public static func random(generator: EntropyGenerator) -> Self
+Bool+Randomizable.swift
+	public static func random(generator: EntropyGenerator) -> Bool
+Double+Randomizable.swift
+	public static func random(generator: EntropyGenerator) -> Double
+Float+Randomizable.swift
+	public static func random(generator: EntropyGenerator) -> Float
+MersenneTwister.swift
+	public init(seed: Int)
+	public func next() -> Double
+ArcGenerator.swift
+	public func next() -> Double
+DrandGenerator.swift
+	public func next() -> Double
