@@ -110,10 +110,10 @@
 		E27ECA9F1C9D65AB00BF6CEB /* Operators */ = {
 			isa = PBXGroup;
 			children = (
+				E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */,
 				E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */,
 				E20488AC1C9D800000BABC62 /* Reproduction.swift */,
 				E20488A01C9D6FF000BABC62 /* OnePointCrossover.swift */,
-				E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */,
 			);
 			name = Operators;
 			sourceTree = "<group>";
