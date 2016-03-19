@@ -1,6 +1,6 @@
 extension Float: Randomizable {
-    public static func random(generator: EntropyGenerator) -> Float {
+    public init(generator: EntropyGenerator) {
         // Loss of precision ahead.
-        return Float(generator.next())
+        self = Float(generator.next())
     }
 }

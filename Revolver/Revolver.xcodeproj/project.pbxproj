@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20488A11C9D6FF000BABC62 /* Crossover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488A01C9D6FF000BABC62 /* Crossover.swift */; };
+		E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */; };
+		E27ECAA31C9D65E100BF6CEB /* GeneticOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */; };
+		E27ECAA61C9D66FB00BF6CEB /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA51C9D66FB00BF6CEB /* Individual.swift */; };
 		E284A71A1C8E3A0000648A2E /* MersenneTwister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A7191C8E3A0000648A2E /* MersenneTwister.swift */; };
 		E284A71C1C8E3AEF00648A2E /* ArcGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A71B1C8E3AEF00648A2E /* ArcGenerator.swift */; };
 		E284A71E1C8E3B6B00648A2E /* DrandGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A71D1C8E3B6B00648A2E /* DrandGenerator.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E20488A01C9D6FF000BABC62 /* Crossover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crossover.swift; sourceTree = "<group>"; };
+		E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutation.swift; sourceTree = "<group>"; };
+		E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticOperator.swift; sourceTree = "<group>"; };
+		E27ECAA51C9D66FB00BF6CEB /* Individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
 		E284A7191C8E3A0000648A2E /* MersenneTwister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MersenneTwister.swift; sourceTree = "<group>"; };
 		E284A71B1C8E3AEF00648A2E /* ArcGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcGenerator.swift; sourceTree = "<group>"; };
 		E284A71D1C8E3B6B00648A2E /* DrandGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrandGenerator.swift; sourceTree = "<group>"; };
@@ -77,6 +85,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E27ECA9F1C9D65AB00BF6CEB /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */,
+				E20488A01C9D6FF000BABC62 /* Crossover.swift */,
+				E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */,
+			);
+			name = Operators;
+			sourceTree = "<group>";
+		};
+		E27ECAA41C9D66D500BF6CEB /* Population */ = {
+			isa = PBXGroup;
+			children = (
+				E27ECAA51C9D66FB00BF6CEB /* Individual.swift */,
+			);
+			name = Population;
+			sourceTree = "<group>";
+		};
 		E284A71F1C8E3BD600648A2E /* Random */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +167,8 @@
 		E29164411C8E0704002879C0 /* Revolver */ = {
 			isa = PBXGroup;
 			children = (
+				E27ECAA41C9D66D500BF6CEB /* Population */,
+				E27ECA9F1C9D65AB00BF6CEB /* Operators */,
 				E284A7391C8E4E2D00648A2E /* Data Structures */,
 				E284A71F1C8E3BD600648A2E /* Random */,
 				E29164421C8E0704002879C0 /* Revolver.h */,
@@ -271,14 +299,18 @@
 				E284A7241C8E3E9100648A2E /* Randomizable.swift in Sources */,
 				E284A7301C8E401700648A2E /* EntropyGenerator+Range.swift in Sources */,
 				E284A7261C8E3F6C00648A2E /* Bool+Randomizable.swift in Sources */,
+				E27ECAA61C9D66FB00BF6CEB /* Individual.swift in Sources */,
 				E284A7281C8E3F8F00648A2E /* Double+Randomizable.swift in Sources */,
 				E284A7341C8E452F00648A2E /* RangeInitializedArray.swift in Sources */,
+				E27ECAA31C9D65E100BF6CEB /* GeneticOperator.swift in Sources */,
 				E29164651C8E3713002879C0 /* EntropyGenerator.swift in Sources */,
 				E284A72A1C8E3FA400648A2E /* Float+Randomizable.swift in Sources */,
 				E284A7321C8E422400648A2E /* EntropyGenerator+RandomizableGeneration.swift in Sources */,
 				E284A71A1C8E3A0000648A2E /* MersenneTwister.swift in Sources */,
+				E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */,
 				E284A72C1C8E3FE100648A2E /* Discrete.swift in Sources */,
 				E284A71C1C8E3AEF00648A2E /* ArcGenerator.swift in Sources */,
+				E20488A11C9D6FF000BABC62 /* Crossover.swift in Sources */,
 				E284A71E1C8E3B6B00648A2E /* DrandGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

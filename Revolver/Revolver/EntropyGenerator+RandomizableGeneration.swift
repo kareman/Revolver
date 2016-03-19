@@ -5,6 +5,6 @@ extension EntropyGenerator {
      - returns: New pseudorandom value.
      */
     public func next<T: Randomizable>() -> T {
-        return T.random(self)
+        return T(generator: self)
     }
 }
