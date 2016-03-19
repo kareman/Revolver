@@ -1,14 +1,29 @@
+Array+OnePointCrossoverable.swift
+	public func onePointCrossover(generator: EntropyGenerator, other: Array) -> (first: Array, second: Array)
 Discrete+Randomizable.swift
-	public static func random(generator: EntropyGenerator) -> Self
+	public init(generator: EntropyGenerator)
+Randomizable.swift
+	init(generator: EntropyGenerator)
 Bool+Randomizable.swift
-	public static func random(generator: EntropyGenerator) -> Bool
+	public init(generator: EntropyGenerator)
 Double+Randomizable.swift
-	public static func random(generator: EntropyGenerator) -> Double
+	public init(generator: EntropyGenerator)
+RangeInitializedArray+Mutable.swift
+	public func mutate(generator: EntropyGenerator) -> RangeInitializedArray
 Float+Randomizable.swift
-	public static func random(generator: EntropyGenerator) -> Float
+	public init(generator: EntropyGenerator)
 MersenneTwister.swift
 	public init(seed: Int)
 	public func next() -> Double
+PopulationPool.swift
+	public class PopulationPool<Chromosome: Randomizable>
+	public func addIndividualToNextGeneration(individual: IndividualType)
+	public func startStagingNextGeneration()
+	public func upgradeGeneration()
+	public func retrieveChromosome(index: Int) -> Chromosome
+	public func cloneIndividual(index: Int) -> IndividualType
+RangeInitializedArray+OnePointCrossoverable.swift
+	public func onePointCrossover(generator: EntropyGenerator, other: RangeInitializedArray) -> (first: RangeInitializedArray, second: RangeInitializedArray)
 ArcGenerator.swift
 	public func next() -> Double
 DrandGenerator.swift

@@ -13,7 +13,7 @@
     <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Revolver Docs</a> (75% documented)</p>
+        <p><a href="index.html">Revolver Docs</a> (80% documented)</p>
         <p class="header-right"><a href="https://github.com/petrmanek/Revolver"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -37,16 +37,52 @@
                 <a href="Classes/DrandGenerator.html">DrandGenerator</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/GeneticOperator.html">GeneticOperator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Individual.html">Individual</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/MersenneTwister.html">MersenneTwister</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/Mutation.html">Mutation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/OnePointCrossover.html">OnePointCrossover</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PopulationPool.html">PopulationPool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RandomSelection.html">RandomSelection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/RangeInitializedArray.html">RangeInitializedArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RankSelection.html">RankSelection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Reproduction.html">Reproduction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RouletteSelection.html">RouletteSelection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Selection.html">Selection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TournamentSelection.html">TournamentSelection</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Array.html">Array</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Extensions/Bool.html">Bool</a>
               </li>
@@ -66,6 +102,15 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/EntropyGenerator.html">EntropyGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/FitnessType.html">FitnessType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Mutable.html">Mutable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/OnePointCrossoverable.html">OnePointCrossoverable</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Randomizable.html">Randomizable</a>
@@ -122,6 +167,41 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:P8Revolver11FitnessType"></a>
+                    <a name="//apple_ref/swift/Protocol/FitnessType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P8Revolver11FitnessType">FitnessType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Objects with fitness value, most likely individuals.</p>
+
+                        <a href="Protocols/FitnessType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">FitnessType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/FitnessType.swift#L5-L10">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:P8Revolver12Randomizable"></a>
                     <a name="//apple_ref/swift/Protocol/Randomizable" class="dashAnchor"></a>
                     <a class="token" href="#/s:P8Revolver12Randomizable">Randomizable</a>
@@ -145,7 +225,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/Randomizable.swift#L4-L13">Show on GitHub</a>
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/Randomizable.swift#L4-L6">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -187,10 +267,80 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P8Revolver7Mutable"></a>
+                    <a name="//apple_ref/swift/Protocol/Mutable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P8Revolver7Mutable">Mutable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Type can be slightly non-deterministically altered.</p>
+
+                        <a href="Protocols/Mutable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Mutable</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/Mutation.swift#L5-L16">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P8Revolver21OnePointCrossoverable"></a>
+                    <a name="//apple_ref/swift/Protocol/OnePointCrossoverable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P8Revolver21OnePointCrossoverable">OnePointCrossoverable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instance of this type can be randomly combined with instance to produce two new offspring instances.</p>
+
+                        <a href="Protocols/OnePointCrossoverable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">OnePointCrossoverable</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/OnePointCrossover.swift#L5-L17">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://petrmanek.cz" target="_blank" rel="external">Petr Mánek</a>. All rights reserved. (Last updated: 2016-03-08)</p>
+          <p>&copy; 2016 <a class="link" href="http://petrmanek.cz" target="_blank" rel="external">Petr Mánek</a>. All rights reserved. (Last updated: 2016-03-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

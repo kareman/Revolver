@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TournamentSelection Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/TournamentSelection" class="dashAnchor"></a>
+    <a title="TournamentSelection Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Revolver Docs</a> (80% documented)</p>
+        <p class="header-right"><a href="https://github.com/petrmanek/Revolver"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Revolver Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TournamentSelection Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ArcGenerator.html">ArcGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DrandGenerator.html">DrandGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GeneticOperator.html">GeneticOperator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Individual.html">Individual</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MersenneTwister.html">MersenneTwister</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Mutation.html">Mutation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OnePointCrossover.html">OnePointCrossover</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PopulationPool.html">PopulationPool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RandomSelection.html">RandomSelection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RangeInitializedArray.html">RangeInitializedArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RankSelection.html">RankSelection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reproduction.html">Reproduction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RouletteSelection.html">RouletteSelection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Selection.html">Selection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TournamentSelection.html">TournamentSelection</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Float.html">Float</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Discrete.html">Discrete</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EntropyGenerator.html">EntropyGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FitnessType.html">FitnessType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Mutable.html">Mutable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OnePointCrossoverable.html">OnePointCrossoverable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Randomizable.html">Randomizable</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TournamentSelection</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TournamentSelection</span><span class="p">:</span> <span class="kt">Selection</span></code></pre>
+
+                </div>
+              </div>
+            <p>Tournament selection.
+For more information, see <a href="https://en.wikipedia.org/wiki/Tournament_selection">Wikipedia</a>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8Revolver19TournamentSelectioncFMS0_FT19numberOfIndividualsSi9generatorPS_16EntropyGenerator_15tournamentOrderSi_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(numberOfIndividuals:generator:tournamentOrder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8Revolver19TournamentSelectioncFMS0_FT19numberOfIndividualsSi9generatorPS_16EntropyGenerator_15tournamentOrderSi_S0_">init(numberOfIndividuals:generator:tournamentOrder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Constructs new tournament selection object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">numberOfIndividuals</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">generator</span><span class="p">:</span> <span class="kt">EntropyGenerator</span><span class="p">,</span> <span class="nv">tournamentOrder</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>numberOfIndividuals</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Number of individuals to select.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>generator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Provider of randomness.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tournamentOrder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Order of the tournament, also known as the .</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>New instance of the tournament selection object.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/TournamentSelection.swift#L24-L29">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Implementation%20of%20abstract%20methods."></a>
+                <a name="//apple_ref/swift/Section/Implementation of abstract methods." class="dashAnchor"></a>
+                <a href="#/Implementation%20of%20abstract%20methods.">
+                  <h3 class="section-name">Implementation of abstract methods.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8Revolver19TournamentSelection23prepareForNewPopulationFS0_FGSaPS_11FitnessType__T_"></a>
+                    <a name="//apple_ref/swift/Method/prepareForNewPopulation(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8Revolver19TournamentSelection23prepareForNewPopulationFS0_FGSaPS_11FitnessType__T_">prepareForNewPopulation(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method shall be called when the population pool changes.
+The selection object uses it to create snapshot of the current population.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">prepareForNewPopulation</span><span class="p">(</span><span class="nv">population</span><span class="p">:</span> <span class="p">[</span><span class="kt">FitnessType</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>population</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Population to select from. It is guaranteed that at the time of calling this method, the <code>fitness</code> property of all individuals in the population is not equal to <code>nil</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/TournamentSelection.swift#L41-L45">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8Revolver19TournamentSelection6selectFS0_FT_GSaSi_"></a>
+                    <a name="//apple_ref/swift/Method/select()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8Revolver19TournamentSelection6selectFS0_FT_GSaSi_">select()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method shall be called when the selection occurs.
+It is equivalent to a single batch of tournaments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">select</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">IndexSet</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Set of indices corresponding with selected individuals in the population.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/TournamentSelection.swift#L53-L67">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="http://petrmanek.cz" target="_blank" rel="external">Petr Mánek</a>. All rights reserved. (Last updated: 2016-03-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

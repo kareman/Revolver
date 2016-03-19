@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Revolver Docs</a> (75% documented)</p>
+        <p><a href="index.html">Revolver Docs</a> (80% documented)</p>
         <p class="header-right"><a href="https://github.com/petrmanek/Revolver"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -37,16 +37,52 @@
                 <a href="Classes/DrandGenerator.html">DrandGenerator</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/GeneticOperator.html">GeneticOperator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Individual.html">Individual</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/MersenneTwister.html">MersenneTwister</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/Mutation.html">Mutation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/OnePointCrossover.html">OnePointCrossover</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PopulationPool.html">PopulationPool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RandomSelection.html">RandomSelection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/RangeInitializedArray.html">RangeInitializedArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RankSelection.html">RankSelection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Reproduction.html">Reproduction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RouletteSelection.html">RouletteSelection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Selection.html">Selection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TournamentSelection.html">TournamentSelection</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Array.html">Array</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Extensions/Bool.html">Bool</a>
               </li>
@@ -68,6 +104,15 @@
                 <a href="Protocols/EntropyGenerator.html">EntropyGenerator</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/FitnessType.html">FitnessType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Mutable.html">Mutable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/OnePointCrossoverable.html">OnePointCrossoverable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/Randomizable.html">Randomizable</a>
               </li>
             </ul>
@@ -87,6 +132,112 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:C8Revolver19TournamentSelection"></a>
+                    <a name="//apple_ref/swift/Class/TournamentSelection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver19TournamentSelection">TournamentSelection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tournament selection.
+For more information, see <a href="https://en.wikipedia.org/wiki/Tournament_selection">Wikipedia</a>.</p>
+
+                        <a href="Classes/TournamentSelection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TournamentSelection</span><span class="p">:</span> <span class="kt">Selection</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/TournamentSelection.swift#L4-L69">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver12Reproduction"></a>
+                    <a name="//apple_ref/swift/Class/Reproduction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver12Reproduction">Reproduction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reproduction copies individuals across generations, while maintaining their chromosome values without alteration.</p>
+
+                        <a href="Classes/Reproduction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Reproduction</span><span class="o">&lt;</span><span class="kt">Chromosome</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">GeneticOperator</span><span class="o">&lt;</span><span class="kt">Chromosome</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/Reproduction.swift#L3-L21">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver10Individual"></a>
+                    <a name="//apple_ref/swift/Class/Individual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver10Individual">Individual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Represents single individual in a population.</p>
+
+                        <a href="Classes/Individual.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Individual</span><span class="o">&lt;</span><span class="kt">Chromosome</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="p">,</span> <span class="kt">FitnessType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/Individual.swift#L3-L47">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:C8Revolver21RangeInitializedArray"></a>
                     <a name="//apple_ref/swift/Class/RangeInitializedArray" class="dashAnchor"></a>
                     <a class="token" href="#/s:C8Revolver21RangeInitializedArray">RangeInitializedArray</a>
@@ -97,7 +248,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Array of elements which is initialized to size within a specific range.</p>
+                        <p>Array of elements, which is initialized to size within a specific range.</p>
 
                         <a href="Classes/RangeInitializedArray.html" class="slightly-smaller">See more</a>
                       </div>
@@ -105,12 +256,120 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RangeInitializedArray</span><span class="o">&lt;</span><span class="kt">Element</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">RangeInitializedArray</span><span class="o">&lt;</span><span class="kt">Element</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/RangeInitializedArray.swift#L2-L32">Show on GitHub</a>
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/RangeInitializedArray.swift#L3-L46">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver15GeneticOperator"></a>
+                    <a name="//apple_ref/swift/Class/GeneticOperator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver15GeneticOperator">GeneticOperator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A genetic operator randomly interacts with the genome of individuals.</p>
+
+                        <a href="Classes/GeneticOperator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">GeneticOperator</span><span class="o">&lt;</span><span class="kt">Chromosome</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/GeneticOperator.swift#L3-L30">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver13RankSelection"></a>
+                    <a name="//apple_ref/swift/Class/RankSelection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver13RankSelection">RankSelection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Another fitness-proportional selection method, fundamentally similar to <code><a href="Classes/RouletteSelection.html">RouletteSelection</a></code>.</p>
+
+<p>Considering ranks instead of actual fitness values, this method proves to be more robust when marginal
+or ill-determined fitness values are expected.</p>
+
+                        <a href="Classes/RankSelection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RankSelection</span><span class="p">:</span> <span class="kt">RouletteSelection</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/RankSelection.swift#L6-L41">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver17RouletteSelection"></a>
+                    <a name="//apple_ref/swift/Class/RouletteSelection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver17RouletteSelection">RouletteSelection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Simple fitness-proportional selection method.</p>
+
+                        <a href="Classes/RouletteSelection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RouletteSelection</span><span class="p">:</span> <span class="kt">Selection</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/RouletteSelection.swift#L3-L94">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -157,6 +416,103 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:C8Revolver8Mutation"></a>
+                    <a name="//apple_ref/swift/Class/Mutation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver8Mutation">Mutation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mutation operator introduces diversity in the population by slightly altering its individuals.</p>
+
+                        <a href="Classes/Mutation.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Mutation</span><span class="o">&lt;</span><span class="kt">Chromosome</span> <span class="k">where</span> <span class="kt">Chromosome</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="p">,</span> <span class="kt">Chromosome</span><span class="p">:</span> <span class="kt">Mutable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">GeneticOperator</span><span class="o">&lt;</span><span class="kt">Chromosome</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/Mutation.swift#L19-L41">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver14PopulationPool"></a>
+                    <a name="//apple_ref/swift/Class/PopulationPool" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver14PopulationPool">PopulationPool</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Classes/PopulationPool.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/PopulationPool.swift#L2-L45">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver9Selection"></a>
+                    <a name="//apple_ref/swift/Class/Selection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver9Selection">Selection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method of selecting individuals from population.</p>
+
+                        <a href="Classes/Selection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Selection</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/Selection.swift#L3-L65">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:C8Revolver12ArcGenerator"></a>
                     <a name="//apple_ref/swift/Class/ArcGenerator" class="dashAnchor"></a>
                     <a class="token" href="#/s:C8Revolver12ArcGenerator">ArcGenerator</a>
@@ -181,6 +537,77 @@
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/ArcGenerator.swift#L2-L8">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver15RandomSelection"></a>
+                    <a name="//apple_ref/swift/Class/RandomSelection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver15RandomSelection">RandomSelection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Random selection method, uninfluenced by any property of the individuals.</p>
+
+                        <a href="Classes/RandomSelection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RandomSelection</span><span class="p">:</span> <span class="kt">Selection</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/RandomSelection.swift#L3-L42">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C8Revolver17OnePointCrossover"></a>
+                    <a name="//apple_ref/swift/Class/OnePointCrossover" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C8Revolver17OnePointCrossover">OnePointCrossover</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>One-point crossover simulates sexual reproduction of individuals within the population.
+It combines their chromosomes to create new offspring chromosomes, which are then inserted into the next generation.</p>
+
+                        <a href="Classes/OnePointCrossover.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">OnePointCrossover</span><span class="o">&lt;</span><span class="kt">Chromosome</span> <span class="k">where</span> <span class="kt">Chromosome</span><span class="p">:</span> <span class="kt">Randomizable</span><span class="p">,</span> <span class="kt">Chromosome</span><span class="p">:</span> <span class="kt">OnePointCrossoverable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">GeneticOperator</span><span class="o">&lt;</span><span class="kt">Chromosome</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/petrmanek/Revolver/tree/1.0/Revolver/OnePointCrossover.swift#L21-L47">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -225,7 +652,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="http://petrmanek.cz" target="_blank" rel="external">Petr Mánek</a>. All rights reserved. (Last updated: 2016-03-08)</p>
+          <p>&copy; 2016 <a class="link" href="http://petrmanek.cz" target="_blank" rel="external">Petr Mánek</a>. All rights reserved. (Last updated: 2016-03-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
