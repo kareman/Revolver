@@ -1,5 +1,7 @@
-/// Array of elements which is initialized to size within a specific range.
-public class RangeInitializedArray<Element: Randomizable> {
+
+/// Array of elements, which is initialized to size within a specific range.
+public final class RangeInitializedArray<Element: Randomizable> {
+    
     /// Provides direct access to the generated values.
     public var array: [Element] = []
     
@@ -21,6 +23,17 @@ public class RangeInitializedArray<Element: Randomizable> {
     }
     
     /**
+     Initializes new array with given value.
+     
+     - parameter array: Initial value of the array.
+     
+     - returns: New instance of array.
+     */
+    init(array: [Element]) {
+        self.array = array
+    }
+    
+    /**
      Method determining the size range of new array.
      This method **must** be implemented in subclasses.
      
@@ -29,4 +42,5 @@ public class RangeInitializedArray<Element: Randomizable> {
     public func getInitializationRange() -> Range<Int> {
         preconditionFailure("This method must be overridden in a subclass.")
     }
+    
 }
