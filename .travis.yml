@@ -9,4 +9,4 @@ before_install:
 
 script: 
 - xctool clean build -project Revolver/Revolver.xcodeproj -scheme Revolver
-- xctool test -project Revolver/Revolver.xcodeproj -scheme RevolverTests
+#- xctool test -project Revolver/Revolver.xcodeproj -scheme RevolverTests
