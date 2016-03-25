@@ -18,7 +18,7 @@
 		E20488B51C9D8A4500BABC62 /* TournamentSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488B41C9D8A4500BABC62 /* TournamentSelection.swift */; };
 		E20488B71C9D91FD00BABC62 /* RandomSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488B61C9D91FD00BABC62 /* RandomSelection.swift */; };
 		E20488B91C9D92B700BABC62 /* RankSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488B81C9D92B700BABC62 /* RankSelection.swift */; };
-		E20488BB1C9DB0EA00BABC62 /* PopulationPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488BA1C9DB0EA00BABC62 /* PopulationPool.swift */; };
+		E20488BB1C9DB0EA00BABC62 /* MatingPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */; };
 		E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */; };
 		E27ECAA31C9D65E100BF6CEB /* GeneticOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */; };
 		E27ECAA61C9D66FB00BF6CEB /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA51C9D66FB00BF6CEB /* Individual.swift */; };
@@ -62,7 +62,7 @@
 		E20488B41C9D8A4500BABC62 /* TournamentSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSelection.swift; sourceTree = "<group>"; };
 		E20488B61C9D91FD00BABC62 /* RandomSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSelection.swift; sourceTree = "<group>"; };
 		E20488B81C9D92B700BABC62 /* RankSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankSelection.swift; sourceTree = "<group>"; };
-		E20488BA1C9DB0EA00BABC62 /* PopulationPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationPool.swift; sourceTree = "<group>"; };
+		E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatingPool.swift; sourceTree = "<group>"; };
 		E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutation.swift; sourceTree = "<group>"; };
 		E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticOperator.swift; sourceTree = "<group>"; };
 		E27ECAA51C9D66FB00BF6CEB /* Individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		E27ECAA41C9D66D500BF6CEB /* Population */ = {
 			isa = PBXGroup;
 			children = (
-				E20488BA1C9DB0EA00BABC62 /* PopulationPool.swift */,
+				E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */,
 				E27ECAA51C9D66FB00BF6CEB /* Individual.swift */,
 				E20488AE1C9D81DB00BABC62 /* Selection.swift */,
 				E20488B01C9D840F00BABC62 /* RouletteSelection.swift */,
@@ -348,7 +348,7 @@
 				E20488B11C9D840F00BABC62 /* RouletteSelection.swift in Sources */,
 				E284A71A1C8E3A0000648A2E /* MersenneTwister.swift in Sources */,
 				E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */,
-				E20488BB1C9DB0EA00BABC62 /* PopulationPool.swift in Sources */,
+				E20488BB1C9DB0EA00BABC62 /* MatingPool.swift in Sources */,
 				E20488AF1C9D81DB00BABC62 /* Selection.swift in Sources */,
 				E20488A51C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift in Sources */,
 				E284A72C1C8E3FE100648A2E /* Discrete.swift in Sources */,

@@ -23,7 +23,7 @@ public class GeneticOperator<Chromosome: Randomizable> {
      - parameter pool:                Pool of individuals. This object is guaranteed to be in the staging state.
      - warning: This method is abstract and *must* be implemented in a subclass.
      */
-    public func apply(selectedIndividuals: Selection.IndexSet, pool: PopulationPool<Chromosome>) {
+    public func apply(selectedIndividuals: Selection.IndexSet, pool: MatingPool<Chromosome>) {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

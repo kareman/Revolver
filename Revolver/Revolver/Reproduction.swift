@@ -8,13 +8,13 @@ public class Reproduction<Chromosome: Randomizable>: GeneticOperator<Chromosome>
      - parameter selectedIndividuals: Indices of selected individuals.
      - parameter pool:                Pool of individuals. This object is guaranteed to be in the staging state.
      */
-    override public func apply(selectedIndividuals: Selection.IndexSet, pool: PopulationPool<Chromosome>) {
+    override public func apply(selectedIndividuals: Selection.IndexSet, pool: MatingPool<Chromosome>) {
         // Clone selected individuals.
-        let clones = selectedIndividuals.map { pool.cloneIndividual($0) }
+        let clones = selectedIndividuals.map { Individual(original: pool.individualAtIndex($0)) }
         
         // Insert clones into new population.
         for clone in clones {
-            pool.addIndividualToNextGeneration(clone)
+            pool.addOffspring(clone)
         }
     }
     

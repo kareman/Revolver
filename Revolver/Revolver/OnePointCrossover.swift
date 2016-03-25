@@ -26,12 +26,12 @@ public class OnePointCrossover<Chromosome where Chromosome: Randomizable, Chromo
      - parameter selectedIndividuals: Exactly two indices of selected individuals (parents).
      - parameter pool:                Pool of individuals. This object is guaranteed to be in the staging state.
      */
-    override public func apply(selectedIndividuals: Selection.IndexSet, pool: PopulationPool<Chromosome>) {
+    override public func apply(selectedIndividuals: Selection.IndexSet, pool: MatingPool<Chromosome>) {
         precondition(selectedIndividuals.count == 2, "The selectedIndividuals argument must contain exactly 2 indices.")
 
         // Retrieve parent chromosomes.
-        let firstChromosome = pool.retrieveChromosome(selectedIndividuals.first!)
-        let secondChromosome = pool.retrieveChromosome(selectedIndividuals.last!)
+        let firstChromosome = pool.individualAtIndex(selectedIndividuals.first!).chromosome
+        let secondChromosome = pool.individualAtIndex(selectedIndividuals.last!).chromosome
         
         // Perform crossover on their underlying data structure.
         let result = firstChromosome.onePointCrossover(entropyGenerator, other: secondChromosome)
@@ -40,8 +40,8 @@ public class OnePointCrossover<Chromosome where Chromosome: Randomizable, Chromo
         let firstOffspring = Individual<Chromosome>(chromosome: result.first)
         let secondOffspring = Individual<Chromosome>(chromosome: result.second)
         
-        pool.addIndividualToNextGeneration(firstOffspring)
-        pool.addIndividualToNextGeneration(secondOffspring)
+        pool.addOffspring(firstOffspring)
+        pool.addOffspring(secondOffspring)
     }
     
 }

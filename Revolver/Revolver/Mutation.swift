@@ -24,18 +24,18 @@ public class Mutation<Chromosome where Chromosome: Randomizable, Chromosome: Mut
      - parameter selectedIndividuals: Exactly one index of selected individual.
      - parameter pool:                Pool of individuals. This object is guaranteed to be in the staging state.
      */
-    override public func apply(selectedIndividuals: Selection.IndexSet, pool: PopulationPool<Chromosome>) {
+    override public func apply(selectedIndividuals: Selection.IndexSet, pool: MatingPool<Chromosome>) {
         precondition(selectedIndividuals.count == 1, "The selectedIndividuals argument must contain exactly 1 index.")
         
         // Retrieve soon-to-be-mutated chromosome.
-        let selectedChromosome = pool.retrieveChromosome(selectedIndividuals.first!)
+        let selectedChromosome = pool.individualAtIndex(selectedIndividuals.first!).chromosome
         
         // Perform mutation on its underlying data structure.
         let mutatedChromosome = selectedChromosome.mutate(entropyGenerator)
         
         // Insert mutant into new population.
         let mutant = Individual<Chromosome>(chromosome: mutatedChromosome)
-        pool.addIndividualToNextGeneration(mutant)
+        pool.addOffspring(mutant)
     }
     
 }
