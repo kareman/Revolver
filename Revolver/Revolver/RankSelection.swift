@@ -32,7 +32,7 @@ public class RankSelection: RouletteSelection {
             currentWeightsSum += Double(rank)
             
             // Gradually increase the rank, so that the individual with the largest fitness, ends up with the largest weight.
-            ++rank
+            rank += 1
         }
         
         prepared = true

@@ -31,7 +31,7 @@ public class PopulationPool<Chromosome: Randomizable> {
         
         pool = newPool
         stagingPool = nil
-        ++currentGeneration
+        currentGeneration += 1
     }
     
     public func retrieveChromosome(index: Int) -> Chromosome {
