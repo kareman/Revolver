@@ -1,6 +1,6 @@
 
 /**
- *  Tree type references other tree types as its descendants.
+ *  Tree type instances reference other tree types as their descendants producing a tree-like data structure.
  */
 public protocol TreeType {
     
