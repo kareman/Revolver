@@ -3,51 +3,61 @@
 public final class SequenceNode: ActionNode {
     
     /// The ordered sequence of actions.
-    public var sequence = [ActionNode]()
+    public var actionSequence = [ActionNode]()
     
     /**
-     Adds random descendants to the node.
+     Initialize new random subtree with specified maximum depth.
      
-     - parameter generator: Provider of randomness.
-     - parameter policy:    Random generation policy.
-     - parameter depth:     Maximum depth used to balance the subtree. If not provided, defaults to the policy.
-     - warning: This method is abstract and *must* be implemented in a subclass.
-     */
-    public override func addRandomDescendants(generator: EntropyGenerator, policy: TreeRandomizationPolicy, depth: Int?) {
-        let maxDepth = depth ?? policy.maximumDepth
-        guard maxDepth > 0 else {
-            // We have reached a terminal node, hence there will be no descendants.
-            return
-        }
-        
-        // Randomly determine number of descendants.
-        let width = generator.nextInRange(min: 0, max: policy.maximumWidth)
-        
-        // Reserve memory to minimize overhead.
-        sequence.reserveCapacity(width)
-        descendants.reserveCapacity(width)
-        
-        for _ in 0..<width {
-            // Generate some random descendants.
-            let descendant = policy.createRandomAction(generator, policy: policy, depth: maxDepth - 1)
-            
-            // Add them to the stack.
-            sequence.append(descendant)
-            descendants.append(descendant)
-        }
-    }
-    
-    /**
-     Initialize new random subtree with maximum depth.
-     
-     - parameter generator: Provider of randomness.
-     - parameter policy:    Random generation policy.
-     - parameter depth:     Maximum depth of the subtree radiating from this node. If not provided, defaults to the policy.
+     - parameter factory:      Object used to generate subtree of this node.
+     - parameter maximumDepth: Longest path between this node and a leaf node.
      
      - returns: New random subtree.
      */
-    public required init(generator: EntropyGenerator, policy: TreeRandomizationPolicy, depth: Int?) {
-        super.init(generator: generator, policy: policy, depth: depth)
+    public required init(factory: RandomTreeFactory, maximumDepth: Int) {
+        let numberOfActions: Int
+        if maximumDepth > 0 {
+            // Determine the number of actions non-deterministically.
+            numberOfActions = factory.entropyGenerator.nextInRange(min: 0, max: factory.maximumTreeWidth)
+        } else {
+            // We have exceeded the maximum depth, don't add any other actions.
+            numberOfActions = 0
+        }
+        
+        // Reserve memory to minimize overhead.
+        actionSequence.reserveCapacity(numberOfActions)
+        
+        for _ in 0..<numberOfActions {
+            // Generate some random descendants.
+            let action = factory.createRandomActionNode(maximumDepth - 1)
+            
+            // Add them to the stack.
+            actionSequence.append(action)
+        }
+        
+        super.init(factory: factory, maximumDepth: maximumDepth)
+        descendants.appendContentsOf(actionSequence as [TreeType])
+    }
+    
+    /**
+     Perform the sequence of actions in evaluation context.
+     
+     - parameter interpreter: Current evaluation context.
+     */
+    public override func perform(interpreter: TreeInterpreter) {
+        guard interpreter.running else {
+            // If the program has stopped, terminate as soon as possible.
+            return
+        }
+        
+        for action in actionSequence {
+            guard interpreter.running else {
+                // If the program has stopped, terminate as soon as possible.
+                return
+            }
+            
+            // Perform individual actions in the sequence.
+            action.perform(interpreter)
+        }
     }
     
 }

@@ -6,29 +6,28 @@ public final class ConstantNode<ValueType: Randomizable>: ValueNode<ValueType> {
     public var constant: ValueType
     
     /**
-     Adds random descendants to the node.
+     Initialize new random subtree with specified maximum depth.
      
-     - parameter generator: Provider of randomness.
-     - parameter policy:    Random generation policy.
-     - parameter depth:     Maximum depth used to balance the subtree. If not provided, defaults to the policy.
-     */
-    public override func addRandomDescendants(generator: EntropyGenerator, policy: TreeRandomizationPolicy, depth: Int?) {
-        // Constant nodes have no descendants, duh.
-    }    
-    
-    
-    /**
-     Initialize new random subtree with maximum depth.
-     
-     - parameter generator: Provider of randomness.
-     - parameter policy:    Random generation policy.
-     - parameter depth:     Maximum depth of the subtree radiating from this node. If not provided, defaults to the policy.
+     - parameter factory:      Object used to generate subtree of this node.
+     - parameter maximumDepth: Longest path between this node and a leaf node.
      
      - returns: New random subtree.
      */
-    public required init(generator: EntropyGenerator, policy: TreeRandomizationPolicy, depth: Int?) {
-        self.constant = generator.next()
-        super.init(generator: generator, policy: policy, depth: depth)
+    public required init(factory: RandomTreeFactory, maximumDepth: Int) {
+        self.constant = factory.entropyGenerator.next()
+        
+        super.init(factory: factory, maximumDepth: maximumDepth)
+    }
+    
+    /**
+     Calculate the value represented by the node.
+     
+     - parameter interpreter: Current evaluation context.
+     
+     - returns: Value of the constant.
+     */
+    public override func evaluate(interpreter: TreeInterpreter) -> ValueType {
+        return constant
     }
     
 }

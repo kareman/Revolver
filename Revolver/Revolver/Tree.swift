@@ -1,9 +1,6 @@
 
 /// Tree encapsulates a randomizable tree-like structure.
-public class Tree<RootType: TreeNode, PolicyType: TreeRandomizationPolicy>: TreeType, Randomizable {
-    
-    /// Randomization policy object instance containing settings ensuring that the randomization process terminates.
-    public let policy = PolicyType()
+public class Tree<RootType: TreeNode, FactoryType: RandomTreeFactory>: TreeType, Randomizable {
     
     /// Root of the tree.
     public var root: RootType
@@ -21,7 +18,8 @@ public class Tree<RootType: TreeNode, PolicyType: TreeRandomizationPolicy>: Tree
      - returns: New random tree.
      */
     public required init(generator: EntropyGenerator) {
-        self.root = RootType(generator: generator, policy: policy)
+        let factory = FactoryType(generator: generator)
+        self.root = RootType(factory: factory, maximumDepth: factory.maximumTreeDepth)
     }
     
 }

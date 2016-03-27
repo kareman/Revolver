@@ -1,6 +1,6 @@
 
-/// Action node represents a course of action.
-public class ActionNode: TreeNode {
+/// Negation node encapsulates the operation of logical negation (NOT) on a Boolean value.
+public final class NegationNode: UnaryNode<Bool, Bool> {
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -15,14 +15,14 @@ public class ActionNode: TreeNode {
     }
     
     /**
-     Perform the action in evaluation context.
+     Perform unary operation on an evaluated operand.
      
-     - parameter interpreter: Current evaluation context.
+     - parameter operandValue: Value of the operand.
      
-     - warning: This method is abstract. You *must* override it in a subclass.
+     - returns: Negated value of the operand.
      */
-    public func perform(interpreter: TreeInterpreter) {
-        preconditionFailure("This method must be implemented in a subclass.")
+    public override func evaluate(operandValue: Bool) -> Bool {
+        return !operandValue
     }
     
 }

@@ -1,19 +1,33 @@
 
 /// Value node represents a scalar or vector value of any type (number, boolean, etc.)
+///
+/// - warning: This class is abstract meaning you probably don't want to instatiate it directly. Instead, subclass it
+///            and be sure to override the `evaluate()` method.
 public class ValueNode<ValueType>: TreeNode {
     
     /**
-     Initialize new random subtree with maximum depth.
+     Initialize new random subtree with specified maximum depth.
      
-     - parameter generator: Provider of randomness.
-     - parameter policy:    Random generation policy.
-     - parameter depth:     Maximum depth of the subtree radiating from this node. If not provided, defaults to the policy.
+     - parameter factory:      Object used to generate subtree of this node.
+     - parameter maximumDepth: Longest path between this node and a leaf node.
      
-     - warning: Do not instantiate this class directly. Create various subclasses of it, instead.
      - returns: New random subtree.
      */
-    public required init(generator: EntropyGenerator, policy: TreeRandomizationPolicy, depth: Int?) {
-        super.init(generator: generator, policy: policy, depth: depth)
+    public required init(factory: RandomTreeFactory, maximumDepth: Int) {
+        super.init(factory: factory, maximumDepth: maximumDepth)
+    }
+    
+    /**
+     Calculate the value represented by the node.
+     
+     - parameter interpreter: Current evaluation context.
+     
+     - returns: Value represented by the node.
+     
+     - warning: This method is abstract. You *must* override it in a subclass.
+     */
+    public func evaluate(interpreter: TreeInterpreter) -> ValueType {
+        preconditionFailure("This method must be implemented in a subclass.")
     }
     
 }

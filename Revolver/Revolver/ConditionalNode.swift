@@ -1,39 +1,54 @@
 
 /// Conditional node represents an action depending on a predicate. During interpretation, the predicate is evaluated and
-/// the sequence of actions to be performed is selected.
+/// the action to be performed is selected.
 public final class ConditionalNode: ActionNode {
     
     /// Logical condition which determines which actions are performed.
-    public var predicate: ValueNode<Bool>!
+    public var predicate: ValueNode<Bool>
     
-    /// Sequence of actions to be performed in case `predicate` is true.
-    public var trueActions: SequenceNode!
+    /// Action to be performed in case `predicate` is true.
+    public var trueAction: ActionNode
     
-    /// Sequence of actions to be performed in case `predicate` is false.
-    public var falseActions: SequenceNode!
-    
-    public override func addRandomDescendants(generator: EntropyGenerator, policy: TreeRandomizationPolicy, depth: Int?) {
-        let maxDepth = depth ?? policy.maximumDepth
-        
-        predicate = policy.createRandomValue(generator, policy: policy, depth: maxDepth - 1)
-        
-        trueActions = SequenceNode(generator: generator, policy: policy, depth: maxDepth - 1)
-        falseActions = SequenceNode(generator: generator, policy: policy, depth: maxDepth - 1)
-        
-        descendants.appendContentsOf([predicate, trueActions, falseActions] as [TreeType])
-    }
+    /// Action to be performed in case `predicate` is false.
+    public var falseAction: ActionNode
     
     /**
-     Initialize new random subtree with maximum depth.
+     Initialize new random subtree with specified maximum depth.
      
-     - parameter generator: Provider of randomness.
-     - parameter policy:    Random generation policy.
-     - parameter depth:     Maximum depth of the subtree radiating from this node. If not provided, defaults to the policy.
+     - parameter factory:      Object used to generate subtree of this node.
+     - parameter maximumDepth: Longest path between this node and a leaf node.
      
      - returns: New random subtree.
      */
-    public required init(generator: EntropyGenerator, policy: TreeRandomizationPolicy, depth: Int?) {
-        super.init(generator: generator, policy: policy, depth: depth)
+    public required init(factory: RandomTreeFactory, maximumDepth: Int) {
+        predicate = factory.createRandomValueNode(maximumDepth - 1)
+        trueAction = factory.createRandomActionNode(maximumDepth - 1)
+        falseAction = factory.createRandomActionNode(maximumDepth - 1)
+        
+        super.init(factory: factory, maximumDepth: maximumDepth)
+        descendants.appendContentsOf([predicate, trueAction, falseAction] as [TreeType])
+    }
+    
+    /**
+     Evaluate the condition and perform one of the actions in evaluation context.
+     
+     - parameter interpreter: Current evaluation context.
+     */
+    public override func perform(interpreter: TreeInterpreter) {
+        guard interpreter.running else {
+            // If the program has stopped, terminate as soon as possible.
+            return
+        }
+        
+        // Evaluate the predicate.
+        let predicateSatisfied = predicate.evaluate(interpreter)
+        
+        // Perform the true branch or the false branch.
+        if predicateSatisfied {
+            trueAction.perform(interpreter)
+        } else {
+            falseAction.perform(interpreter)
+        }
     }
     
 }

@@ -4,7 +4,7 @@
  */
 public protocol TreeType {
     
-    /// Next level descendant nodes of the current node.
+    /// Next level descendant nodes of the current node in the tree.
     var descendants: [TreeType] { get }
     
 }
