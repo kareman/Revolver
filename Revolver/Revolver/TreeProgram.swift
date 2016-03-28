@@ -1,9 +1,9 @@
 
-/// Tree encapsulates a randomizable tree-like structure.
-public class Tree<RootType: TreeNode, FactoryType: RandomTreeFactory>: TreeType, Randomizable {
+/// Tree encapsulates a randomizable tree-like structure with executable program.
+public class TreeProgram<FactoryType: RandomTreeFactory>: TreeType, Randomizable {
     
     /// Root of the tree.
-    public var root: RootType
+    public var root: ActionNode
     
     /// Next level descendant nodes of the current node.
     public var descendants: [TreeType] {
@@ -19,7 +19,7 @@ public class Tree<RootType: TreeNode, FactoryType: RandomTreeFactory>: TreeType,
      */
     public required init(generator: EntropyGenerator) {
         let factory = FactoryType(generator: generator)
-        self.root = RootType(factory: factory, maximumDepth: factory.maximumTreeDepth)
+        self.root = factory.createRandomActionNode(factory.maximumTreeDepth)
     }
     
 }

@@ -12,7 +12,7 @@ public class TreeInterpreter {
     /**
      Main entry point to perform a program stored as a tree
      
-     - parameter tree: The program to perform.
+     - parameter program: The program to perform.
      
      - remark: This method is synchronous. It will **block the current thread** until the program terminates or until `kill()`
                method is called from another thread.
@@ -20,13 +20,13 @@ public class TreeInterpreter {
      - precondition: No other program can be running at the same time. To verify that, check that the `running` property
                      is equal to `false`.
      */
-    public func run<FactoryType: RandomTreeFactory>(tree: Tree<ActionNode, FactoryType>) {
+    public func run<FactoryType: RandomTreeFactory>(program: TreeProgram<FactoryType>) {
         guard !running else {
             preconditionFailure("A program is already running. Cannot start a new one before it finishes.")
         }
         
         running = true
-        tree.root.perform(self)
+        program.root.perform(self)
     }
     
     /**

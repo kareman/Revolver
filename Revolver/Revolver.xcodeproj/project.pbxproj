@@ -43,7 +43,7 @@
 		E29F9DB71CA945E300FE4BEF /* XMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB61CA945E300FE4BEF /* XMLElement.swift */; };
 		E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */; };
 		E29F9DC31CA94EC500FE4BEF /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */; };
-		E2B9ED8F1CA6FE500071EE18 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9ED8E1CA6FE500071EE18 /* Tree.swift */; };
+		E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */; };
 		E2E71A521CA5CAED002E34DD /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A511CA5CAED002E34DD /* TreeNode.swift */; };
 		E2E71A541CA5CBCB002E34DD /* TreeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A531CA5CBCB002E34DD /* TreeType.swift */; };
 		E2E71A5A1CA5DE6B002E34DD /* ConstantNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A591CA5DE6B002E34DD /* ConstantNode.swift */; };
@@ -122,7 +122,7 @@
 		E29F9DB61CA945E300FE4BEF /* XMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElement.swift; sourceTree = "<group>"; };
 		E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttribute.swift; sourceTree = "<group>"; };
 		E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
-		E2B9ED8E1CA6FE500071EE18 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeProgram.swift; sourceTree = "<group>"; };
 		E2E71A511CA5CAED002E34DD /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		E2E71A531CA5CBCB002E34DD /* TreeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeType.swift; sourceTree = "<group>"; };
 		E2E71A591CA5DE6B002E34DD /* ConstantNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantNode.swift; sourceTree = "<group>"; };
@@ -185,12 +185,7 @@
 			children = (
 				E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */,
 				E27ECAA51C9D66FB00BF6CEB /* Individual.swift */,
-				E20488AE1C9D81DB00BABC62 /* Selection.swift */,
-				E20488B01C9D840F00BABC62 /* RouletteSelection.swift */,
-				E20488B81C9D92B700BABC62 /* RankSelection.swift */,
-				E20488B61C9D91FD00BABC62 /* RandomSelection.swift */,
-				E20488B41C9D8A4500BABC62 /* TournamentSelection.swift */,
-				E20488B21C9D84B500BABC62 /* FitnessType.swift */,
+				E29F9DC51CA9526200FE4BEF /* Selections */,
 			);
 			name = Population;
 			sourceTree = "<group>";
@@ -301,6 +296,19 @@
 			name = Compatibility;
 			sourceTree = "<group>";
 		};
+		E29F9DC51CA9526200FE4BEF /* Selections */ = {
+			isa = PBXGroup;
+			children = (
+				E20488AE1C9D81DB00BABC62 /* Selection.swift */,
+				E20488B01C9D840F00BABC62 /* RouletteSelection.swift */,
+				E20488B81C9D92B700BABC62 /* RankSelection.swift */,
+				E20488B61C9D91FD00BABC62 /* RandomSelection.swift */,
+				E20488B41C9D8A4500BABC62 /* TournamentSelection.swift */,
+				E20488B21C9D84B500BABC62 /* FitnessType.swift */,
+			);
+			name = Selections;
+			sourceTree = "<group>";
+		};
 		E2B9ED901CA74A240071EE18 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,10 +349,10 @@
 			isa = PBXGroup;
 			children = (
 				E2E71A531CA5CBCB002E34DD /* TreeType.swift */,
-				E2B9ED8E1CA6FE500071EE18 /* Tree.swift */,
 				E2E71A511CA5CAED002E34DD /* TreeNode.swift */,
 				E2E71A711CA5FCD8002E34DD /* RandomTreeFactory.swift */,
 				E2E71A6B1CA5E360002E34DD /* TreeInterpreter.swift */,
+				E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */,
 				E2B9ED911CA74A2C0071EE18 /* Values */,
 				E2B9ED901CA74A240071EE18 /* Actions */,
 			);
@@ -524,7 +532,7 @@
 				E2F31C971CA86F5600372B95 /* EquivalenceNode.swift in Sources */,
 				E2E71A701CA5E8CA002E34DD /* LoopNode.swift in Sources */,
 				E20488B91C9D92B700BABC62 /* RankSelection.swift in Sources */,
-				E2B9ED8F1CA6FE500071EE18 /* Tree.swift in Sources */,
+				E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */,
 				E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */,
 				E29F9DB71CA945E300FE4BEF /* XMLElement.swift in Sources */,
 				E20488B11C9D840F00BABC62 /* RouletteSelection.swift in Sources */,
