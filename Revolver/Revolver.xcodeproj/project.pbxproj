@@ -42,6 +42,7 @@
 		E29F9DB41CA9454A00FE4BEF /* XMLSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB31CA9454A00FE4BEF /* XMLSerializable.swift */; };
 		E29F9DB71CA945E300FE4BEF /* XMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB61CA945E300FE4BEF /* XMLElement.swift */; };
 		E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */; };
+		E29F9DC31CA94EC500FE4BEF /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */; };
 		E2B9ED8F1CA6FE500071EE18 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9ED8E1CA6FE500071EE18 /* Tree.swift */; };
 		E2E71A521CA5CAED002E34DD /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A511CA5CAED002E34DD /* TreeNode.swift */; };
 		E2E71A541CA5CBCB002E34DD /* TreeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A531CA5CBCB002E34DD /* TreeType.swift */; };
@@ -120,6 +121,7 @@
 		E29F9DB31CA9454A00FE4BEF /* XMLSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLSerializable.swift; sourceTree = "<group>"; };
 		E29F9DB61CA945E300FE4BEF /* XMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElement.swift; sourceTree = "<group>"; };
 		E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttribute.swift; sourceTree = "<group>"; };
+		E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		E2B9ED8E1CA6FE500071EE18 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		E2E71A511CA5CAED002E34DD /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		E2E71A531CA5CBCB002E34DD /* TreeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeType.swift; sourceTree = "<group>"; };
@@ -258,7 +260,7 @@
 		E29164411C8E0704002879C0 /* Revolver */ = {
 			isa = PBXGroup;
 			children = (
-				E29F9DB51CA9455600FE4BEF /* Persistence */,
+				E29F9DC41CA9522F00FE4BEF /* Compatibility */,
 				E27ECAA41C9D66D500BF6CEB /* Population */,
 				E27ECA9F1C9D65AB00BF6CEB /* Operators */,
 				E284A7391C8E4E2D00648A2E /* Data Structures */,
@@ -288,6 +290,15 @@
 				E29F9DB31CA9454A00FE4BEF /* XMLSerializable.swift */,
 			);
 			name = Persistence;
+			sourceTree = "<group>";
+		};
+		E29F9DC41CA9522F00FE4BEF /* Compatibility */ = {
+			isa = PBXGroup;
+			children = (
+				E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */,
+				E29F9DB51CA9455600FE4BEF /* Persistence */,
+			);
+			name = Compatibility;
 			sourceTree = "<group>";
 		};
 		E2B9ED901CA74A240071EE18 /* Actions */ = {
@@ -518,6 +529,7 @@
 				E29F9DB71CA945E300FE4BEF /* XMLElement.swift in Sources */,
 				E20488B11C9D840F00BABC62 /* RouletteSelection.swift in Sources */,
 				E2E71A541CA5CBCB002E34DD /* TreeType.swift in Sources */,
+				E29F9DC31CA94EC500FE4BEF /* OperationQueue.swift in Sources */,
 				E29F9DB21CA9438100FE4BEF /* XMLWriter.swift in Sources */,
 				E2F31C781CA868A900372B95 /* EquationNode.swift in Sources */,
 				E284A71A1C8E3A0000648A2E /* MersenneTwister.swift in Sources */,
