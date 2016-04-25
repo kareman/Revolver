@@ -4,13 +4,18 @@
 public final class ConditionalNode: ActionNode {
     
     /// Logical condition which determines which actions are performed.
-    public var predicate: ValueNode<Bool>
+    public let predicate: ValueNode<Bool>
     
     /// Action to be performed in case `predicate` is true.
-    public var trueAction: ActionNode
+    public let trueAction: ActionNode
     
     /// Action to be performed in case `predicate` is false.
-    public var falseAction: ActionNode
+    public let falseAction: ActionNode
+    
+    /// Next-level descendant nodes of this node, not necessarily of the same type.
+    public override var treeNodeDescendants: [TreeNode] {
+        return [ predicate, trueAction, falseAction ]
+    }
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -24,9 +29,40 @@ public final class ConditionalNode: ActionNode {
         predicate = factory.createRandomValueNode(maximumDepth - 1)
         trueAction = factory.createRandomActionNode(maximumDepth - 1)
         falseAction = factory.createRandomActionNode(maximumDepth - 1)
-        
         super.init(factory: factory, maximumDepth: maximumDepth)
-        descendants.appendContentsOf([predicate, trueAction, falseAction] as [TreeType])
+    }
+    
+    /**
+     Initialize new node with field values.
+     
+     - parameter id:           Unique identifier of the node.
+     - parameter maximumDepth: Maximum depth of the subtree.
+     - parameter predicate:    Logical condition which determines which actions are performed.
+     - parameter trueAction:   Action to be performed in case `predicate` is true.
+     - parameter falseAction:  Action to be performed in case `predicate` is false.
+     
+     - returns: New node with set values.
+     */
+    public init(id: Int, maximumDepth: Int, predicate: ValueNode<Bool>, trueAction: ActionNode, falseAction: ActionNode) {
+        self.predicate = predicate
+        self.trueAction = trueAction
+        self.falseAction = falseAction
+        super.init(id: id, maximumDepth: maximumDepth)
+    }
+    
+    /**
+     Initialize new node with field values.
+     
+     - parameter id:           Unique identifier of the node.
+     - parameter maximumDepth: Maximum depth of the subtree.
+     
+     - returns: New subtree with set values.
+     
+     - warning: Do NOT use this method. It will not work!
+     */
+    public required init(id: Int, maximumDepth: Int) {
+        // FIXME: This is an ugly solution. Why does not ConstantNode need it and this class does?
+        fatalError("init(id:maximumDepth:) has not been implemented")
     }
     
     /**
@@ -49,6 +85,22 @@ public final class ConditionalNode: ActionNode {
         } else {
             falseAction.perform(interpreter)
         }
+    }
+    
+    /**
+     Clone the node and propagate the clone-or-mutate call to its descendants.
+     
+     - parameter factory: Subtree generator for the mutated node.
+     - parameter id:      Identifier of the mutated node.
+     
+     - returns: A clone of this node with a subtree, which is possibly mutated.
+     */
+    public override func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
+        let predicateClone = predicate.clone(factory, mutateNodeId: id)
+        let trueActionClone = trueAction.clone(factory, mutateNodeId: id)
+        let falseActionClone = falseAction.clone(factory, mutateNodeId: id)
+        
+        return ConditionalNode(id: id, maximumDepth: maximumDepth, predicate: predicateClone, trueAction: trueActionClone, falseAction: falseActionClone)
     }
     
 }

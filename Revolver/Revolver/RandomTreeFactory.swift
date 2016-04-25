@@ -40,4 +40,11 @@ public protocol RandomTreeFactory {
      */
     func createRandomValueNode<ValueType: Randomizable>(maximumDepth: Int) -> ValueNode<ValueType>
     
+    /**
+     Generates unique identifier for a new `TreeNode` instance.
+     
+     - returns: Identifier, unique to scope of the factory.
+     */
+    func assignNewIdentifier() -> Int
+    
 }

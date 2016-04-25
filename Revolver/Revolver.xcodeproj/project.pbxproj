@@ -43,6 +43,9 @@
 		E29F9DB71CA945E300FE4BEF /* XMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB61CA945E300FE4BEF /* XMLElement.swift */; };
 		E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */; };
 		E29F9DC31CA94EC500FE4BEF /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */; };
+		E29F9DC71CA9539C00FE4BEF /* TreeProgram+Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC61CA9539C00FE4BEF /* TreeProgram+Mutable.swift */; };
+		E29F9DC91CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC81CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift */; };
+		E29F9DCD1CA961FD00FE4BEF /* TreeNode+SequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DCC1CA961FD00FE4BEF /* TreeNode+SequenceType.swift */; };
 		E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */; };
 		E2E71A521CA5CAED002E34DD /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A511CA5CAED002E34DD /* TreeNode.swift */; };
 		E2E71A541CA5CBCB002E34DD /* TreeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A531CA5CBCB002E34DD /* TreeType.swift */; };
@@ -122,6 +125,9 @@
 		E29F9DB61CA945E300FE4BEF /* XMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElement.swift; sourceTree = "<group>"; };
 		E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttribute.swift; sourceTree = "<group>"; };
 		E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		E29F9DC61CA9539C00FE4BEF /* TreeProgram+Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TreeProgram+Mutable.swift"; sourceTree = "<group>"; };
+		E29F9DC81CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TreeProgram+OnePointCrossoverable.swift"; sourceTree = "<group>"; };
+		E29F9DCC1CA961FD00FE4BEF /* TreeNode+SequenceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TreeNode+SequenceType.swift"; sourceTree = "<group>"; };
 		E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeProgram.swift; sourceTree = "<group>"; };
 		E2E71A511CA5CAED002E34DD /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		E2E71A531CA5CBCB002E34DD /* TreeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeType.swift; sourceTree = "<group>"; };
@@ -350,9 +356,12 @@
 			children = (
 				E2E71A531CA5CBCB002E34DD /* TreeType.swift */,
 				E2E71A511CA5CAED002E34DD /* TreeNode.swift */,
+				E29F9DCC1CA961FD00FE4BEF /* TreeNode+SequenceType.swift */,
 				E2E71A711CA5FCD8002E34DD /* RandomTreeFactory.swift */,
 				E2E71A6B1CA5E360002E34DD /* TreeInterpreter.swift */,
 				E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */,
+				E29F9DC61CA9539C00FE4BEF /* TreeProgram+Mutable.swift */,
+				E29F9DC81CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift */,
 				E2B9ED911CA74A2C0071EE18 /* Values */,
 				E2B9ED901CA74A240071EE18 /* Actions */,
 			);
@@ -525,6 +534,7 @@
 				E284A7341C8E452F00648A2E /* RangeInitializedArray.swift in Sources */,
 				E20488A31C9D71D600BABC62 /* RangeInitializedArray+Mutable.swift in Sources */,
 				E2E71A5C1CA5DE73002E34DD /* ValueNode.swift in Sources */,
+				E29F9DCD1CA961FD00FE4BEF /* TreeNode+SequenceType.swift in Sources */,
 				E27ECAA31C9D65E100BF6CEB /* GeneticOperator.swift in Sources */,
 				E29164651C8E3713002879C0 /* EntropyGenerator.swift in Sources */,
 				E284A72A1C8E3FA400648A2E /* Float+Randomizable.swift in Sources */,
@@ -545,7 +555,9 @@
 				E20488BB1C9DB0EA00BABC62 /* MatingPool.swift in Sources */,
 				E2F31C911CA86F3500372B95 /* ConjunctionNode.swift in Sources */,
 				E2E71A641CA5DEFE002E34DD /* ConditionalNode.swift in Sources */,
+				E29F9DC91CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift in Sources */,
 				E20488AF1C9D81DB00BABC62 /* Selection.swift in Sources */,
+				E29F9DC71CA9539C00FE4BEF /* TreeProgram+Mutable.swift in Sources */,
 				E20488A51C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift in Sources */,
 				E2F31C7C1CA86AEC00372B95 /* UnaryNode.swift in Sources */,
 				E2F31C7E1CA86AF200372B95 /* BinaryNode.swift in Sources */,

@@ -3,7 +3,12 @@
 public final class SequenceNode: ActionNode {
     
     /// The ordered sequence of actions.
-    public var actionSequence = [ActionNode]()
+    public let actionSequence: [ActionNode]
+    
+    /// Next-level descendant nodes of this node, not necessarily of the same type.
+    public override var treeNodeDescendants: [TreeNode] {
+        return actionSequence
+    }
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -24,18 +29,48 @@ public final class SequenceNode: ActionNode {
         }
         
         // Reserve memory to minimize overhead.
-        actionSequence.reserveCapacity(numberOfActions)
+        var newActionSequence = [ActionNode]()
+        newActionSequence.reserveCapacity(numberOfActions)
         
         for _ in 0..<numberOfActions {
             // Generate some random descendants.
             let action = factory.createRandomActionNode(maximumDepth - 1)
             
             // Add them to the stack.
-            actionSequence.append(action)
+            newActionSequence.append(action)
         }
         
+        self.actionSequence = newActionSequence
         super.init(factory: factory, maximumDepth: maximumDepth)
-        descendants.appendContentsOf(actionSequence as [TreeType])
+    }
+    
+    /**
+     Initialize new node with field values.
+     
+     - parameter id:           Unique identifier of the node.
+     - parameter maximumDepth: Maximum depth of the subtree.
+     - parameter actionSequence: Ordered sequence of actions.
+     
+     - returns: New node with set values.
+     */
+    public init(id: Int, maximumDepth: Int, actionSequence: [ActionNode]) {        
+        self.actionSequence = actionSequence
+        super.init(id: id, maximumDepth: maximumDepth)
+    }
+    
+    /**
+     Initialize new node with field values.
+     
+     - parameter id:           Unique identifier of the node.
+     - parameter maximumDepth: Maximum depth of the subtree.
+     
+     - returns: New subtree with set values.
+     
+     - warning: Do NOT use this method. It will not work!
+     */
+    public required init(id: Int, maximumDepth: Int) {
+        // FIXME: This is an ugly solution. Why does not ConstantNode need it and this class does?
+        fatalError("init(id:maximumDepth:) has not been implemented")
     }
     
     /**
@@ -58,6 +93,26 @@ public final class SequenceNode: ActionNode {
             // Perform individual actions in the sequence.
             action.perform(interpreter)
         }
+    }
+    
+    /**
+     Clone the node and propagate the clone-or-mutate call to its descendants.
+     
+     - parameter factory: Subtree generator for the mutated node.
+     - parameter id:      Identifier of the mutated node.
+     
+     - returns: A clone of this node with a subtree, which is possibly mutated.
+     */
+    public override func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
+        var newSequence = [ActionNode]()
+        newSequence.reserveCapacity(actionSequence.count)
+        
+        for action in actionSequence {
+            let actionClone = action.clone(factory, mutateNodeId: id)
+            newSequence.append(actionClone)
+        }
+        
+        return SequenceNode(id: id, maximumDepth: maximumDepth, actionSequence: newSequence)
     }
     
 }
