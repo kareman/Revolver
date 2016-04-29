@@ -1,46 +1,31 @@
 
-/// Array of elements, which is initialized to size within a specific range.
-public final class RangeInitializedArray<Element: Randomizable> {
+/// Array of elements, which is initialized to an uncertain size.
+///
+/// When conforming to this protocol, do not implement any of its inherited protocols.
+/// They have been already implemented by extensions.
+///
+/// In the initializer, merely assign the argument to its field counterpart.
+/// You may configure the element type and size constraints by setting `Element` and `initializationRange`.
+/// Example of this can be seen in the `RangeInitializedArrayExample` class.
+public protocol RangeInitializedArray: CustomStringConvertible, CustomDebugStringConvertible, Randomizable, Mutable, OnePointCrossoverable {
+    
+    /// Homogeneous type of elements in the array.
+    associatedtype Element: Randomizable
+    
+    /// Constant range from, which the size is chosen at random.
+    /// PRO TIP: Set the range to a single number (e. g. 42...42) to get array of a fixed size.
+    static var initializationRange: Range<Int> { get }
     
     /// Provides direct access to the generated values.
-    public var array: [Element] = []
+    var array: [Element] { get }
     
     /**
-     Initializes new array with pseudorandom values.
-     
-     - parameter generator: Provider of randomness.
-     
+     Initialize a new array with given values.
+
+     - parameter array: Values of the array.
+
      - returns: New instance of array.
      */
-    public required init(generator: EntropyGenerator) {
-        let range = self.getInitializationRange()
-        let size: Int = generator.nextInRange(range)
-        
-        array = []
-        for _ in 0..<size {
-            array.append(generator.next())
-        }
-    }
-    
-    /**
-     Initializes new array with given value.
-     
-     - parameter array: Initial value of the array.
-     
-     - returns: New instance of array.
-     */
-    init(array: [Element]) {
-        self.array = array
-    }
-    
-    /**
-     Method determining the size range of new array.
-     This method **must** be implemented in subclasses.
-     
-     - returns: Constant range from which the size is chosen at random.
-     */
-    public func getInitializationRange() -> Range<Int> {
-        preconditionFailure("This method must be overridden in a subclass.")
-    }
+    init(array: [Element])
     
 }

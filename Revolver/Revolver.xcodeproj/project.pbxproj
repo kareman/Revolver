@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E20488A11C9D6FF000BABC62 /* OnePointCrossover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488A01C9D6FF000BABC62 /* OnePointCrossover.swift */; };
-		E20488A31C9D71D600BABC62 /* RangeInitializedArray+Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488A21C9D71D600BABC62 /* RangeInitializedArray+Mutable.swift */; };
 		E20488A51C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488A41C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift */; };
 		E20488A71C9D740900BABC62 /* Array+OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488A61C9D740900BABC62 /* Array+OnePointCrossoverable.swift */; };
 		E20488AD1C9D800000BABC62 /* Reproduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488AC1C9D800000BABC62 /* Reproduction.swift */; };
@@ -33,7 +32,12 @@
 		E284A72E1C8E3FF200648A2E /* Discrete+Randomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A72D1C8E3FF200648A2E /* Discrete+Randomizable.swift */; };
 		E284A7301C8E401700648A2E /* EntropyGenerator+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A72F1C8E401700648A2E /* EntropyGenerator+Range.swift */; };
 		E284A7321C8E422400648A2E /* EntropyGenerator+RandomizableGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A7311C8E422400648A2E /* EntropyGenerator+RandomizableGeneration.swift */; };
-		E284A7341C8E452F00648A2E /* RangeInitializedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A7331C8E452F00648A2E /* RangeInitializedArray.swift */; };
+		E28980C11CD3C76300B00749 /* RangeInitializedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980C01CD3C76300B00749 /* RangeInitializedArray.swift */; };
+		E28980C31CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980C21CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift */; };
+		E28980C51CD3CA1000B00749 /* RangeInitializedArray+Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980C41CD3CA1000B00749 /* RangeInitializedArray+Mutable.swift */; };
+		E28980C71CD3CAD700B00749 /* RangeInitializedArrayExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980C61CD3CAD700B00749 /* RangeInitializedArrayExample.swift */; };
+		E28980C91CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */; };
+		E28980CB1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */; };
 		E29164431C8E0704002879C0 /* Revolver.h in Headers */ = {isa = PBXBuildFile; fileRef = E29164421C8E0704002879C0 /* Revolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E291644A1C8E0704002879C0 /* Revolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E291643F1C8E0704002879C0 /* Revolver.framework */; };
 		E291644F1C8E0704002879C0 /* RevolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291644E1C8E0704002879C0 /* RevolverTests.swift */; };
@@ -86,7 +90,6 @@
 
 /* Begin PBXFileReference section */
 		E20488A01C9D6FF000BABC62 /* OnePointCrossover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePointCrossover.swift; sourceTree = "<group>"; };
-		E20488A21C9D71D600BABC62 /* RangeInitializedArray+Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+Mutable.swift"; sourceTree = "<group>"; };
 		E20488A41C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+OnePointCrossoverable.swift"; sourceTree = "<group>"; };
 		E20488A61C9D740900BABC62 /* Array+OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+OnePointCrossoverable.swift"; sourceTree = "<group>"; };
 		E20488AC1C9D800000BABC62 /* Reproduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reproduction.swift; sourceTree = "<group>"; };
@@ -112,7 +115,12 @@
 		E284A72D1C8E3FF200648A2E /* Discrete+Randomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Discrete+Randomizable.swift"; sourceTree = "<group>"; };
 		E284A72F1C8E401700648A2E /* EntropyGenerator+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntropyGenerator+Range.swift"; sourceTree = "<group>"; };
 		E284A7311C8E422400648A2E /* EntropyGenerator+RandomizableGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntropyGenerator+RandomizableGeneration.swift"; sourceTree = "<group>"; };
-		E284A7331C8E452F00648A2E /* RangeInitializedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeInitializedArray.swift; sourceTree = "<group>"; };
+		E28980C01CD3C76300B00749 /* RangeInitializedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeInitializedArray.swift; sourceTree = "<group>"; };
+		E28980C21CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+Randomizable.swift"; sourceTree = "<group>"; };
+		E28980C41CD3CA1000B00749 /* RangeInitializedArray+Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+Mutable.swift"; sourceTree = "<group>"; };
+		E28980C61CD3CAD700B00749 /* RangeInitializedArrayExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeInitializedArrayExample.swift; sourceTree = "<group>"; };
+		E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+CustomStringConvertible.swift"; sourceTree = "<group>"; };
+		E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+CustomDebugStringConvertible.swift"; sourceTree = "<group>"; };
 		E291643F1C8E0704002879C0 /* Revolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Revolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29164421C8E0704002879C0 /* Revolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Revolver.h; sourceTree = "<group>"; };
 		E29164441C8E0704002879C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -344,9 +352,13 @@
 			isa = PBXGroup;
 			children = (
 				E20488A61C9D740900BABC62 /* Array+OnePointCrossoverable.swift */,
-				E284A7331C8E452F00648A2E /* RangeInitializedArray.swift */,
-				E20488A21C9D71D600BABC62 /* RangeInitializedArray+Mutable.swift */,
+				E28980C01CD3C76300B00749 /* RangeInitializedArray.swift */,
+				E28980C21CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift */,
+				E28980C41CD3CA1000B00749 /* RangeInitializedArray+Mutable.swift */,
 				E20488A41C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift */,
+				E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */,
+				E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */,
+				E28980C61CD3CAD700B00749 /* RangeInitializedArrayExample.swift */,
 			);
 			name = Arrays;
 			sourceTree = "<group>";
@@ -531,16 +543,16 @@
 				E284A7281C8E3F8F00648A2E /* Double+Randomizable.swift in Sources */,
 				E2F31C821CA86D8000372B95 /* AdditionNode.swift in Sources */,
 				E2E71A721CA5FCD8002E34DD /* RandomTreeFactory.swift in Sources */,
-				E284A7341C8E452F00648A2E /* RangeInitializedArray.swift in Sources */,
-				E20488A31C9D71D600BABC62 /* RangeInitializedArray+Mutable.swift in Sources */,
 				E2E71A5C1CA5DE73002E34DD /* ValueNode.swift in Sources */,
 				E29F9DCD1CA961FD00FE4BEF /* TreeNode+SequenceType.swift in Sources */,
 				E27ECAA31C9D65E100BF6CEB /* GeneticOperator.swift in Sources */,
 				E29164651C8E3713002879C0 /* EntropyGenerator.swift in Sources */,
+				E28980C91CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift in Sources */,
 				E284A72A1C8E3FA400648A2E /* Float+Randomizable.swift in Sources */,
 				E284A7321C8E422400648A2E /* EntropyGenerator+RandomizableGeneration.swift in Sources */,
 				E2F31C971CA86F5600372B95 /* EquivalenceNode.swift in Sources */,
 				E2E71A701CA5E8CA002E34DD /* LoopNode.swift in Sources */,
+				E28980CB1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift in Sources */,
 				E20488B91C9D92B700BABC62 /* RankSelection.swift in Sources */,
 				E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */,
 				E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */,
@@ -552,6 +564,7 @@
 				E2F31C781CA868A900372B95 /* EquationNode.swift in Sources */,
 				E284A71A1C8E3A0000648A2E /* MersenneTwister.swift in Sources */,
 				E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */,
+				E28980C71CD3CAD700B00749 /* RangeInitializedArrayExample.swift in Sources */,
 				E20488BB1C9DB0EA00BABC62 /* MatingPool.swift in Sources */,
 				E2F31C911CA86F3500372B95 /* ConjunctionNode.swift in Sources */,
 				E2E71A641CA5DEFE002E34DD /* ConditionalNode.swift in Sources */,
@@ -561,6 +574,7 @@
 				E20488A51C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift in Sources */,
 				E2F31C7C1CA86AEC00372B95 /* UnaryNode.swift in Sources */,
 				E2F31C7E1CA86AF200372B95 /* BinaryNode.swift in Sources */,
+				E28980C11CD3C76300B00749 /* RangeInitializedArray.swift in Sources */,
 				E284A72C1C8E3FE100648A2E /* Discrete.swift in Sources */,
 				E284A71C1C8E3AEF00648A2E /* ArcGenerator.swift in Sources */,
 				E2F31C8F1CA86F0000372B95 /* NegationNode.swift in Sources */,
@@ -571,7 +585,9 @@
 				E20488A11C9D6FF000BABC62 /* OnePointCrossover.swift in Sources */,
 				E2F31C951CA86F4D00372B95 /* ImplicationNode.swift in Sources */,
 				E2F31C891CA86EA200372B95 /* SubtractionNode.swift in Sources */,
+				E28980C51CD3CA1000B00749 /* RangeInitializedArray+Mutable.swift in Sources */,
 				E284A71E1C8E3B6B00648A2E /* DrandGenerator.swift in Sources */,
+				E28980C31CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
