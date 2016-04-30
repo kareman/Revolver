@@ -322,3 +322,15 @@ footer {
     color:#444;
   }
 }
+
+/* Some custom styles */
+div.evolution {
+  background-color: #F05138;
+  text-align: center;
+  padding: 20px;
+  margin: 0 0 0 20px;
+}
+
+div.evolution img {
+  max-width: 865px;
+}
