@@ -38,6 +38,7 @@
 		E28980C71CD3CAD700B00749 /* RangeInitializedArrayExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980C61CD3CAD700B00749 /* RangeInitializedArrayExample.swift */; };
 		E28980C91CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */; };
 		E28980CB1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */; };
+		E28980CD1CD4B4AE00B00749 /* ActionNodeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CC1CD4B4AE00B00749 /* ActionNodeExample.swift */; };
 		E29164431C8E0704002879C0 /* Revolver.h in Headers */ = {isa = PBXBuildFile; fileRef = E29164421C8E0704002879C0 /* Revolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E291644A1C8E0704002879C0 /* Revolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E291643F1C8E0704002879C0 /* Revolver.framework */; };
 		E291644F1C8E0704002879C0 /* RevolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291644E1C8E0704002879C0 /* RevolverTests.swift */; };
@@ -121,6 +122,7 @@
 		E28980C61CD3CAD700B00749 /* RangeInitializedArrayExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeInitializedArrayExample.swift; sourceTree = "<group>"; };
 		E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+CustomDebugStringConvertible.swift"; sourceTree = "<group>"; };
+		E28980CC1CD4B4AE00B00749 /* ActionNodeExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionNodeExample.swift; sourceTree = "<group>"; };
 		E291643F1C8E0704002879C0 /* Revolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Revolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29164421C8E0704002879C0 /* Revolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Revolver.h; sourceTree = "<group>"; };
 		E29164441C8E0704002879C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				E2E71A5D1CA5DEAE002E34DD /* SequenceNode.swift */,
 				E2E71A631CA5DEFE002E34DD /* ConditionalNode.swift */,
 				E2E71A6F1CA5E8CA002E34DD /* LoopNode.swift */,
+				E28980CC1CD4B4AE00B00749 /* ActionNodeExample.swift */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				E2E71A5E1CA5DEAE002E34DD /* SequenceNode.swift in Sources */,
 				E284A7241C8E3E9100648A2E /* Randomizable.swift in Sources */,
 				E2F31C7A1CA86A8300372B95 /* ComparisonNode.swift in Sources */,
+				E28980CD1CD4B4AE00B00749 /* ActionNodeExample.swift in Sources */,
 				E2E71A521CA5CAED002E34DD /* TreeNode.swift in Sources */,
 				E2F31C8B1CA86EA700372B95 /* DivisionNode.swift in Sources */,
 				E20488AD1C9D800000BABC62 /* Reproduction.swift in Sources */,
