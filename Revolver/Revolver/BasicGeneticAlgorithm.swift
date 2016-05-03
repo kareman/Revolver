@@ -1,8 +1,7 @@
 
 /// A simple genetic algorithm running in sequential (non-distributed) environment.
-public class BasicGeneticAlgorithm<Evaluator: FitnessEvaluator where Evaluator.Chromosome: Randomizable> {
-    public typealias Chromosome = Evaluator.Chromosome
-    public typealias Hook = BasicGeneticAlgorithm<Evaluator> -> ()
+public class BasicGeneticAlgorithm<Chromosome: Randomizable> {
+    public typealias Hook = BasicGeneticAlgorithm<Chromosome> -> ()
     
     public let entropyGenerator: EntropyGenerator
     public let population: MatingPool<Chromosome>
@@ -11,23 +10,23 @@ public class BasicGeneticAlgorithm<Evaluator: FitnessEvaluator where Evaluator.C
     public let operatorsExecutedOnce: Pipeline<Chromosome>
     public let operatorsExecutedRepeatedly: Pipeline<Chromosome>
     
-    public let evaluator: Evaluator
+    public let evaluator: Evaluator<Chromosome>
     public let termination: TerminationCondition<Chromosome>
     
     public var hookRunStarted: Hook?
     public var hookRunFinished: Hook?
     public var hookGenerationAdvanced: Hook?
     
-    public init(generator: EntropyGenerator, populationSize: Int, operatorsExecutedOnce: Pipeline<Chromosome>, operatorsExecutedRepeatedly: Pipeline<Chromosome>, termination: TerminationCondition<Chromosome>) {
+    public init(generator: EntropyGenerator, populationSize: Int, operatorsExecutedOnce: Pipeline<Chromosome>, operatorsExecutedRepeatedly: Pipeline<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
         // Copy some values
         self.populationSize = populationSize
         self.entropyGenerator = generator
         self.operatorsExecutedOnce = operatorsExecutedOnce
         self.operatorsExecutedRepeatedly = operatorsExecutedRepeatedly
+        self.evaluator = evaluator
         self.termination = termination
         
         // Initialize some fields.
-        self.evaluator = Evaluator()
         self.population = MatingPool<Chromosome>()
         
         // If the debug mode is turned on, occupy hooks with default implementations.
@@ -38,7 +37,7 @@ public class BasicGeneticAlgorithm<Evaluator: FitnessEvaluator where Evaluator.C
             hookRunFinished = { _ in
                 debugPrint("BasicGeneticAlgorithm[DEBUG]: Run finished.")
             }
-            hookGenerationAdvanced = { (alg: BasicGeneticAlgorithm<Evaluator>) in
+            hookGenerationAdvanced = { (alg: BasicGeneticAlgorithm<Chromosome>) in
                 debugPrint("BasicGeneticAlgorithm[DEBUG]: Generation advanced: \(alg.population.currentGeneration)")
             }
         #endif
@@ -111,25 +110,8 @@ public class BasicGeneticAlgorithm<Evaluator: FitnessEvaluator where Evaluator.C
     private func evaluateNewIndividuals() {
         resetIndividualEvaluationForNewGeneration()
         
-        for individualIndex in 0..<population.populationSize {
-            // Go through the population and make sure all individuals are evaluated.
-            
-            guard population.individualAtIndex(individualIndex).fitness != nil else {
-                // The individual has been already evaluated once.
-                // We don't need to evaluate it twice.
-                processIndividualEvaluationAtIndex(individualIndex)
-                
-                continue
-            }
-            
-            // Evaluate individual synchronously.
-            let chromosome = population.individualAtIndex(individualIndex).chromosome
-            let fitness = evaluator.evaluate(chromosome)
-            
-            // Save the evaluation for later.
-            population.individualAtIndex(individualIndex).fitness = fitness
-            processIndividualEvaluationAtIndex(individualIndex)
-        }
+        // Call the evaluator to do stuff.
+        evaluator.evaluateIndividuals(population, individualEvaluated: self.processIndividualEvaluationAtIndex)
     }
     
 }

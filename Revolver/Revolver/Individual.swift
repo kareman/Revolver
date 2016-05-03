@@ -6,7 +6,7 @@ public class Individual<Chromosome: Randomizable>: Randomizable, FitnessType {
     public let chromosome: Chromosome
     
     /// Fitness evaluation of the individual.
-    public var fitness: Double?
+    public var fitness: Fitness?
     
     /**
      Construct a new random individual.

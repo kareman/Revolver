@@ -8,7 +8,7 @@ internal class BasicGeneticAlgorithmExample {
     internal typealias MyChromosome = RangeInitializedArrayExample
     internal typealias MyEvaluator = FitnessEvaluatorExample
     internal typealias MyPipeline = Pipeline<MyChromosome>
-    internal typealias MyAlgorithm = BasicGeneticAlgorithm<MyEvaluator>
+    internal typealias MyAlgorithm = BasicGeneticAlgorithm<MyChromosome>
     internal typealias MyTermination = TerminationCondition<MyChromosome>
     
     internal func run() {
@@ -62,6 +62,7 @@ internal class BasicGeneticAlgorithmExample {
             populationSize: populationSize,
             operatorsExecutedOnce: elitism,
             operatorsExecutedRepeatedly: loopOperators,
+            evaluator: MyEvaluator(),
             termination: termination)
         
         /* You can set up various hooks to be called during execution of the algorithm.

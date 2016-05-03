@@ -1,15 +1,13 @@
 
-/* This is an example of usage of the FitnessEvaluator protocol.
+/* This is an example of subclass of the Evaluator class.
  * It is made "internal" not to conflict with other objects in the library.
  */
-internal class FitnessEvaluatorExample: FitnessEvaluator {
+internal class FitnessEvaluatorExample: SequentialEvaluator<RangeInitializedArrayExample> {
     
     // CONFIGURATION: Here you need to reference the chromosome type, on which the evaluations are based.
     internal typealias Chromosome = RangeInitializedArrayExample
     
-    internal required init() { }
-    
-    internal func evaluate(chromosome: Chromosome) -> Double {
+    internal override func evaluateChromosome(individual: Chromosome) -> Fitness {
         /* IMPLEMENT ME: Here will probably rest the most time-expensive portion of your application.
          * This code is responsible for reading the chromosome and rating it with a [0;1] value.
          *

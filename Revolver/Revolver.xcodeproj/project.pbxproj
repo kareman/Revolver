@@ -40,7 +40,6 @@
 		E28980CB1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */; };
 		E28980CD1CD4B4AE00B00749 /* ActionNodeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CC1CD4B4AE00B00749 /* ActionNodeExample.swift */; };
 		E28980D01CD4E05E00B00749 /* BasicGeneticAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CF1CD4E05E00B00749 /* BasicGeneticAlgorithm.swift */; };
-		E28980D71CD4EA3D00B00749 /* FitnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980D61CD4EA3D00B00749 /* FitnessEvaluator.swift */; };
 		E28980DB1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DA1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift */; };
 		E28980DD1CD4F98E00B00749 /* FitnessEvaluatorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DC1CD4F98E00B00749 /* FitnessEvaluatorExample.swift */; };
 		E28980DF1CD4FFA800B00749 /* IndexSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DE1CD4FFA800B00749 /* IndexSet.swift */; };
@@ -61,6 +60,10 @@
 		E28981011CD53C3B00B00749 /* NotCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981001CD53C3B00B00749 /* NotCondition.swift */; };
 		E28981031CD5496200B00749 /* BestSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981021CD5496200B00749 /* BestSelection.swift */; };
 		E28981051CD54C6E00B00749 /* WorstSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981041CD54C6E00B00749 /* WorstSelection.swift */; };
+		E28981081CD943CD00B00749 /* Evaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981071CD943CD00B00749 /* Evaluator.swift */; };
+		E289810A1CD9443700B00749 /* SequentialEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981091CD9443700B00749 /* SequentialEvaluator.swift */; };
+		E289810C1CD944D700B00749 /* Fitness.swift in Sources */ = {isa = PBXBuildFile; fileRef = E289810B1CD944D700B00749 /* Fitness.swift */; };
+		E289810E1CD945CF00B00749 /* CyclicEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E289810D1CD945CF00B00749 /* CyclicEvaluator.swift */; };
 		E29164431C8E0704002879C0 /* Revolver.h in Headers */ = {isa = PBXBuildFile; fileRef = E29164421C8E0704002879C0 /* Revolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E291644A1C8E0704002879C0 /* Revolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E291643F1C8E0704002879C0 /* Revolver.framework */; };
 		E291644F1C8E0704002879C0 /* RevolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291644E1C8E0704002879C0 /* RevolverTests.swift */; };
@@ -146,7 +149,6 @@
 		E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+CustomDebugStringConvertible.swift"; sourceTree = "<group>"; };
 		E28980CC1CD4B4AE00B00749 /* ActionNodeExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionNodeExample.swift; sourceTree = "<group>"; };
 		E28980CF1CD4E05E00B00749 /* BasicGeneticAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicGeneticAlgorithm.swift; sourceTree = "<group>"; };
-		E28980D61CD4EA3D00B00749 /* FitnessEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessEvaluator.swift; sourceTree = "<group>"; };
 		E28980DA1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicGeneticAlgorithmExample.swift; sourceTree = "<group>"; };
 		E28980DC1CD4F98E00B00749 /* FitnessEvaluatorExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessEvaluatorExample.swift; sourceTree = "<group>"; };
 		E28980DE1CD4FFA800B00749 /* IndexSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexSet.swift; sourceTree = "<group>"; };
@@ -167,6 +169,10 @@
 		E28981001CD53C3B00B00749 /* NotCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotCondition.swift; sourceTree = "<group>"; };
 		E28981021CD5496200B00749 /* BestSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestSelection.swift; sourceTree = "<group>"; };
 		E28981041CD54C6E00B00749 /* WorstSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorstSelection.swift; sourceTree = "<group>"; };
+		E28981071CD943CD00B00749 /* Evaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evaluator.swift; sourceTree = "<group>"; };
+		E28981091CD9443700B00749 /* SequentialEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequentialEvaluator.swift; sourceTree = "<group>"; };
+		E289810B1CD944D700B00749 /* Fitness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fitness.swift; sourceTree = "<group>"; };
+		E289810D1CD945CF00B00749 /* CyclicEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclicEvaluator.swift; sourceTree = "<group>"; };
 		E291643F1C8E0704002879C0 /* Revolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Revolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29164421C8E0704002879C0 /* Revolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Revolver.h; sourceTree = "<group>"; };
 		E29164441C8E0704002879C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -248,7 +254,6 @@
 			children = (
 				E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */,
 				E27ECAA51C9D66FB00BF6CEB /* Individual.swift */,
-				E29F9DC51CA9526200FE4BEF /* Selections */,
 			);
 			name = Population;
 			sourceTree = "<group>";
@@ -302,10 +307,7 @@
 			children = (
 				E28980CF1CD4E05E00B00749 /* BasicGeneticAlgorithm.swift */,
 				E28980DA1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift */,
-				E28980D61CD4EA3D00B00749 /* FitnessEvaluator.swift */,
 				E28980DC1CD4F98E00B00749 /* FitnessEvaluatorExample.swift */,
-				E20488B21C9D84B500BABC62 /* FitnessType.swift */,
-				E28980EF1CD529AA00B00749 /* Termination Conditions */,
 			);
 			name = Algorithms;
 			sourceTree = "<group>";
@@ -336,6 +338,18 @@
 			name = "Termination Conditions";
 			sourceTree = "<group>";
 		};
+		E28981061CD9439200B00749 /* Evaluators */ = {
+			isa = PBXGroup;
+			children = (
+				E289810B1CD944D700B00749 /* Fitness.swift */,
+				E20488B21C9D84B500BABC62 /* FitnessType.swift */,
+				E28981071CD943CD00B00749 /* Evaluator.swift */,
+				E28981091CD9443700B00749 /* SequentialEvaluator.swift */,
+				E289810D1CD945CF00B00749 /* CyclicEvaluator.swift */,
+			);
+			name = Evaluators;
+			sourceTree = "<group>";
+		};
 		E29164351C8E0704002879C0 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +373,9 @@
 			children = (
 				E29F9DC41CA9522F00FE4BEF /* Compatibility */,
 				E28980CE1CD4E04000B00749 /* Algorithms */,
+				E28980EF1CD529AA00B00749 /* Termination Conditions */,
+				E28981061CD9439200B00749 /* Evaluators */,
+				E29F9DC51CA9526200FE4BEF /* Selections */,
 				E27ECAA41C9D66D500BF6CEB /* Population */,
 				E27ECA9F1C9D65AB00BF6CEB /* Operators */,
 				E284A7391C8E4E2D00648A2E /* Data Structures */,
@@ -655,7 +672,9 @@
 				E28980C91CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift in Sources */,
 				E284A72A1C8E3FA400648A2E /* Float+Randomizable.swift in Sources */,
 				E284A7321C8E422400648A2E /* EntropyGenerator+RandomizableGeneration.swift in Sources */,
+				E289810A1CD9443700B00749 /* SequentialEvaluator.swift in Sources */,
 				E2F31C971CA86F5600372B95 /* EquivalenceNode.swift in Sources */,
+				E289810C1CD944D700B00749 /* Fitness.swift in Sources */,
 				E28980FF1CD53C3400B00749 /* OrCondition.swift in Sources */,
 				E2E71A701CA5E8CA002E34DD /* LoopNode.swift in Sources */,
 				E28980CB1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift in Sources */,
@@ -663,7 +682,6 @@
 				E20488B91C9D92B700BABC62 /* RankSelection.swift in Sources */,
 				E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */,
 				E28980DD1CD4F98E00B00749 /* FitnessEvaluatorExample.swift in Sources */,
-				E28980D71CD4EA3D00B00749 /* FitnessEvaluator.swift in Sources */,
 				E28980FD1CD53C2E00B00749 /* AndCondition.swift in Sources */,
 				E28980E91CD5126500B00749 /* BranchingPipeline.swift in Sources */,
 				E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */,
@@ -672,6 +690,7 @@
 				E2E71A541CA5CBCB002E34DD /* TreeType.swift in Sources */,
 				E29F9DC31CA94EC500FE4BEF /* OperationQueue.swift in Sources */,
 				E29F9DB21CA9438100FE4BEF /* XMLWriter.swift in Sources */,
+				E289810E1CD945CF00B00749 /* CyclicEvaluator.swift in Sources */,
 				E2F31C781CA868A900372B95 /* EquationNode.swift in Sources */,
 				E284A71A1C8E3A0000648A2E /* MersenneTwister.swift in Sources */,
 				E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */,
@@ -691,6 +710,7 @@
 				E284A71C1C8E3AEF00648A2E /* ArcGenerator.swift in Sources */,
 				E2F31C8F1CA86F0000372B95 /* NegationNode.swift in Sources */,
 				E29F9DB41CA9454A00FE4BEF /* XMLSerializable.swift in Sources */,
+				E28981081CD943CD00B00749 /* Evaluator.swift in Sources */,
 				E2E71A5A1CA5DE6B002E34DD /* ConstantNode.swift in Sources */,
 				E28980F31CD5397A00B00749 /* MaxNumberOfGenerations.swift in Sources */,
 				E28980DF1CD4FFA800B00749 /* IndexSet.swift in Sources */,
