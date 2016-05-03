@@ -1,6 +1,6 @@
 
 /**
- *  Random tree factorird creates random tree-like structures.
+ *  Random tree factory creates random tree-like structures.
  */
 public protocol RandomTreeFactory {
     

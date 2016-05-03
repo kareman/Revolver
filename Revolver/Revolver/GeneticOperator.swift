@@ -1,21 +1,16 @@
 
 /// A genetic operator randomly interacts with the genome of individuals.
+///
+/// This class is **abstract**, you cannot instantiate it directly.
+/// When subclassing it, be sure to implement the `apply()` method.
 public class GeneticOperator<Chromosome: Randomizable> {
     
-    /// The provider of randomness.
-    public private(set) var entropyGenerator: EntropyGenerator
+    internal let selection: Selection<Chromosome>
     
-    /**
-     Initializes new instance of a genetic operator.
-     
-     - parameter generator: Provider of randomness.
-     
-     - returns: New operator.
-     */
-    public init(generator: EntropyGenerator) {
-        self.entropyGenerator = generator
+    public init(_ selection: Selection<Chromosome>) {
+        self.selection = selection
     }
-    
+
     /**
      Applies the operator on some individuals within a population pool.
      
@@ -23,7 +18,7 @@ public class GeneticOperator<Chromosome: Randomizable> {
      - parameter pool:                Pool of individuals. This object is guaranteed to be in the staging state.
      - warning: This method is abstract and *must* be implemented in a subclass.
      */
-    public func apply(selectedIndividuals: Selection.IndexSet, pool: MatingPool<Chromosome>) {
+    public func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

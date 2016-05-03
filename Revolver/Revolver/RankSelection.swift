@@ -3,39 +3,54 @@
 ///
 /// Considering ranks instead of actual fitness values, this method proves to be more robust when marginal
 /// or ill-determined fitness values are expected.
-public class RankSelection: RouletteSelection {
-    
-    // MARK: Implementation of abstract methods.
+public class RankSelection<Chromosome: Randomizable>: Selection<Chromosome> {
     
     /**
-     This method shall be called when the population pool changes.
-     The selection object uses it to update weights on the roulette wheel proportional to the ranks of individuals,
-     as sorted by their fitness (greater fitness = greater rank = greater weight).
-    
-     - parameter population: Population to select from.
-                             It is guaranteed that at the time of calling this method, the `fitness` property
-                             of all individuals in the population is not equal to `nil`.
+     Finds index of an interval containing a specific value on the roulette wheel.
+     
+     - parameter roulette:   Value on the wheel.
+     - parameter population: Population with weights of intervals determined by the fitness.
+     
+     - returns: Index of the interval, where the value belongs.
      */
-    public override func prepareForNewPopulation(population: [FitnessType]) {
-        // Sort the indices of the population.
-        let indices = 0..<population.count
-        let sortedIndices = indices.sort { self.fitnessMapping(population[$0].fitness!) < self.fitnessMapping(population[$1].fitness!) }
+    private func findIndexOnWheel(roulette: Double, population: MatingPool<Chromosome>) -> Int {
+        var incrementalWeight = Double(0)
         
-        // Initialize the weights as ranks in the fitness-proportional ordering.
-        currentWeights = [Double](count: population.count, repeatedValue: 0)
-        currentWeightsSum = 0
-        
-        var rank = 1
-        for index in sortedIndices {
-            // Enumerate the sorted indices from the lowest fitness to the largest.
-            currentWeights[index] = Double(rank)
-            currentWeightsSum += Double(rank)
+        for index in 0..<population.populationSize {
+            let individualWeight = Double(index + 1)
             
-            // Gradually increase the rank, so that the individual with the largest fitness, ends up with the largest weight.
-            rank += 1
+            // Cumulatively add weights and find the interval index, where the roulette struck.
+            let newWeight = incrementalWeight + individualWeight
+            
+            if roulette >= incrementalWeight && roulette < newWeight {
+                // If the generated value belongs to this interval, return its index.
+                return population.populationIndicesSortedByFitness[index]
+            }
+            
+            incrementalWeight = newWeight
         }
         
-        prepared = true
+        // Fallback for roulette == 1.
+        return population.populationIndicesSortedByFitness.last!
+    }
+    
+    public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
+        precondition(numberOfIndividuals >= population.populationSize, "The number of individuals to select is greater than the number of individuals available.")
+        
+        // Sum of arithmetic series.
+        let weightsSum = Double(population.populationSize) * (1 + Double(population.populationSize)) / 2.0
+        
+        var foundIndexSet = IndexSet()
+        for _ in 0..<numberOfIndividuals {
+            // Spin the roulette.
+            let roulette: Double = generator.nextInRange(min: 0, max: weightsSum)
+            let foundIndex = findIndexOnWheel(roulette, population: population)
+            
+            // Add the index corresponding to the selected interval.
+            foundIndexSet.append(foundIndex)
+        }
+        
+        return foundIndexSet
     }
 
 }

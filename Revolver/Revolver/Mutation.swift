@@ -1,37 +1,21 @@
 
-/**
- *  Type can be slightly non-deterministically altered.
- */
-public protocol Mutable {
-    
-    /**
-     Creates new instance by copying values of the current instance and changing them randomly.
-     
-     - parameter generator: Provider of randomness.
-     
-     - returns: New mutated instance.
-     */
-    func mutate(generator: EntropyGenerator) -> Self
-    
-}
-
 /// Mutation operator introduces diversity in the population by slightly altering its individuals.
 public class Mutation<Chromosome where Chromosome: Randomizable, Chromosome: Mutable>: GeneticOperator<Chromosome> {
     
-    /**
-     Mutates genome of a single individual in the population pool and inserts the resulting mutant into next generation.
-     
-     - parameter selectedIndividuals: Exactly one index of selected individual.
-     - parameter pool:                Pool of individuals. This object is guaranteed to be in the staging state.
-     */
-    override public func apply(selectedIndividuals: Selection.IndexSet, pool: MatingPool<Chromosome>) {
-        precondition(selectedIndividuals.count == 1, "The selectedIndividuals argument must contain exactly 1 index.")
+    public override init(_ selection: Selection<Chromosome>) {
+        super.init(selection)
+    }
+    
+    public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+        // Select a single individual.
+        let selectedIndividuals = selection.select(generator, population: pool, numberOfIndividuals: 1)
+        let selectedIndividual = selectedIndividuals.first!
         
         // Retrieve soon-to-be-mutated chromosome.
-        let selectedChromosome = pool.individualAtIndex(selectedIndividuals.first!).chromosome
+        let selectedChromosome = pool.individualAtIndex(selectedIndividual).chromosome
         
         // Perform mutation on its underlying data structure.
-        let mutatedChromosome = selectedChromosome.mutate(entropyGenerator)
+        let mutatedChromosome = selectedChromosome.mutate(generator)
         
         // Insert mutant into new population.
         let mutant = Individual<Chromosome>(chromosome: mutatedChromosome)

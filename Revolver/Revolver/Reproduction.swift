@@ -2,13 +2,17 @@
 /// Reproduction copies individuals across generations, while maintaining their chromosome values without alteration.
 public class Reproduction<Chromosome: Randomizable>: GeneticOperator<Chromosome> {
     
-    /**
-     Clones some individuals from the population pool and inserts them into the next generation.
-     
-     - parameter selectedIndividuals: Indices of selected individuals.
-     - parameter pool:                Pool of individuals. This object is guaranteed to be in the staging state.
-     */
-    override public func apply(selectedIndividuals: Selection.IndexSet, pool: MatingPool<Chromosome>) {
+    public let numberOfIndividuals: Int
+    
+    init(_ selection: Selection<Chromosome>, numberOfIndividuals: Int = 1) {
+        self.numberOfIndividuals = numberOfIndividuals
+        super.init(selection)
+    }
+    
+    public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+        // Select some individuals.
+        let selectedIndividuals = selection.select(generator, population: pool, numberOfIndividuals: numberOfIndividuals)
+        
         // Clone selected individuals.
         let clones = selectedIndividuals.map { Individual(original: pool.individualAtIndex($0)) }
         

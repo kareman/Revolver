@@ -1,13 +1,12 @@
 
-/// Select random individuals from the population. No regards is given to their fitness.
-public class RandomSelection<Chromosome: Randomizable>: Selection<Chromosome> {
+/// Select N worst individuals according to their fitness.
+public class WorstSelection<Chromosome: Randomizable>: Selection<Chromosome> {
     
     public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
         precondition(numberOfIndividuals >= population.populationSize, "The number of individuals to select is greater than the number of individuals available.")
-
-        var indices = IndexSet()
-        indices.append(generator.nextInRange(min: 0, max: population.populationSize - 1))
-        return indices
+        
+        let bestIndices = population.populationIndicesSortedByFitness[0..<numberOfIndividuals]
+        return IndexSet(bestIndices)
     }
     
 }

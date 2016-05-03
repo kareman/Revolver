@@ -1,0 +1,16 @@
+
+/**
+ *  Type can be slightly non-deterministically altered.
+ */
+public protocol Mutable {
+    
+    /**
+     Creates new instance by copying values of the current instance and changing them randomly.
+     
+     - parameter generator: Provider of randomness.
+     
+     - returns: New mutated instance.
+     */
+    func mutate(generator: EntropyGenerator) -> Self
+    
+}

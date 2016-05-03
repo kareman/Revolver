@@ -82,6 +82,9 @@ public class MatingPool<Chromosome: Randomizable> {
         population = offspring!
         offspring = nil
         currentGeneration += 1
+        privateSortedIndices = nil
+        privateFitnessSum = nil
+        privateBestFitness = nil
     }
     
     /**
@@ -140,6 +143,60 @@ public class MatingPool<Chromosome: Randomizable> {
         }
         
         offspring!.append(individual)
+    }
+    
+    /// Indices of individuals in the population, sorted ascending according to their fitness. *(lazy loaded)*
+    public var populationIndicesSortedByFitness: IndexSet {
+        if let indices = privateSortedIndices {
+            return indices
+        }
+        
+        let indices = sortIndividualsByFitness()
+        privateSortedIndices = indices
+        return indices
+    }
+    
+    private var privateSortedIndices: IndexSet?
+    private func sortIndividualsByFitness() -> IndexSet {
+        let indices = 0..<population.count
+        return indices.sort { population[$0].fitness! < population[$1].fitness! }
+    }
+    
+    /// Sum of all fitness values of individuals in the population. *(lazy loaded)*
+    public var fitnessSum: Double {
+        if let sum = privateFitnessSum {
+            return sum
+        }
+        
+        let sum = calculateFitnessSum()
+        privateFitnessSum = sum
+        return sum
+    }
+    
+    private var privateFitnessSum: Double?
+    private func calculateFitnessSum() -> Double {
+        return population.reduce(0, combine: { $0 + $1.fitness!})
+    }
+    
+    /// Average fitness of the individuals in the population.
+    public var averageFitness: Double {
+        return fitnessSum / Double(populationSize)
+    }
+    
+    /// Best fitness value in the population. *(lazy loaded)*
+    public var bestFitness: Double {
+        if let best = privateBestFitness {
+            return best
+        }
+        
+        let best = calculateBestFitness()
+        privateBestFitness = best
+        return best
+    }
+    
+    private var privateBestFitness: Double?
+    private func calculateBestFitness() -> Double {
+        return population.maxElement { $0.fitness! < $1.fitness! }!.fitness!
     }
     
 }

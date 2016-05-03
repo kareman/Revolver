@@ -1,44 +1,21 @@
 
-/// Simple fitness-proportional selection method.
-public class RouletteSelection: Selection {
-    
-    /// A function of one variable.
-    public typealias FitnessMapping = Double -> Double
-    
-    /// Mapping to alter the fitness before it is processed.
-    public let fitnessMapping: FitnessMapping
-    
-    /// Array of weights of individuals in the population. The bigger the weight, the bigger probability individual will be selected.
-    internal var currentWeights: [Double] = []
-    internal var currentWeightsSum: Double = 0
-    
-    /**
-     Constructs new instance of roulette selection.
-     
-     - parameter numberOfIndividuals: Number of individuals to select.
-     - parameter generator:           Provider of randomness for the roulette.
-     - parameter fitnessMapping:      Mapping to apply on the individual's fitness. Defaults to identity.
-     
-     - returns: New instance with given parameters.
-     */
-    public init(numberOfIndividuals: Int, generator: EntropyGenerator, fitnessMapping: FitnessMapping = { $0 }) {
-        self.fitnessMapping = fitnessMapping
-        super.init(numberOfIndividuals: numberOfIndividuals, generator: generator)
-    }
+/// Roulette selection is a simple fitness-proportional selection method.
+public class RouletteSelection<Chromosome: Randomizable>: Selection<Chromosome> {
     
     /**
      Finds index of an interval containing a specific value on the roulette wheel.
      
-     - parameter roulette: Value to on the wheel.
+     - parameter roulette:   Value on the wheel.
+     - parameter population: Population with weights of intervals determined by the fitness.
      
-     - returns: Index of interval, where the value belongs.
+     - returns: Index of the interval, where the value belongs.
      */
-    internal func findIndexOnWheel(roulette: Double) -> Int {
+    private func findIndexOnWheel(roulette: Double, population: MatingPool<Chromosome>) -> Int {
         var incrementalWeight = Double(0)
         
-        for index in 0..<currentWeights.count {
+        for index in 0..<population.populationSize {
             // Cumulatively add weights and find the interval index, where the roulette struck.
-            let newWeight = incrementalWeight + currentWeights[index]
+            let newWeight = incrementalWeight + population.individualAtIndex(index).fitness!
             
             if roulette >= incrementalWeight && roulette < newWeight {
                 // If the generated value belongs to this interval, return its index.
@@ -49,40 +26,20 @@ public class RouletteSelection: Selection {
         }
         
         // Fallback for roulette == 1.
-        return currentWeights.count - 1
+        return population.populationSize - 1
     }
     
-    // MARK: Implementation of abstract methods.
-    
-    /**
-     This method shall be called when the population pool changes.
-     The selection object uses it to update weights on the roulette wheel proportional to the fitness values of individuals.
-    
-     - parameter population: Population to select from.
-                             It is guaranteed that at the time of calling this method, the `fitness` property
-                             of all individuals in the population is not equal to `nil`.
-     */
-    public override func prepareForNewPopulation(population: [FitnessType]) {
-        // Use fitness as a weight for every individual.
-        currentWeights = population.map { self.fitnessMapping($0.fitness!) }
-        currentWeightsSum = currentWeights.reduce(0, combine: +)
-        prepared = true
-    }
-    
-    /**
-     This method shall be called when the selection occurs.
-     It is equivalent to a single batch of spins of the roulette wheel.
-     
-     - returns: Set of indices corresponding with selected individuals in the population.
-     */
-    public override func select() -> IndexSet {
-        precondition(prepared, "The method select() was called on an unprepared Selection object. Call prepareForNewPopulation() first.")
+    public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
+        precondition(numberOfIndividuals >= population.populationSize, "The number of individuals to select is greater than the number of individuals available.")
+        
+        // Maximum of the random generation.
+        let weightsSum = population.fitnessSum
         
         var foundIndexSet = IndexSet()
         for _ in 0..<numberOfIndividuals {
             // Spin the roulette.
-            let roulette: Double = entropyGenerator.nextInRange(min: 0, max: currentWeightsSum)
-            let foundIndex = findIndexOnWheel(roulette)
+            let roulette: Double = generator.nextInRange(min: 0, max: weightsSum)
+            let foundIndex = findIndexOnWheel(roulette, population: population)
             
             // Add the index corresponding to the selected interval.
             foundIndexSet.append(foundIndex)

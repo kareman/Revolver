@@ -1,5 +1,5 @@
 
-/// Represents single individual in a population.
+/// A single individual of a population.
 public class Individual<Chromosome: Randomizable>: Randomizable, FitnessType {
     
     /// Genetic information of the individual.
@@ -9,7 +9,7 @@ public class Individual<Chromosome: Randomizable>: Randomizable, FitnessType {
     public var fitness: Double?
     
     /**
-     Constructs new random individual.
+     Construct a new random individual.
      
      - parameter generator: Provider of randomness.
      
@@ -21,7 +21,7 @@ public class Individual<Chromosome: Randomizable>: Randomizable, FitnessType {
     }
     
     /**
-     Constructs new individual with a specific chromosome.
+     Construct a new individual with a specific chromosome.
      
      - parameter chromosome: Genetic information to initialize.
      
@@ -33,7 +33,7 @@ public class Individual<Chromosome: Randomizable>: Randomizable, FitnessType {
     }
     
     /**
-     Constructs a copy of other individual.
+     Construct a copy of other individual.
      
      - parameter original: The individual to copy.
      
