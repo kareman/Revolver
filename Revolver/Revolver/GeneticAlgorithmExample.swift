@@ -31,7 +31,7 @@ internal class GeneticAlgorithmExample {
          * EXAMPLE: Here we use elitism as #1 to clone the best 5 individuals when creating new generations.
          *          This helps us maintain the best solution so far.
          */
-        let elitism: MyPipeline = Reproduction(BestSelection(), numberOfIndividuals: 5)
+        let elitism = Reproduction<MyChromosome>(BestSelection(), numberOfIndividuals: 5)
         
         /* In pipelines, you can use some cool symbols to combine operators effortlessly:
          *     e.g. "op1 ---> op2 ---> op3" produces a sequence, in which operators are applied sequentially

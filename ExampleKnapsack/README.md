@@ -7,7 +7,7 @@ This example shows how Revolver can be applied to solve the Knapsack Problem.
 [Read more](https://en.wikipedia.org/wiki/Knapsack_problem) about the problem on Wikipedia.
 
 ## Credits
-The example code was created by Petr Mánek (@petrmanek), Charles University, 2016.
+The example code was created by [Petr Mánek](https://github.com/petrmanek), Charles University, 2016.
 [The sample problem instance](https://people.sc.fsu.edu/~jburkardt/datasets/knapsack_01/knapsack_01.html) was provided by Florida State University.
 
 This example is distributed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License).
@@ -20,14 +20,14 @@ This example is distributed under the [MIT License](https://en.wikipedia.org/wik
 
 ## Usage
 
- 1. Build and run the project in Xcode. *(don't use xcodeproj in this directory, use xcworkspace in the directory above)*
+ 1. Build and run the project in Xcode. *(don't use xcodeproj in this directory, use xcworkspace in the parent directory)*
  2. Hit the *Run algorithm* button.
  3. Observe the output generated in the log.
  4. Play around with `ProblemInstance.swift` to change the weights and values of things and observe how the output changes.
  5. Change parameters of the algorithm in `ViewController.swift` and observe how the output changes.
 
 ## Example Ouptut
-When running this example, you should see a similar output (provided that you don't change the seed or the problem instance).
+When running this example, you should see similar output (provided that you don't change the seed or the problem instance).
 ```
 ---
 Run started.
