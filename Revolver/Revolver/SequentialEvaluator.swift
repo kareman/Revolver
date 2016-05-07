@@ -5,11 +5,15 @@
 /// When subclassing it, be sure to override the `evaluateChromosome()` method.
 public class SequentialEvaluator<Chromosome: Randomizable>: Evaluator<Chromosome> {
     
+    public override init() {
+        super.init()
+    }
+    
     public final override func evaluateIndividuals(individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
         for individualIndex in 0..<individuals.populationSize {
             // Go through the population and make sure all individuals are evaluated.
             
-            guard individuals.individualAtIndex(individualIndex).fitness != nil else {
+            guard individuals.individualAtIndex(individualIndex).fitness == nil else {
                 // The individual has been already evaluated once.
                 // We don't need to evaluate it twice.
                 individualEvaluated(index: individualIndex)

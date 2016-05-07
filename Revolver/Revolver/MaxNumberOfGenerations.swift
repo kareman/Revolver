@@ -14,6 +14,7 @@ public class MaxNumberOfGenerations<Chromosome: Randomizable>: TerminationCondit
      */
     public init(_ generations: Int) {
         self.generations = generations
+        super.init()
     }
     
     public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {

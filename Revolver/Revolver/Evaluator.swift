@@ -7,6 +7,8 @@ public class Evaluator<Chromosome: Randomizable> {
     
     public typealias EvaluationHandler = (index: Int) -> ()
     
+    public init() { }
+    
     /**
      Evaluate population of individuals.
      

@@ -5,6 +5,8 @@
 /// or ill-determined fitness values are expected.
 public class RankSelection<Chromosome: Randomizable>: Selection<Chromosome> {
     
+    public override init() { }
+    
     /**
      Finds index of an interval containing a specific value on the roulette wheel.
      
@@ -35,7 +37,7 @@ public class RankSelection<Chromosome: Randomizable>: Selection<Chromosome> {
     }
     
     public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
-        precondition(numberOfIndividuals >= population.populationSize, "The number of individuals to select is greater than the number of individuals available.")
+        precondition(numberOfIndividuals <= population.populationSize, "The number of individuals to select is greater than the number of individuals available.")
         
         // Sum of arithmetic series.
         let weightsSum = Double(population.populationSize) * (1 + Double(population.populationSize)) / 2.0

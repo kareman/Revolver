@@ -199,4 +199,20 @@ public class MatingPool<Chromosome: Randomizable> {
         return population.maxElement { $0.fitness! < $1.fitness! }!.fitness!
     }
     
+    public var bestIndividual: IndividualType? {
+        guard let index = populationIndicesSortedByFitness.last else {
+            return nil
+        }
+        
+        return population[index]
+    }
+    
+    public var worstIndividual: IndividualType? {
+        guard let index = populationIndicesSortedByFitness.first else {
+            return nil
+        }
+        
+        return population[index]
+    }
+    
 }

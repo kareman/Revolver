@@ -4,7 +4,7 @@ public class Reproduction<Chromosome: Randomizable>: GeneticOperator<Chromosome>
     
     public let numberOfIndividuals: Int
     
-    init(_ selection: Selection<Chromosome>, numberOfIndividuals: Int = 1) {
+    public init(_ selection: Selection<Chromosome>, numberOfIndividuals: Int = 1) {
         self.numberOfIndividuals = numberOfIndividuals
         super.init(selection)
     }

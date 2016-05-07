@@ -1,14 +1,14 @@
 
-/* This is an example of usage of the BasicGeneticAlgorithm.
+/* This is an example of usage of the GeneticAlgorithm.
  * It is made "internal" not to conflict with other objects in the library.
  */
-internal class BasicGeneticAlgorithmExample {
+internal class GeneticAlgorithmExample {
     
     // It's useful to define types in advance. Helps sweep away repeated portions (such as generic types).
     internal typealias MyChromosome = RangeInitializedArrayExample
-    internal typealias MyEvaluator = FitnessEvaluatorExample
+    internal typealias MyEvaluator = SequentialEvaluatorExample
     internal typealias MyPipeline = Pipeline<MyChromosome>
-    internal typealias MyAlgorithm = BasicGeneticAlgorithm<MyChromosome>
+    internal typealias MyAlgorithm = GeneticAlgorithm<MyChromosome>
     internal typealias MyTermination = TerminationCondition<MyChromosome>
     
     internal func run() {
@@ -31,7 +31,7 @@ internal class BasicGeneticAlgorithmExample {
          * EXAMPLE: Here we use elitism as #1 to clone the best 5 individuals when creating new generations.
          *          This helps us maintain the best solution so far.
          */
-        let elitism: MyPipeline = GeneticOperatorPipeline(Reproduction(BestSelection(), numberOfIndividuals: 5))
+        let elitism: MyPipeline = Reproduction(BestSelection(), numberOfIndividuals: 5)
         
         /* In pipelines, you can use some cool symbols to combine operators effortlessly:
          *     e.g. "op1 ---> op2 ---> op3" produces a sequence, in which operators are applied sequentially
@@ -60,8 +60,8 @@ internal class BasicGeneticAlgorithmExample {
         let alg = MyAlgorithm(
             generator: gen,
             populationSize: populationSize,
-            operatorsExecutedOnce: elitism,
-            operatorsExecutedRepeatedly: loopOperators,
+            executeEveryGeneration: elitism,
+            executeInLoop: loopOperators,
             evaluator: MyEvaluator(),
             termination: termination)
         

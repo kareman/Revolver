@@ -16,7 +16,7 @@ public class NotCondition<Chromosome: Randomizable>: TerminationCondition<Chromo
      
      - returns: New termination condition.
      */
-    init(_ operand: TerminationCondition<Chromosome>) {
+    public init(_ operand: TerminationCondition<Chromosome>) {
         self.operand = operand
     }
     

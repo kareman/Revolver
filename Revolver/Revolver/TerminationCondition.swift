@@ -5,6 +5,8 @@
 /// When overriding it, you will need to subclass the `shouldTerminate()` function.
 public class TerminationCondition<Chromosome: Randomizable> {
     
+    public init() { }
+    
     /**
      Decide whether to terminate a genetic algorithm.
      

@@ -1,14 +1,14 @@
 
 /// A simple genetic algorithm running in sequential (non-distributed) environment.
-public class BasicGeneticAlgorithm<Chromosome: Randomizable> {
-    public typealias Hook = BasicGeneticAlgorithm<Chromosome> -> ()
+public class GeneticAlgorithm<Chromosome: Randomizable> {
+    public typealias Hook = GeneticAlgorithm<Chromosome> -> ()
     
     public let entropyGenerator: EntropyGenerator
     public let population: MatingPool<Chromosome>
     public let populationSize: Int
     
-    public let operatorsExecutedOnce: Pipeline<Chromosome>
-    public let operatorsExecutedRepeatedly: Pipeline<Chromosome>
+    public let pipelineExecutedEveryGeneration: Pipeline<Chromosome>?
+    public let pipelineExecutedInLoop: Pipeline<Chromosome>
     
     public let evaluator: Evaluator<Chromosome>
     public let termination: TerminationCondition<Chromosome>
@@ -17,12 +17,12 @@ public class BasicGeneticAlgorithm<Chromosome: Randomizable> {
     public var hookRunFinished: Hook?
     public var hookGenerationAdvanced: Hook?
     
-    public init(generator: EntropyGenerator, populationSize: Int, operatorsExecutedOnce: Pipeline<Chromosome>, operatorsExecutedRepeatedly: Pipeline<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
+    public init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: Pipeline<Chromosome>?, executeInLoop: Pipeline<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
         // Copy some values
         self.populationSize = populationSize
         self.entropyGenerator = generator
-        self.operatorsExecutedOnce = operatorsExecutedOnce
-        self.operatorsExecutedRepeatedly = operatorsExecutedRepeatedly
+        self.pipelineExecutedEveryGeneration = executeEveryGeneration
+        self.pipelineExecutedInLoop = executeInLoop
         self.evaluator = evaluator
         self.termination = termination
         
@@ -32,15 +32,48 @@ public class BasicGeneticAlgorithm<Chromosome: Randomizable> {
         // If the debug mode is turned on, occupy hooks with default implementations.
         #if DEBUG
             hookRunStarted = { _ in
-                debugPrint("BasicGeneticAlgorithm[DEBUG]: Run started.")
+                debugPrint("GeneticAlgorithm[DEBUG]: Run started.")
             }
             hookRunFinished = { _ in
-                debugPrint("BasicGeneticAlgorithm[DEBUG]: Run finished.")
+                debugPrint("GeneticAlgorithm[DEBUG]: Run finished.")
             }
-            hookGenerationAdvanced = { (alg: BasicGeneticAlgorithm<Chromosome>) in
-                debugPrint("BasicGeneticAlgorithm[DEBUG]: Generation advanced: \(alg.population.currentGeneration)")
+            hookGenerationAdvanced = { (alg: GeneticAlgorithm<Chromosome>) in
+                debugPrint("GeneticAlgorithm[DEBUG]: Generation advanced: \(alg.population.currentGeneration)")
             }
         #endif
+    }
+    
+    public convenience init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: GeneticOperator<Chromosome>, executeInLoop: GeneticOperator<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
+        self.init(
+            generator: generator,
+            populationSize: populationSize,
+            executeEveryGeneration: GeneticOperatorPipeline<Chromosome>(executeEveryGeneration),
+            executeInLoop: GeneticOperatorPipeline<Chromosome>(executeInLoop),
+            evaluator: evaluator,
+            termination: termination
+        )
+    }
+    
+    public convenience init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: Pipeline<Chromosome>?, executeInLoop: GeneticOperator<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
+        self.init(
+            generator: generator,
+            populationSize: populationSize,
+            executeEveryGeneration: executeEveryGeneration,
+            executeInLoop: GeneticOperatorPipeline<Chromosome>(executeInLoop),
+            evaluator: evaluator,
+            termination: termination
+        )
+    }
+    
+    public convenience init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: GeneticOperator<Chromosome>, executeInLoop: Pipeline<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
+        self.init(
+            generator: generator,
+            populationSize: populationSize,
+            executeEveryGeneration: GeneticOperatorPipeline<Chromosome>(executeEveryGeneration),
+            executeInLoop: executeInLoop,
+            evaluator: evaluator,
+            termination: termination
+        )
     }
     
     public func run() {
@@ -90,10 +123,10 @@ public class BasicGeneticAlgorithm<Chromosome: Randomizable> {
         }
         
         population.beginReproduction()
-        operatorsExecutedOnce.execute(entropyGenerator, pool: population)
+        pipelineExecutedEveryGeneration?.execute(entropyGenerator, pool: population)
         
         while population.offspringSize! < populationSize {
-            operatorsExecutedRepeatedly.execute(entropyGenerator, pool: population)
+            pipelineExecutedInLoop.execute(entropyGenerator, pool: population)
         }
         
         population.advanceGeneration()

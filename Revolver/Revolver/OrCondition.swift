@@ -20,9 +20,10 @@ public class OrCondition<Chromosome: Randomizable>: TerminationCondition<Chromos
      
      - returns: New termination condition.
      */
-    init(_ first: TerminationCondition<Chromosome>, _ second: TerminationCondition<Chromosome>) {
+    public init(_ first: TerminationCondition<Chromosome>, _ second: TerminationCondition<Chromosome>) {
         self.firstOperand = first
         self.secondOperand = second
+        super.init()
     }
     
     public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {

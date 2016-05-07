@@ -12,8 +12,9 @@ public class AfterDate<Chromosome: Randomizable>: TerminationCondition<Chromosom
      
      - returns: New termination condition.
      */
-    init(_ date: NSDate) {
+    public init(_ date: NSDate) {
         self.date = date
+        super.init()
     }
     
     public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {

@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E28981371CDE7E3600B00749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981361CDE7E3600B00749 /* AppDelegate.swift */; };
+		E28981391CDE7E3600B00749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981381CDE7E3600B00749 /* ViewController.swift */; };
+		E289813B1CDE7E3600B00749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E289813A1CDE7E3600B00749 /* Assets.xcassets */; };
+		E289813E1CDE7E3700B00749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E289813C1CDE7E3700B00749 /* Main.storyboard */; };
+		E28981491CDE7E3700B00749 /* ExampleKnapsackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981481CDE7E3700B00749 /* ExampleKnapsackTests.swift */; };
+		E28981571CDE800000B00749 /* KnapsackEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981531CDE800000B00749 /* KnapsackEvaluator.swift */; };
+		E28981581CDE800000B00749 /* KnapsackChromosome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981541CDE800000B00749 /* KnapsackChromosome.swift */; };
+		E28981591CDE800000B00749 /* ProblemInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981551CDE800000B00749 /* ProblemInstance.swift */; };
+		E289815A1CDE800000B00749 /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981561CDE800000B00749 /* Thing.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E28981451CDE7E3700B00749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E289812B1CDE7E3600B00749 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E28981321CDE7E3600B00749;
+			remoteInfo = ExampleKnapsack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E28981331CDE7E3600B00749 /* ExampleKnapsack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleKnapsack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28981361CDE7E3600B00749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E28981381CDE7E3600B00749 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E289813A1CDE7E3600B00749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E289813D1CDE7E3700B00749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E289813F1CDE7E3700B00749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28981441CDE7E3700B00749 /* ExampleKnapsackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleKnapsackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28981481CDE7E3700B00749 /* ExampleKnapsackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleKnapsackTests.swift; sourceTree = "<group>"; };
+		E289814A1CDE7E3700B00749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28981531CDE800000B00749 /* KnapsackEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnapsackEvaluator.swift; sourceTree = "<group>"; };
+		E28981541CDE800000B00749 /* KnapsackChromosome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnapsackChromosome.swift; sourceTree = "<group>"; };
+		E28981551CDE800000B00749 /* ProblemInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemInstance.swift; sourceTree = "<group>"; };
+		E28981561CDE800000B00749 /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E28981301CDE7E3600B00749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E28981411CDE7E3700B00749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E289812A1CDE7E3600B00749 = {
+			isa = PBXGroup;
+			children = (
+				E28981351CDE7E3600B00749 /* ExampleKnapsack */,
+				E28981471CDE7E3700B00749 /* ExampleKnapsackTests */,
+				E28981341CDE7E3600B00749 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E28981341CDE7E3600B00749 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E28981331CDE7E3600B00749 /* ExampleKnapsack.app */,
+				E28981441CDE7E3700B00749 /* ExampleKnapsackTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E28981351CDE7E3600B00749 /* ExampleKnapsack */ = {
+			isa = PBXGroup;
+			children = (
+				E28981531CDE800000B00749 /* KnapsackEvaluator.swift */,
+				E28981541CDE800000B00749 /* KnapsackChromosome.swift */,
+				E28981551CDE800000B00749 /* ProblemInstance.swift */,
+				E28981561CDE800000B00749 /* Thing.swift */,
+				E28981381CDE7E3600B00749 /* ViewController.swift */,
+				E289815B1CDEA07900B00749 /* Boring Stuff */,
+			);
+			path = ExampleKnapsack;
+			sourceTree = "<group>";
+		};
+		E28981471CDE7E3700B00749 /* ExampleKnapsackTests */ = {
+			isa = PBXGroup;
+			children = (
+				E28981481CDE7E3700B00749 /* ExampleKnapsackTests.swift */,
+				E289814A1CDE7E3700B00749 /* Info.plist */,
+			);
+			path = ExampleKnapsackTests;
+			sourceTree = "<group>";
+		};
+		E289815B1CDEA07900B00749 /* Boring Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				E28981361CDE7E3600B00749 /* AppDelegate.swift */,
+				E289813A1CDE7E3600B00749 /* Assets.xcassets */,
+				E289813C1CDE7E3700B00749 /* Main.storyboard */,
+				E289813F1CDE7E3700B00749 /* Info.plist */,
+			);
+			name = "Boring Stuff";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E28981321CDE7E3600B00749 /* ExampleKnapsack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E289814D1CDE7E3700B00749 /* Build configuration list for PBXNativeTarget "ExampleKnapsack" */;
+			buildPhases = (
+				E289812F1CDE7E3600B00749 /* Sources */,
+				E28981301CDE7E3600B00749 /* Frameworks */,
+				E28981311CDE7E3600B00749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExampleKnapsack;
+			productName = ExampleKnapsack;
+			productReference = E28981331CDE7E3600B00749 /* ExampleKnapsack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E28981431CDE7E3700B00749 /* ExampleKnapsackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E28981501CDE7E3700B00749 /* Build configuration list for PBXNativeTarget "ExampleKnapsackTests" */;
+			buildPhases = (
+				E28981401CDE7E3700B00749 /* Sources */,
+				E28981411CDE7E3700B00749 /* Frameworks */,
+				E28981421CDE7E3700B00749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E28981461CDE7E3700B00749 /* PBXTargetDependency */,
+			);
+			name = ExampleKnapsackTests;
+			productName = ExampleKnapsackTests;
+			productReference = E28981441CDE7E3700B00749 /* ExampleKnapsackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E289812B1CDE7E3600B00749 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Petr Manek";
+				TargetAttributes = {
+					E28981321CDE7E3600B00749 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					E28981431CDE7E3700B00749 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E28981321CDE7E3600B00749;
+					};
+				};
+			};
+			buildConfigurationList = E289812E1CDE7E3600B00749 /* Build configuration list for PBXProject "ExampleKnapsack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E289812A1CDE7E3600B00749;
+			productRefGroup = E28981341CDE7E3600B00749 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E28981321CDE7E3600B00749 /* ExampleKnapsack */,
+				E28981431CDE7E3700B00749 /* ExampleKnapsackTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E28981311CDE7E3600B00749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E289813B1CDE7E3600B00749 /* Assets.xcassets in Resources */,
+				E289813E1CDE7E3700B00749 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E28981421CDE7E3700B00749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E289812F1CDE7E3600B00749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28981391CDE7E3600B00749 /* ViewController.swift in Sources */,
+				E28981571CDE800000B00749 /* KnapsackEvaluator.swift in Sources */,
+				E28981371CDE7E3600B00749 /* AppDelegate.swift in Sources */,
+				E28981591CDE800000B00749 /* ProblemInstance.swift in Sources */,
+				E289815A1CDE800000B00749 /* Thing.swift in Sources */,
+				E28981581CDE800000B00749 /* KnapsackChromosome.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E28981401CDE7E3700B00749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28981491CDE7E3700B00749 /* ExampleKnapsackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E28981461CDE7E3700B00749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E28981321CDE7E3600B00749 /* ExampleKnapsack */;
+			targetProxy = E28981451CDE7E3700B00749 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E289813C1CDE7E3700B00749 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E289813D1CDE7E3700B00749 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E289814B1CDE7E3700B00749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E289814C1CDE7E3700B00749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E289814E1CDE7E3700B00749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ExampleKnapsack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.petrmanek.ExampleKnapsack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E289814F1CDE7E3700B00749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ExampleKnapsack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.petrmanek.ExampleKnapsack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E28981511CDE7E3700B00749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ExampleKnapsackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.petrmanek.ExampleKnapsackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleKnapsack.app/Contents/MacOS/ExampleKnapsack";
+			};
+			name = Debug;
+		};
+		E28981521CDE7E3700B00749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ExampleKnapsackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.petrmanek.ExampleKnapsackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleKnapsack.app/Contents/MacOS/ExampleKnapsack";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E289812E1CDE7E3600B00749 /* Build configuration list for PBXProject "ExampleKnapsack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E289814B1CDE7E3700B00749 /* Debug */,
+				E289814C1CDE7E3700B00749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E289814D1CDE7E3700B00749 /* Build configuration list for PBXNativeTarget "ExampleKnapsack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E289814E1CDE7E3700B00749 /* Debug */,
+				E289814F1CDE7E3700B00749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E28981501CDE7E3700B00749 /* Build configuration list for PBXNativeTarget "ExampleKnapsackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E28981511CDE7E3700B00749 /* Debug */,
+				E28981521CDE7E3700B00749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E289812B1CDE7E3600B00749 /* Project object */;
+}

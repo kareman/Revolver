@@ -30,9 +30,10 @@ public class FitnessThreshold<Chromosome: Randomizable>: TerminationCondition<Ch
      
      - returns: New termination condition.
      */
-    init(_ fitness: Double, kind: FitnessKind = .BestFitness) {
+    public init(_ fitness: Double, kind: FitnessKind = .BestFitness) {
         self.fitness = fitness
         self.fitnessKind = kind
+        super.init()
     }
     
     public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {

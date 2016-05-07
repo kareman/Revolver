@@ -2,7 +2,7 @@
 /* This is an example of subclass of the Evaluator class.
  * It is made "internal" not to conflict with other objects in the library.
  */
-internal class FitnessEvaluatorExample: SequentialEvaluator<RangeInitializedArrayExample> {
+internal class SequentialEvaluatorExample: SequentialEvaluator<RangeInitializedArrayExample> {
     
     // CONFIGURATION: Here you need to reference the chromosome type, on which the evaluations are based.
     internal typealias Chromosome = RangeInitializedArrayExample

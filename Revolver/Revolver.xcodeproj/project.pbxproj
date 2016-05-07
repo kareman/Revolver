@@ -39,9 +39,9 @@
 		E28980C91CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */; };
 		E28980CB1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */; };
 		E28980CD1CD4B4AE00B00749 /* ActionNodeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CC1CD4B4AE00B00749 /* ActionNodeExample.swift */; };
-		E28980D01CD4E05E00B00749 /* BasicGeneticAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CF1CD4E05E00B00749 /* BasicGeneticAlgorithm.swift */; };
-		E28980DB1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DA1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift */; };
-		E28980DD1CD4F98E00B00749 /* FitnessEvaluatorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DC1CD4F98E00B00749 /* FitnessEvaluatorExample.swift */; };
+		E28980D01CD4E05E00B00749 /* GeneticAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980CF1CD4E05E00B00749 /* GeneticAlgorithm.swift */; };
+		E28980DB1CD4F94B00B00749 /* GeneticAlgorithmExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DA1CD4F94B00B00749 /* GeneticAlgorithmExample.swift */; };
+		E28980DD1CD4F98E00B00749 /* SequentialEvaluatorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DC1CD4F98E00B00749 /* SequentialEvaluatorExample.swift */; };
 		E28980DF1CD4FFA800B00749 /* IndexSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DE1CD4FFA800B00749 /* IndexSet.swift */; };
 		E28980E11CD5045500B00749 /* Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E01CD5045500B00749 /* Mutable.swift */; };
 		E28980E31CD5049A00B00749 /* OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E21CD5049A00B00749 /* OnePointCrossoverable.swift */; };
@@ -148,9 +148,9 @@
 		E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+CustomDebugStringConvertible.swift"; sourceTree = "<group>"; };
 		E28980CC1CD4B4AE00B00749 /* ActionNodeExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionNodeExample.swift; sourceTree = "<group>"; };
-		E28980CF1CD4E05E00B00749 /* BasicGeneticAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicGeneticAlgorithm.swift; sourceTree = "<group>"; };
-		E28980DA1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicGeneticAlgorithmExample.swift; sourceTree = "<group>"; };
-		E28980DC1CD4F98E00B00749 /* FitnessEvaluatorExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessEvaluatorExample.swift; sourceTree = "<group>"; };
+		E28980CF1CD4E05E00B00749 /* GeneticAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticAlgorithm.swift; sourceTree = "<group>"; };
+		E28980DA1CD4F94B00B00749 /* GeneticAlgorithmExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticAlgorithmExample.swift; sourceTree = "<group>"; };
+		E28980DC1CD4F98E00B00749 /* SequentialEvaluatorExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequentialEvaluatorExample.swift; sourceTree = "<group>"; };
 		E28980DE1CD4FFA800B00749 /* IndexSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexSet.swift; sourceTree = "<group>"; };
 		E28980E01CD5045500B00749 /* Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutable.swift; sourceTree = "<group>"; };
 		E28980E21CD5049A00B00749 /* OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePointCrossoverable.swift; sourceTree = "<group>"; };
@@ -305,9 +305,8 @@
 		E28980CE1CD4E04000B00749 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				E28980CF1CD4E05E00B00749 /* BasicGeneticAlgorithm.swift */,
-				E28980DA1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift */,
-				E28980DC1CD4F98E00B00749 /* FitnessEvaluatorExample.swift */,
+				E28980CF1CD4E05E00B00749 /* GeneticAlgorithm.swift */,
+				E28980DA1CD4F94B00B00749 /* GeneticAlgorithmExample.swift */,
 			);
 			name = Algorithms;
 			sourceTree = "<group>";
@@ -345,6 +344,7 @@
 				E20488B21C9D84B500BABC62 /* FitnessType.swift */,
 				E28981071CD943CD00B00749 /* Evaluator.swift */,
 				E28981091CD9443700B00749 /* SequentialEvaluator.swift */,
+				E28980DC1CD4F98E00B00749 /* SequentialEvaluatorExample.swift */,
 				E289810D1CD945CF00B00749 /* CyclicEvaluator.swift */,
 			);
 			name = Evaluators;
@@ -649,7 +649,7 @@
 				E2E71A521CA5CAED002E34DD /* TreeNode.swift in Sources */,
 				E2F31C8B1CA86EA700372B95 /* DivisionNode.swift in Sources */,
 				E20488AD1C9D800000BABC62 /* Reproduction.swift in Sources */,
-				E28980DB1CD4F94B00B00749 /* BasicGeneticAlgorithmExample.swift in Sources */,
+				E28980DB1CD4F94B00B00749 /* GeneticAlgorithmExample.swift in Sources */,
 				E2F31C871CA86E9A00372B95 /* MultiplicationNode.swift in Sources */,
 				E284A7301C8E401700648A2E /* EntropyGenerator+Range.swift in Sources */,
 				E28981051CD54C6E00B00749 /* WorstSelection.swift in Sources */,
@@ -681,7 +681,7 @@
 				E28980E11CD5045500B00749 /* Mutable.swift in Sources */,
 				E20488B91C9D92B700BABC62 /* RankSelection.swift in Sources */,
 				E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */,
-				E28980DD1CD4F98E00B00749 /* FitnessEvaluatorExample.swift in Sources */,
+				E28980DD1CD4F98E00B00749 /* SequentialEvaluatorExample.swift in Sources */,
 				E28980FD1CD53C2E00B00749 /* AndCondition.swift in Sources */,
 				E28980E91CD5126500B00749 /* BranchingPipeline.swift in Sources */,
 				E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */,
@@ -721,7 +721,7 @@
 				E2F31C891CA86EA200372B95 /* SubtractionNode.swift in Sources */,
 				E28980C51CD3CA1000B00749 /* RangeInitializedArray+Mutable.swift in Sources */,
 				E284A71E1C8E3B6B00648A2E /* DrandGenerator.swift in Sources */,
-				E28980D01CD4E05E00B00749 /* BasicGeneticAlgorithm.swift in Sources */,
+				E28980D01CD4E05E00B00749 /* GeneticAlgorithm.swift in Sources */,
 				E28980C31CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift in Sources */,
 				E28980E51CD50CAA00B00749 /* GeneticOperatorPipeline.swift in Sources */,
 			);

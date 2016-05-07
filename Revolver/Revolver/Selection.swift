@@ -2,6 +2,8 @@
 /// A method of selecting individuals from the population.
 public class Selection<Chromosome: Randomizable> {
     
+    public init() { }
+    
     /**
      Select individuals from the population.
      
