@@ -4,8 +4,10 @@ class Simulation {
     
     private typealias ShellResult = (exitCode: Int32, output: String)
     
-    // Courtesy of http://stackoverflow.com/questions/26971240/how-do-i-run-an-terminal-command-in-a-swift-script-e-g-xcodebuild
     private static func shell(executable: String, args: String...) -> ShellResult {
+        // Courtesy of StackOverflow.
+        // http://stackoverflow.com/questions/26971240/how-do-i-run-an-terminal-command-in-a-swift-script-e-g-xcodebuild
+        
         let task = NSTask()
         task.launchPath = executable
         task.arguments = args
@@ -21,7 +23,7 @@ class Simulation {
         
         if task.terminationStatus != 0 {
             let debugData = Simulation.readPipe(stderr)
-            print("Qwopper STDERR:\n\(debugData)")
+            print("      - stderr: \(debugData)")
         }
         
         return (exitCode: task.terminationStatus, output: Simulation.readPipe(stdout))
@@ -37,32 +39,33 @@ class Simulation {
         return output
     }
     
-    static func programString(program: [Command]) -> String {
-        return program.reduce("", combine: { $0 + String($1.rawValue) })
-    }
-    
     private let app: String
     
     init() {
         self.app = NSBundle.mainBundle().pathForResource("qwopper", ofType: "jar")!
     }
     
-    func testProgram(program: [Command], tries: Int, time: NSTimeInterval) -> Double {
-        let progString = Simulation.programString(program)
+    func testChromosome(chromosome: QwopChromosome, tries: Int, time: NSTimeInterval) -> Double {
+        let progString = chromosome.programString
         let timeInt = Int(time * 1000.0)
-        let out = Simulation.shell("/usr/bin/java", args: "-jar", app, "\(tries)", "\(timeInt)", progString)
         
-        if out.exitCode != 0 {
-            // Simulation error is error of the individual. Life isn't fair.
-            return 0
+        for _ in 1...3 {
+            print("      - try 1")
+            let out = Simulation.shell("/usr/bin/java", args: "-jar", app, "\(tries)", "\(timeInt)", progString)
+            
+            if out.exitCode == 0 {
+                // Simulation succeeded.
+                let distances = out.output.componentsSeparatedByString("\n").map(parseLine).filter { $0 != nil }.map { !$0!.success ? 0 : $0!.distance }
+                let meanDistance = distances.count == 0 ? 0 : distances.reduce(0, combine: +) / Double(distances.count)
+                let maxDistance = Double(100) // meters
+                
+                // The fitness function is fraction of total distance (100m) traveled in constant time interval (or until crash).
+                return min(1, max(0, meanDistance / maxDistance))
+            }
         }
         
-        let distances = out.output.componentsSeparatedByString("\n").map(parseLine).filter { $0 != nil }.map { !$0!.success ? 0 : $0!.distance }
-        let meanDistance = distances.count == 0 ? 0 : distances.reduce(0, combine: +) / Double(distances.count)
-        let maxDistance = Double(100) // meters
-        
-        // The fitness function is fraction of total distance (100m) traveled in constant time interval (or until crash).
-        return min(1, max(0, meanDistance / maxDistance))
+        // 3 simulation errors in a row. Give up.
+        return 0
     }
     
     private typealias RunInfo = (success: Bool, duration: Int, distance: Double)

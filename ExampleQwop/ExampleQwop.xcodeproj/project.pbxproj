@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E284A7381C8E47CE00648A2E /* Chromosome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A7371C8E47CE00648A2E /* Chromosome.swift */; };
+		E21AB4ED1CDF454F008C970F /* QwopEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21AB4EC1CDF454F008C970F /* QwopEvaluator.swift */; };
+		E284A7381C8E47CE00648A2E /* QwopChromosome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284A7371C8E47CE00648A2E /* QwopChromosome.swift */; };
 		E29164251C8DF6A5002879C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29164241C8DF6A5002879C0 /* AppDelegate.swift */; };
 		E29164271C8DF6A5002879C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29164261C8DF6A5002879C0 /* ViewController.swift */; };
 		E29164291C8DF6A5002879C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29164281C8DF6A5002879C0 /* Assets.xcassets */; };
 		E291642C1C8DF6A5002879C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E291642A1C8DF6A5002879C0 /* Main.storyboard */; };
 		E29164341C8DFB86002879C0 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29164331C8DFB86002879C0 /* Simulation.swift */; };
 		E291645A1C8E0735002879C0 /* Revolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29164591C8E0735002879C0 /* Revolver.framework */; };
-		E291645E1C8E083C002879C0 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291645D1C8E083C002879C0 /* Command.swift */; };
-		E29164601C8E0AC6002879C0 /* qwopper.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = E291645F1C8E0AC6002879C0 /* qwopper.jar */; };
+		E291645E1C8E083C002879C0 /* QwopCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291645D1C8E083C002879C0 /* QwopCommand.swift */; };
 		E29164611C8E0B10002879C0 /* qwopper.jar in Resources */ = {isa = PBXBuildFile; fileRef = E291645F1C8E0AC6002879C0 /* qwopper.jar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E284A7371C8E47CE00648A2E /* Chromosome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chromosome.swift; sourceTree = "<group>"; };
+		E21AB4EC1CDF454F008C970F /* QwopEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QwopEvaluator.swift; sourceTree = "<group>"; };
+		E284A7371C8E47CE00648A2E /* QwopChromosome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QwopChromosome.swift; sourceTree = "<group>"; };
 		E29164211C8DF6A4002879C0 /* ExampleQwop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleQwop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29164241C8DF6A5002879C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E29164261C8DF6A5002879C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +30,7 @@
 		E291642D1C8DF6A5002879C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E29164331C8DFB86002879C0 /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		E29164591C8E0735002879C0 /* Revolver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Revolver.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Workspace-axefejvpinxtzwalahtnkekcgrks/Build/Products/Debug/Revolver.framework"; sourceTree = "<group>"; };
-		E291645D1C8E083C002879C0 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		E291645D1C8E083C002879C0 /* QwopCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QwopCommand.swift; sourceTree = "<group>"; };
 		E291645F1C8E0AC6002879C0 /* qwopper.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; path = qwopper.jar; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -38,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29164601C8E0AC6002879C0 /* qwopper.jar in Frameworks */,
 				E291645A1C8E0735002879C0 /* Revolver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,8 +73,9 @@
 				E291642A1C8DF6A5002879C0 /* Main.storyboard */,
 				E291642D1C8DF6A5002879C0 /* Info.plist */,
 				E29164331C8DFB86002879C0 /* Simulation.swift */,
-				E284A7371C8E47CE00648A2E /* Chromosome.swift */,
-				E291645D1C8E083C002879C0 /* Command.swift */,
+				E284A7371C8E47CE00648A2E /* QwopChromosome.swift */,
+				E291645D1C8E083C002879C0 /* QwopCommand.swift */,
+				E21AB4EC1CDF454F008C970F /* QwopEvaluator.swift */,
 			);
 			path = ExampleQwop;
 			sourceTree = "<group>";
@@ -151,10 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E29164271C8DF6A5002879C0 /* ViewController.swift in Sources */,
-				E284A7381C8E47CE00648A2E /* Chromosome.swift in Sources */,
+				E284A7381C8E47CE00648A2E /* QwopChromosome.swift in Sources */,
 				E29164341C8DFB86002879C0 /* Simulation.swift in Sources */,
 				E29164251C8DF6A5002879C0 /* AppDelegate.swift in Sources */,
-				E291645E1C8E083C002879C0 /* Command.swift in Sources */,
+				E21AB4ED1CDF454F008C970F /* QwopEvaluator.swift in Sources */,
+				E291645E1C8E083C002879C0 /* QwopCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

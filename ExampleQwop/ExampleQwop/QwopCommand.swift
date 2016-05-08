@@ -1,7 +1,7 @@
 import Foundation
 import Revolver
 
-enum Command: Character, Discrete, Randomizable {
+enum QwopCommand: Character, Discrete, Randomizable {
     case PressQ = "Q"
     case ReleaseQ = "q"
     case PressW = "W"
@@ -12,7 +12,7 @@ enum Command: Character, Discrete, Randomizable {
     case ReleaseP = "p"
     case Wait = "+"
     
-    static let allValues: [Command] = [
+    static let allValues: [QwopCommand] = [
         .PressQ, .ReleaseQ,
         .PressW, .ReleaseW,
         .PressO, .ReleaseO,

@@ -40,7 +40,7 @@ public class Main {
         System.out.println(String.format("%d;%d;%f", info.crashed ? 0 : 1, info.duration, info.distance));
       }
     } catch (Throwable t) {
-      LOG.log("Error", t);
+      LOG.log("err;" + t.getMessage());
       System.exit(1);
     }
   }
