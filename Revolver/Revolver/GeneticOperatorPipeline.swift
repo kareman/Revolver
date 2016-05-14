@@ -1,6 +1,6 @@
 
 /// A genetic operator pipeline applies a genetic operator on population.
-public class GeneticOperatorPipeline<Chromosome: Randomizable>: Pipeline<Chromosome> {
+public class GeneticOperatorPipeline<Chromosome: ChromosomeType>: Pipeline<Chromosome> {
     
     private var currentOperator: GeneticOperator<Chromosome>
     

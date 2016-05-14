@@ -1,6 +1,6 @@
 
 /// A pipeline describes a series of actions applied in sequence on a population.
-public class Pipeline<Chromosome: Randomizable> {
+public class Pipeline<Chromosome: ChromosomeType> {
     
     private var next: Pipeline<Chromosome>?
     

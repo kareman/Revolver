@@ -1,7 +1,7 @@
 
-/// One-point crossover simulates sexual reproduction of individuals within the population.
+/// Two-point crossover simulates sexual reproduction of individuals within the population.
 /// It combines their chromosomes to create new offspring chromosomes, which are then inserted into the next generation.
-public class OnePointCrossover<Chromosome: OnePointCrossoverable>: GeneticOperator<Chromosome> {
+public class TwoPointCrossover<Chromosome: TwoPointCrossoverable>: GeneticOperator<Chromosome> {
     
     public override init(_ selection: Selection<Chromosome>) {
         super.init(selection)
@@ -16,7 +16,7 @@ public class OnePointCrossover<Chromosome: OnePointCrossoverable>: GeneticOperat
         let secondChromosome = pool.individualAtIndex(selectedIndividuals.last!).chromosome
         
         // Perform crossover on their underlying data structure.
-        let result = firstChromosome.onePointCrossover(generator, other: secondChromosome)
+        let result = firstChromosome.twoPointCrossover(generator, other: secondChromosome)
         
         // Insert the offspring into new population.
         let firstOffspring = Individual<Chromosome>(chromosome: result.first)

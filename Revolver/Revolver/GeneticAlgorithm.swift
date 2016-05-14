@@ -1,6 +1,6 @@
 
 /// A simple genetic algorithm running in sequential (non-distributed) environment.
-public class GeneticAlgorithm<Chromosome: Randomizable> {
+public class GeneticAlgorithm<Chromosome: ChromosomeType> {
     public typealias Hook = GeneticAlgorithm<Chromosome> -> ()
     
     public let entropyGenerator: EntropyGenerator

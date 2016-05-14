@@ -1,7 +1,7 @@
 
 /// Tournament selection.
 /// For more information, see [the article on Wikipedia](https://en.wikipedia.org/wiki/Tournament_selection).
-public class TournamentSelection<Chromosome: Randomizable>: Selection<Chromosome> {
+public class TournamentSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
     
     /// Random selection used for the subselection within every tournament.
     private var randomSelection: RandomSelection<Chromosome>

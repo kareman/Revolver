@@ -1,6 +1,6 @@
 
 /// A single individual of a population.
-public class Individual<Chromosome: Randomizable>: Randomizable, FitnessType {
+public class Individual<Chromosome: ChromosomeType>: Randomizable, FitnessType, ChromosomeType, Copyable {
     
     /// Genetic information of the individual.
     public let chromosome: Chromosome
@@ -39,8 +39,8 @@ public class Individual<Chromosome: Randomizable>: Randomizable, FitnessType {
      
      - returns: Identical copy of the original individual.
      */
-    public init(original: Individual<Chromosome>) {
-        self.chromosome = original.chromosome
+    public required init(original: Individual<Chromosome>) {
+        self.chromosome = Chromosome(original: original.chromosome)
         self.fitness = original.fitness
     }
     

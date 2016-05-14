@@ -2,7 +2,7 @@
 /// Combine two termination conditions together by the AND operation.
 ///
 /// **Pro Tip:** You can use this class with nicer syntax by combining conditions with the `&&` operator.
-public class AndCondition<Chromosome: Randomizable>: TerminationCondition<Chromosome> {
+public class AndCondition<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// The first operand of the AND operation.
     public let firstOperand: TerminationCondition<Chromosome>
@@ -32,6 +32,6 @@ public class AndCondition<Chromosome: Randomizable>: TerminationCondition<Chromo
     
 }
 
-public func &&<Chromosome: Randomizable>(lhs: TerminationCondition<Chromosome>, rhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome> {
+public func &&<Chromosome: ChromosomeType>(lhs: TerminationCondition<Chromosome>, rhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome> {
     return AndCondition(lhs, rhs)
 }

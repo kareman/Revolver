@@ -1,6 +1,6 @@
 
 /// Cyclic evaluator uses another evaluator multiple times over.
-public final class CyclicEvaluator<Chromosome: Randomizable>: SequentialEvaluator<Chromosome> {
+public final class CyclicEvaluator<Chromosome: ChromosomeType>: SequentialEvaluator<Chromosome> {
     
     /// The evaluator to call multiple times.
     private let innerEvaluator: SequentialEvaluator<Chromosome>

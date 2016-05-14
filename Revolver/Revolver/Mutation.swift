@@ -1,6 +1,6 @@
 
 /// Mutation operator introduces diversity in the population by slightly altering its individuals.
-public class Mutation<Chromosome where Chromosome: Randomizable, Chromosome: Mutable>: GeneticOperator<Chromosome> {
+public class Mutation<Chromosome: Mutable>: GeneticOperator<Chromosome> {
     
     public override init(_ selection: Selection<Chromosome>) {
         super.init(selection)

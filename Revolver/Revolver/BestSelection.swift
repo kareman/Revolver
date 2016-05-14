@@ -1,6 +1,6 @@
 
 /// Select N best individuals according to their fitness.
-public class BestSelection<Chromosome: Randomizable>: Selection<Chromosome> {
+public class BestSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
     
     public override init() { }
     

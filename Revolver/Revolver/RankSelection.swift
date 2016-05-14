@@ -3,7 +3,7 @@
 ///
 /// Considering ranks instead of actual fitness values, this method proves to be more robust when marginal
 /// or ill-determined fitness values are expected.
-public class RankSelection<Chromosome: Randomizable>: Selection<Chromosome> {
+public class RankSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
     
     public override init() { }
     

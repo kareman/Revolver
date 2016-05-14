@@ -46,11 +46,19 @@ class Simulation {
     }
     
     func testChromosome(chromosome: QwopChromosome, tries: Int, time: NSTimeInterval) -> Double {
-        let progString = chromosome.programString
+        let progString: String        
+        if !chromosome.programString.containsString("+") {
+            // Safety measure. There has to be at least one "+" or the qwopper app will hang in an infinite loop.
+            progString = chromosome.programString + "+"
+        } else {
+            progString = chromosome.programString
+        }
+        
+        
         let timeInt = Int(time * 1000.0)
         
-        for _ in 1...3 {
-            print("      - try 1")
+        for t in 1...3 {
+            print("      - try \(t)")
             let out = Simulation.shell("/usr/bin/java", args: "-jar", app, "\(tries)", "\(timeInt)", progString)
             
             if out.exitCode == 0 {

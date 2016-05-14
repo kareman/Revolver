@@ -1,6 +1,6 @@
 
 /// A branching pipeline non-deterministically selects one of multiple choices.
-public class BranchingPipeline<Chromosome: Randomizable>: Pipeline<Chromosome> {
+public class BranchingPipeline<Chromosome: ChromosomeType>: Pipeline<Chromosome> {
     
     private var choices: [Choice<Chromosome>]
     private var sum: Double

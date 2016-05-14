@@ -2,7 +2,7 @@ import Revolver
 
 final class QwopChromosome: RangeInitializedArray {
     typealias Element = QwopCommand
-    static let initializationRange = 1...50
+    static let initializationRange = 1...200
     
     let array: [QwopCommand]
     

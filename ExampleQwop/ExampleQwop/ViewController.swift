@@ -12,16 +12,13 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
     @IBOutlet weak var webView: WebView!
     @IBOutlet weak var statusLabel: NSTextField!
     
-    let twister = MersenneTwister(seed: 1234)
+    let twister = MersenneTwister(seed: 4242)
     
     var chromosome: QwopChromosome!
     var tries: Int = 0
     var time: NSTimeInterval = 0
     
     var completion: Fitness -> () = { _ in }
-    
-    var browserSimulations: Int? = nil
-    let maxBrowserSimulations = 1
     
     var evaluator: QwopEvaluator!
     
@@ -33,7 +30,6 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
     
     func reloadBrowser() {
         statusLabel.stringValue = "loading website"
-        browserSimulations = 0
         
         let request = NSURLRequest(URL: qwopURL)
         webView.mainFrame.loadRequest(request)
@@ -44,29 +40,18 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
         
         // Settings
         self.chromosome = chromosome
-        self.tries = 3
+        self.tries = 1
         self.time = 30
         
         self.completion = completion
         
-        if browserSimulations == nil || browserSimulations! > maxBrowserSimulations {
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-                self.reloadBrowser()
-            }
-        } else {
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-                self.launchExternalApp()
-            }
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.reloadBrowser()
         }
     }
     
     func launchExternalApp() {
         statusLabel.stringValue = "running \(chromosome.programString)"
-        if let current = browserSimulations {
-            browserSimulations = current + tries
-        } else {
-            browserSimulations = tries
-        }
         
         simulationQueue.addOperationWithBlock {
             let fitness = self.sim.testChromosome(self.chromosome, tries: self.tries, time: self.time)
@@ -81,7 +66,7 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
     
     func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
         guard frame.isEqual(webView.mainFrame) else { return }
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC)))
         statusLabel.stringValue = "waiting for the game to load"
         
         dispatch_after(delayTime, dispatch_get_main_queue()) {
@@ -99,14 +84,15 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
         let crossover = OnePointCrossover<QwopChromosome>(TournamentSelection(order: 5))
         
         let elitism = Reproduction<QwopChromosome>(BestSelection())
+        let tomorrow = NSDate().dateByAddingTimeInterval(18 * 60 * 60)
         
         alg = GeneticAlgorithm<QwopChromosome>(
             generator: twister,
-            populationSize: 200,
+            populationSize: 80,
             executeEveryGeneration: elitism,
             executeInLoop: (Choice(reproduction, p: 0.5) ||| Choice(mutation, p: 0.3) ||| Choice(crossover, p: 0.2)),
             evaluator: evaluator,
-            termination: MaxNumberOfGenerations(10) || FitnessThreshold(1)
+            termination: FitnessThreshold(0.8) || AfterDate(tomorrow)
         )
         
         // Some hooks to print nice stuff.

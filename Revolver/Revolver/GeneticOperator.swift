@@ -3,7 +3,7 @@
 ///
 /// This class is **abstract**, you cannot instantiate it directly.
 /// When subclassing it, be sure to implement the `apply()` method.
-public class GeneticOperator<Chromosome: Randomizable> {
+public class GeneticOperator<Chromosome: ChromosomeType> {
     
     internal let selection: Selection<Chromosome>
     

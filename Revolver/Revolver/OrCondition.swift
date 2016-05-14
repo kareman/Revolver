@@ -2,7 +2,7 @@
 /// Combine two termination conditions together by the OR operation.
 ///
 /// **Pro Tip:** You can use this class with nicer syntax by combining conditions with the `||` operator.
-public class OrCondition<Chromosome: Randomizable>: TerminationCondition<Chromosome> {
+public class OrCondition<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// The first operand of the OR operation.
     public let firstOperand: TerminationCondition<Chromosome>
@@ -32,6 +32,6 @@ public class OrCondition<Chromosome: Randomizable>: TerminationCondition<Chromos
     
 }
 
-public func ||<Chromosome: Randomizable>(lhs: TerminationCondition<Chromosome>, rhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome> {
+public func ||<Chromosome: ChromosomeType>(lhs: TerminationCondition<Chromosome>, rhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome> {
     return OrCondition(lhs, rhs)
 }

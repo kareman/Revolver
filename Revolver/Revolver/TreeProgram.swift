@@ -1,6 +1,6 @@
 
 /// Tree encapsulates a randomizable tree-like structure with executable program.
-public final class TreeProgram<FactoryType: RandomTreeFactory>: TreeType, Randomizable {
+public final class TreeProgram<FactoryType: RandomTreeFactory>: TreeType {
     
     /// Factory used to generate the program and all programs derived from it.
     internal let factory: FactoryType
@@ -46,6 +46,12 @@ public final class TreeProgram<FactoryType: RandomTreeFactory>: TreeType, Random
         var ids = [Int]()
         TreeProgram<FactoryType>.enumerateIds(&ids, currentNode: self.root)
         self.descendantIds = ids
+    }
+    
+    public required init(original: TreeProgram<FactoryType>) {
+        self.factory = original.factory
+        self.root = original.root
+        self.descendantIds = original.descendantIds
     }
     
     /**

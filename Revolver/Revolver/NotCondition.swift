@@ -2,7 +2,7 @@
 /// Invert a termination condition.
 ///
 /// **Pro Tip:** You can use this class with nicer syntax through the `!` prefix operator.
-public class NotCondition<Chromosome: Randomizable>: TerminationCondition<Chromosome> {
+public class NotCondition<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// The condition to invert.
     public let operand: TerminationCondition<Chromosome>
@@ -26,6 +26,6 @@ public class NotCondition<Chromosome: Randomizable>: TerminationCondition<Chromo
     
 }
 
-public prefix func !<Chromosome: Randomizable>(lhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome> {
+public prefix func !<Chromosome: ChromosomeType>(lhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome> {
     return NotCondition(lhs)
 }

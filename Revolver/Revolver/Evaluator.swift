@@ -3,7 +3,7 @@
 ///
 /// This is an abstract class. You **cannot** instantate it directly.
 /// When subclassing it, be sure to implement the `evaluateIndividuals()` method.
-public class Evaluator<Chromosome: Randomizable> {
+public class Evaluator<Chromosome: ChromosomeType> {
     
     public typealias EvaluationHandler = (index: Int) -> ()
     

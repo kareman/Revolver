@@ -1,6 +1,6 @@
 
 /// Select N worst individuals according to their fitness.
-public class WorstSelection<Chromosome: Randomizable>: Selection<Chromosome> {
+public class WorstSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
     
     public override init() { }
     

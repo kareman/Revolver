@@ -1,6 +1,6 @@
 
 /// A method of selecting individuals from the population.
-public class Selection<Chromosome: Randomizable> {
+public class Selection<Chromosome: ChromosomeType> {
     
     public init() { }
     

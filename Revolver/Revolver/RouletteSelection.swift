@@ -1,6 +1,6 @@
 
 /// Roulette selection is a simple fitness-proportional selection method.
-public class RouletteSelection<Chromosome: Randomizable>: Selection<Chromosome> {
+public class RouletteSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
     
     public override init() { }
     

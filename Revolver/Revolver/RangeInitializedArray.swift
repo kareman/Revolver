@@ -7,7 +7,7 @@
 /// In the initializer, merely assign the argument to its field counterpart.
 /// You may configure the element type and size constraints by setting `Element` and `initializationRange`.
 /// Example of this can be seen in the `RangeInitializedArrayExample` class.
-public protocol RangeInitializedArray: CustomStringConvertible, CustomDebugStringConvertible, Randomizable, Mutable, OnePointCrossoverable {
+public protocol RangeInitializedArray: CustomStringConvertible, CustomDebugStringConvertible, CommonChromosomeType, TwoPointCrossoverable {
     
     /// Homogeneous type of elements in the array.
     associatedtype Element: Randomizable

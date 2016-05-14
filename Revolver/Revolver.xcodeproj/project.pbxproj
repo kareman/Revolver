@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E20488A11C9D6FF000BABC62 /* OnePointCrossover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488A01C9D6FF000BABC62 /* OnePointCrossover.swift */; };
 		E20488A51C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488A41C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift */; };
-		E20488A71C9D740900BABC62 /* Array+OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488A61C9D740900BABC62 /* Array+OnePointCrossoverable.swift */; };
 		E20488AD1C9D800000BABC62 /* Reproduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488AC1C9D800000BABC62 /* Reproduction.swift */; };
 		E20488AF1C9D81DB00BABC62 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488AE1C9D81DB00BABC62 /* Selection.swift */; };
 		E20488B11C9D840F00BABC62 /* RouletteSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488B01C9D840F00BABC62 /* RouletteSelection.swift */; };
@@ -18,6 +17,14 @@
 		E20488B71C9D91FD00BABC62 /* RandomSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488B61C9D91FD00BABC62 /* RandomSelection.swift */; };
 		E20488B91C9D92B700BABC62 /* RankSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488B81C9D92B700BABC62 /* RankSelection.swift */; };
 		E20488BB1C9DB0EA00BABC62 /* MatingPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */; };
+		E277E23F1CE782D4009737C3 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E23E1CE782D4009737C3 /* Copyable.swift */; };
+		E277E2411CE78313009737C3 /* Reproducible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2401CE78313009737C3 /* Reproducible.swift */; };
+		E277E2431CE783C7009737C3 /* ChromosomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2421CE783C7009737C3 /* ChromosomeType.swift */; };
+		E277E2451CE783E9009737C3 /* CommonChromosomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2441CE783E9009737C3 /* CommonChromosomeType.swift */; };
+		E277E24A1CE789AE009737C3 /* TwoPointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2491CE789AE009737C3 /* TwoPointCrossoverable.swift */; };
+		E277E24C1CE789E3009737C3 /* TwoPointCrossover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E24B1CE789E3009737C3 /* TwoPointCrossover.swift */; };
+		E277E24E1CE79014009737C3 /* RangeInitializedArray+TwoPointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E24D1CE79014009737C3 /* RangeInitializedArray+TwoPointCrossoverable.swift */; };
+		E277E2501CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E24F1CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift */; };
 		E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */; };
 		E27ECAA31C9D65E100BF6CEB /* GeneticOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */; };
 		E27ECAA61C9D66FB00BF6CEB /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA51C9D66FB00BF6CEB /* Individual.swift */; };
@@ -75,7 +82,6 @@
 		E29F9DC31CA94EC500FE4BEF /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */; };
 		E29F9DC71CA9539C00FE4BEF /* TreeProgram+Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC61CA9539C00FE4BEF /* TreeProgram+Mutable.swift */; };
 		E29F9DC91CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC81CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift */; };
-		E29F9DCD1CA961FD00FE4BEF /* TreeNode+SequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DCC1CA961FD00FE4BEF /* TreeNode+SequenceType.swift */; };
 		E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */; };
 		E2E71A521CA5CAED002E34DD /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A511CA5CAED002E34DD /* TreeNode.swift */; };
 		E2E71A541CA5CBCB002E34DD /* TreeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E71A531CA5CBCB002E34DD /* TreeType.swift */; };
@@ -117,7 +123,6 @@
 /* Begin PBXFileReference section */
 		E20488A01C9D6FF000BABC62 /* OnePointCrossover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePointCrossover.swift; sourceTree = "<group>"; };
 		E20488A41C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+OnePointCrossoverable.swift"; sourceTree = "<group>"; };
-		E20488A61C9D740900BABC62 /* Array+OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+OnePointCrossoverable.swift"; sourceTree = "<group>"; };
 		E20488AC1C9D800000BABC62 /* Reproduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reproduction.swift; sourceTree = "<group>"; };
 		E20488AE1C9D81DB00BABC62 /* Selection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		E20488B01C9D840F00BABC62 /* RouletteSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouletteSelection.swift; sourceTree = "<group>"; };
@@ -126,6 +131,14 @@
 		E20488B61C9D91FD00BABC62 /* RandomSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSelection.swift; sourceTree = "<group>"; };
 		E20488B81C9D92B700BABC62 /* RankSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankSelection.swift; sourceTree = "<group>"; };
 		E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatingPool.swift; sourceTree = "<group>"; };
+		E277E23E1CE782D4009737C3 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
+		E277E2401CE78313009737C3 /* Reproducible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reproducible.swift; sourceTree = "<group>"; };
+		E277E2421CE783C7009737C3 /* ChromosomeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromosomeType.swift; sourceTree = "<group>"; };
+		E277E2441CE783E9009737C3 /* CommonChromosomeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonChromosomeType.swift; sourceTree = "<group>"; };
+		E277E2491CE789AE009737C3 /* TwoPointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPointCrossoverable.swift; sourceTree = "<group>"; };
+		E277E24B1CE789E3009737C3 /* TwoPointCrossover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPointCrossover.swift; sourceTree = "<group>"; };
+		E277E24D1CE79014009737C3 /* RangeInitializedArray+TwoPointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+TwoPointCrossoverable.swift"; sourceTree = "<group>"; };
+		E277E24F1CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+Copyable.swift"; sourceTree = "<group>"; };
 		E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutation.swift; sourceTree = "<group>"; };
 		E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticOperator.swift; sourceTree = "<group>"; };
 		E27ECAA51C9D66FB00BF6CEB /* Individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
@@ -187,7 +200,6 @@
 		E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		E29F9DC61CA9539C00FE4BEF /* TreeProgram+Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TreeProgram+Mutable.swift"; sourceTree = "<group>"; };
 		E29F9DC81CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TreeProgram+OnePointCrossoverable.swift"; sourceTree = "<group>"; };
-		E29F9DCC1CA961FD00FE4BEF /* TreeNode+SequenceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TreeNode+SequenceType.swift"; sourceTree = "<group>"; };
 		E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeProgram.swift; sourceTree = "<group>"; };
 		E2E71A511CA5CAED002E34DD /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		E2E71A531CA5CBCB002E34DD /* TreeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeType.swift; sourceTree = "<group>"; };
@@ -235,15 +247,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E277E2461CE78566009737C3 /* Reproduction */ = {
+			isa = PBXGroup;
+			children = (
+				E277E2401CE78313009737C3 /* Reproducible.swift */,
+				E20488AC1C9D800000BABC62 /* Reproduction.swift */,
+			);
+			name = Reproduction;
+			sourceTree = "<group>";
+		};
+		E277E2471CE78572009737C3 /* Mutation */ = {
+			isa = PBXGroup;
+			children = (
+				E28980E01CD5045500B00749 /* Mutable.swift */,
+				E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */,
+			);
+			name = Mutation;
+			sourceTree = "<group>";
+		};
+		E277E2481CE7857F009737C3 /* Crossover */ = {
+			isa = PBXGroup;
+			children = (
+				E28980E21CD5049A00B00749 /* OnePointCrossoverable.swift */,
+				E20488A01C9D6FF000BABC62 /* OnePointCrossover.swift */,
+				E277E2491CE789AE009737C3 /* TwoPointCrossoverable.swift */,
+				E277E24B1CE789E3009737C3 /* TwoPointCrossover.swift */,
+			);
+			name = Crossover;
+			sourceTree = "<group>";
+		};
 		E27ECA9F1C9D65AB00BF6CEB /* Operators */ = {
 			isa = PBXGroup;
 			children = (
 				E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */,
-				E20488AC1C9D800000BABC62 /* Reproduction.swift */,
-				E28980E01CD5045500B00749 /* Mutable.swift */,
-				E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */,
-				E28980E21CD5049A00B00749 /* OnePointCrossoverable.swift */,
-				E20488A01C9D6FF000BABC62 /* OnePointCrossover.swift */,
+				E277E2461CE78566009737C3 /* Reproduction */,
+				E277E2471CE78572009737C3 /* Mutation */,
+				E277E2481CE7857F009737C3 /* Crossover */,
 				E28980EA1CD512E300B00749 /* Syntax Sugar */,
 			);
 			name = Operators;
@@ -296,6 +335,8 @@
 		E284A7391C8E4E2D00648A2E /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				E277E2421CE783C7009737C3 /* ChromosomeType.swift */,
+				E277E2441CE783E9009737C3 /* CommonChromosomeType.swift */,
 				E2E71A651CA5DF21002E34DD /* Arrays */,
 				E2E71A661CA5DF2B002E34DD /* Trees */,
 			);
@@ -413,6 +454,7 @@
 				E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */,
 				E29F9DB51CA9455600FE4BEF /* Persistence */,
 				E28980F61CD53A9300B00749 /* DateComparison.swift */,
+				E277E23E1CE782D4009737C3 /* Copyable.swift */,
 			);
 			name = Compatibility;
 			sourceTree = "<group>";
@@ -461,11 +503,12 @@
 		E2E71A651CA5DF21002E34DD /* Arrays */ = {
 			isa = PBXGroup;
 			children = (
-				E20488A61C9D740900BABC62 /* Array+OnePointCrossoverable.swift */,
 				E28980C01CD3C76300B00749 /* RangeInitializedArray.swift */,
+				E277E24F1CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift */,
 				E28980C21CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift */,
 				E28980C41CD3CA1000B00749 /* RangeInitializedArray+Mutable.swift */,
 				E20488A41C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift */,
+				E277E24D1CE79014009737C3 /* RangeInitializedArray+TwoPointCrossoverable.swift */,
 				E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */,
 				E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */,
 				E28980C61CD3CAD700B00749 /* RangeInitializedArrayExample.swift */,
@@ -478,7 +521,6 @@
 			children = (
 				E2E71A531CA5CBCB002E34DD /* TreeType.swift */,
 				E2E71A511CA5CAED002E34DD /* TreeNode.swift */,
-				E29F9DCC1CA961FD00FE4BEF /* TreeNode+SequenceType.swift */,
 				E2E71A711CA5FCD8002E34DD /* RandomTreeFactory.swift */,
 				E2E71A6B1CA5E360002E34DD /* TreeInterpreter.swift */,
 				E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */,
@@ -632,15 +674,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20488A71C9D740900BABC62 /* Array+OnePointCrossoverable.swift in Sources */,
 				E2F31C8D1CA86EAD00372B95 /* ModuloNode.swift in Sources */,
 				E20488B51C9D8A4500BABC62 /* TournamentSelection.swift in Sources */,
+				E277E24C1CE789E3009737C3 /* TwoPointCrossover.swift in Sources */,
 				E284A72E1C8E3FF200648A2E /* Discrete+Randomizable.swift in Sources */,
 				E20488B31C9D84B500BABC62 /* FitnessType.swift in Sources */,
 				E28980E71CD5124E00B00749 /* Choice.swift in Sources */,
 				E28981031CD5496200B00749 /* BestSelection.swift in Sources */,
 				E28980F11CD529C300B00749 /* TerminationCondition.swift in Sources */,
 				E28980EC1CD5137E00B00749 /* PipelineOperators.swift in Sources */,
+				E277E2411CE78313009737C3 /* Reproducible.swift in Sources */,
 				E2E71A5E1CA5DEAE002E34DD /* SequenceNode.swift in Sources */,
 				E284A7241C8E3E9100648A2E /* Randomizable.swift in Sources */,
 				E2F31C7A1CA86A8300372B95 /* ComparisonNode.swift in Sources */,
@@ -648,9 +691,11 @@
 				E28980CD1CD4B4AE00B00749 /* ActionNodeExample.swift in Sources */,
 				E2E71A521CA5CAED002E34DD /* TreeNode.swift in Sources */,
 				E2F31C8B1CA86EA700372B95 /* DivisionNode.swift in Sources */,
+				E277E23F1CE782D4009737C3 /* Copyable.swift in Sources */,
 				E20488AD1C9D800000BABC62 /* Reproduction.swift in Sources */,
 				E28980DB1CD4F94B00B00749 /* GeneticAlgorithmExample.swift in Sources */,
 				E2F31C871CA86E9A00372B95 /* MultiplicationNode.swift in Sources */,
+				E277E24A1CE789AE009737C3 /* TwoPointCrossoverable.swift in Sources */,
 				E284A7301C8E401700648A2E /* EntropyGenerator+Range.swift in Sources */,
 				E28981051CD54C6E00B00749 /* WorstSelection.swift in Sources */,
 				E2F31C841CA86DE700372B95 /* NumericType.swift in Sources */,
@@ -658,13 +703,13 @@
 				E2E71A6C1CA5E360002E34DD /* TreeInterpreter.swift in Sources */,
 				E27ECAA61C9D66FB00BF6CEB /* Individual.swift in Sources */,
 				E28980E31CD5049A00B00749 /* OnePointCrossoverable.swift in Sources */,
+				E277E2451CE783E9009737C3 /* CommonChromosomeType.swift in Sources */,
 				E2E71A681CA5E081002E34DD /* ActionNode.swift in Sources */,
 				E284A7281C8E3F8F00648A2E /* Double+Randomizable.swift in Sources */,
 				E2F31C821CA86D8000372B95 /* AdditionNode.swift in Sources */,
 				E2E71A721CA5FCD8002E34DD /* RandomTreeFactory.swift in Sources */,
 				E2E71A5C1CA5DE73002E34DD /* ValueNode.swift in Sources */,
 				E28981011CD53C3B00B00749 /* NotCondition.swift in Sources */,
-				E29F9DCD1CA961FD00FE4BEF /* TreeNode+SequenceType.swift in Sources */,
 				E28980F91CD53B3C00B00749 /* FitnessThreshold.swift in Sources */,
 				E27ECAA31C9D65E100BF6CEB /* GeneticOperator.swift in Sources */,
 				E28980F51CD53A1100B00749 /* AfterDate.swift in Sources */,
@@ -702,6 +747,7 @@
 				E20488AF1C9D81DB00BABC62 /* Selection.swift in Sources */,
 				E28980EE1CD5143C00B00749 /* Pipeline.swift in Sources */,
 				E29F9DC71CA9539C00FE4BEF /* TreeProgram+Mutable.swift in Sources */,
+				E277E2501CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift in Sources */,
 				E20488A51C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift in Sources */,
 				E2F31C7C1CA86AEC00372B95 /* UnaryNode.swift in Sources */,
 				E2F31C7E1CA86AF200372B95 /* BinaryNode.swift in Sources */,
@@ -713,6 +759,8 @@
 				E28981081CD943CD00B00749 /* Evaluator.swift in Sources */,
 				E2E71A5A1CA5DE6B002E34DD /* ConstantNode.swift in Sources */,
 				E28980F31CD5397A00B00749 /* MaxNumberOfGenerations.swift in Sources */,
+				E277E2431CE783C7009737C3 /* ChromosomeType.swift in Sources */,
+				E277E24E1CE79014009737C3 /* RangeInitializedArray+TwoPointCrossoverable.swift in Sources */,
 				E28980DF1CD4FFA800B00749 /* IndexSet.swift in Sources */,
 				E20488B71C9D91FD00BABC62 /* RandomSelection.swift in Sources */,
 				E2F31C931CA86F3B00372B95 /* DisjunctionNode.swift in Sources */,

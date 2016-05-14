@@ -3,7 +3,7 @@
 ///
 /// This class is abstract. You **cannot** instantiate it directly.
 /// When subclassing it, be sure to override the `evaluateChromosome()` method.
-public class SequentialEvaluator<Chromosome: Randomizable>: Evaluator<Chromosome> {
+public class SequentialEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome> {
     
     public override init() {
         super.init()

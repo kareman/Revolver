@@ -3,7 +3,7 @@
 ///
 /// This class is **abstract**, you cannot instantiate it directly.
 /// When overriding it, you will need to subclass the `shouldTerminate()` function.
-public class TerminationCondition<Chromosome: Randomizable> {
+public class TerminationCondition<Chromosome: ChromosomeType> {
     
     public init() { }
     

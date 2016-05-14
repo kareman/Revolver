@@ -16,7 +16,7 @@
 /// or accepting the offspring as a new generation respectively.
 ///
 /// If the offspring or any of the methods mentioned above are accessed in the wrong state, a precondition failure occurs.
-public class MatingPool<Chromosome: Randomizable> {
+public class MatingPool<Chromosome: ChromosomeType> {
     
     /// Type of individual stored in the mating pool.
     public typealias IndividualType = Individual<Chromosome>

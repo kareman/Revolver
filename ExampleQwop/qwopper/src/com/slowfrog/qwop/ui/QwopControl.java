@@ -100,6 +100,7 @@ public class QwopControl extends JFrame implements Log {
     top.setLayout(new BorderLayout());
     top.add(new JLabel("Current: "), BorderLayout.WEST);
     sequence = new JTextField();
+    sequence.setEnabled(true);
     top.add(sequence, BorderLayout.CENTER);
     JPanel bottom = new JPanel();
     top.add(bottom, BorderLayout.SOUTH);

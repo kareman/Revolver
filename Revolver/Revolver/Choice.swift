@@ -1,6 +1,6 @@
 
 /// A choice is a non-deterministically selected pipeline branch.
-public class Choice<Chromosome: Randomizable>: GeneticOperatorPipeline<Chromosome> {
+public class Choice<Chromosome: ChromosomeType>: GeneticOperatorPipeline<Chromosome> {
     
     public let probability: Double
     

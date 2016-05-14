@@ -1,6 +1,6 @@
 
 /// Select random individuals from the population. No regards is given to their fitness.
-public class RandomSelection<Chromosome: Randomizable>: Selection<Chromosome> {
+public class RandomSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
     
     public override init() { }
     

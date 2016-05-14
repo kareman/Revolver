@@ -1,6 +1,6 @@
 
 /// Reproduction copies individuals across generations, while maintaining their chromosome values without alteration.
-public class Reproduction<Chromosome: Randomizable>: GeneticOperator<Chromosome> {
+public class Reproduction<Chromosome: Reproducible>: GeneticOperator<Chromosome> {
     
     public let numberOfIndividuals: Int
     

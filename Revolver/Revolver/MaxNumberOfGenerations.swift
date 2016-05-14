@@ -1,6 +1,6 @@
 
 /// Terminate the genetic algorithm after a given number of generations is created.
-public class MaxNumberOfGenerations<Chromosome: Randomizable>: TerminationCondition<Chromosome> {
+public class MaxNumberOfGenerations<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// Number of generations to create.
     public let generations: Int

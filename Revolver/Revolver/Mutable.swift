@@ -2,7 +2,7 @@
 /**
  *  Type can be slightly non-deterministically altered.
  */
-public protocol Mutable {
+public protocol Mutable: ChromosomeType {
     
     /**
      Creates new instance by copying values of the current instance and changing them randomly.

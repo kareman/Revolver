@@ -14,7 +14,7 @@ public enum FitnessKind {
 }
 
 /// Terminate the genetic algorithm after a certain fitness value is reached.
-public class FitnessThreshold<Chromosome: Randomizable>: TerminationCondition<Chromosome> {
+public class FitnessThreshold<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// The fitness value to reach.
     public let fitness: Double
