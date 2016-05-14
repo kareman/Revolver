@@ -27,7 +27,7 @@ Revolver is dependent on:
  - Foundation
  - libdispatch
 
-Revolver can be run on:
+Revolver can run on:
 
  - Mac OS X
  - iOS
@@ -103,7 +103,7 @@ If you use Revolver for your work, please reference it. For your convenience, he
   timestamp         = {20160527},
   author            = {Petr Mánek},
   title             = {Genetic programming in Swift for human-competitive evolution},
-  school            = {Charles University, Faculty of Mathematics and Physics},
+  school            = {Charles University in Prague},
   year              = {2016},
   type              = {Bachelor Thesis},
   month             = {May},
@@ -133,10 +133,11 @@ At the moment, there are no rules for contributing. However, before creating pul
 [issue-tracker]: https://github.com/petrmanek/Revolver/issues
 
 [jazzy]: https://github.com/realm/jazzy
-[html-doc]: tree/master/Revolver/Documentation
+[html-doc]: Revolver/Documentation
 [thesis]: https://github.com/petrmanek/mff-bachelor-thesis
-[example-maxone]: tree/master/ExampleMaxOne
-[example-knapsack]: tree/master/ExampleKnapsack
-[example-parallel]: tree/master/ExampleParallel
-[example-car]: tree/master/ExampleCar
-[example-qwop]: tree/master/ExampleQwop
+
+[example-maxone]: ExampleMaxOne
+[example-knapsack]: ExampleKnapsack
+[example-parallel]: ExampleParallel
+[example-car]: ExampleCar
+[example-qwop]: ExampleQwop
