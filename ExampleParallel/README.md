@@ -8,7 +8,7 @@ This example shows how Revolver evaluation can be parallelized.
  - **What is parallelized?** Fitness evaluation, as it's often the most time-consuming part of genetic algorithms.
  - **How it's done?** You instantiate a non-empty set of `SequentialEvaluator<T>` subclasses and wrap them inside a `ParallelEvaluator<T>` instance. Revolver does the rest of the work.
  - **Are there any requirements?** Yeah, there are two:
-   1. CPU of the your machine must have more than one core, duh.
+   1. CPU of your machine must have more than one core, duh.
    2. Your subclasses of `SequentialEvaluator<T>` must not interfere with each other's work.
  - **What is thread-safe?** Nothing, unless declared otherwise in the documentation.
  
