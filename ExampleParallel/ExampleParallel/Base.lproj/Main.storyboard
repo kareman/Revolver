@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -11,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="ExampleKnapsack" id="1Xt-HY-uBw">
+                            <menuItem title="ExampleParallel" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="ExampleKnapsack" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="ExampleParallel" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About ExampleKnapsack" id="5kV-Vb-QxS">
+                                        <menuItem title="About ExampleParallel" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide ExampleKnapsack" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide ExampleParallel" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit ExampleKnapsack" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit ExampleParallel" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -628,7 +629,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="ExampleKnapsack Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="ExampleParallel Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -642,7 +643,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ExampleKnapsack" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ExampleParallel" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -651,7 +652,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Knapsack Solver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Parallel Evaluation Demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -668,25 +669,48 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="ExampleKnapsack" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="ExampleParallel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ehm-2P-lX6">
-                                <rect key="frame" x="177" y="118" width="127" height="32"/>
-                                <buttonCell key="cell" type="push" title="Run Algorithm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F3l-5b-sga">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9H4-Vu-KZG">
+                                <rect key="frame" x="143" y="118" width="194" height="32"/>
+                                <buttonCell key="cell" type="push" title="Run Sequential Algorithm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nAk-Ae-KG8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="runAlgorithmClicked:" target="XfG-lQ-9wD" id="1GL-uk-LG5"/>
+                                    <action selector="runSequentialAlgorithmClicked:" target="XfG-lQ-9wD" id="Ess-eD-FBk"/>
                                 </connections>
                             </button>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jnu-Qe-Dii">
+                                <rect key="frame" x="159" y="92" width="162" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uIm-bC-c0p">
+                                        <rect key="frame" x="-6" y="-7" width="174" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Run Parallel Algorithm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3FC-Nf-5cg">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="runParallelAlgorithmClicked:" target="XfG-lQ-9wD" id="ton-o0-Rgp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ehm-2P-lX6" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="j8l-DK-zF5"/>
-                            <constraint firstItem="Ehm-2P-lX6" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="paK-Pn-eVs"/>
+                            <constraint firstItem="jnu-Qe-Dii" firstAttribute="top" secondItem="9H4-Vu-KZG" secondAttribute="bottom" constant="12" id="U1D-Lx-Mse"/>
+                            <constraint firstItem="9H4-Vu-KZG" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="eep-1O-eqJ"/>
+                            <constraint firstItem="9H4-Vu-KZG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="nf7-w5-QAc"/>
+                            <constraint firstItem="uIm-bC-c0p" firstAttribute="centerX" secondItem="9H4-Vu-KZG" secondAttribute="centerX" id="ueb-Gz-eou"/>
                         </constraints>
                     </view>
                 </viewController>

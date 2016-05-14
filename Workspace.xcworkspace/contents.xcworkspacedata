@@ -2,13 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ExampleMaxOne/ExampleMaxOne.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Revolver/Revolver.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ExampleMaxOne/ExampleMaxOne.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ExampleKnapsack/ExampleKnapsack.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ExampleParallel/ExampleParallel.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ExampleQwop/ExampleQwop.xcodeproj">

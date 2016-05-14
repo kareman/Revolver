@@ -25,6 +25,7 @@
 		E277E24C1CE789E3009737C3 /* TwoPointCrossover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E24B1CE789E3009737C3 /* TwoPointCrossover.swift */; };
 		E277E24E1CE79014009737C3 /* RangeInitializedArray+TwoPointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E24D1CE79014009737C3 /* RangeInitializedArray+TwoPointCrossoverable.swift */; };
 		E277E2501CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E24F1CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift */; };
+		E277E2521CE7A14C009737C3 /* ParallelEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2511CE7A14C009737C3 /* ParallelEvaluator.swift */; };
 		E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */; };
 		E27ECAA31C9D65E100BF6CEB /* GeneticOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */; };
 		E27ECAA61C9D66FB00BF6CEB /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27ECAA51C9D66FB00BF6CEB /* Individual.swift */; };
@@ -139,6 +140,7 @@
 		E277E24B1CE789E3009737C3 /* TwoPointCrossover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPointCrossover.swift; sourceTree = "<group>"; };
 		E277E24D1CE79014009737C3 /* RangeInitializedArray+TwoPointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+TwoPointCrossoverable.swift"; sourceTree = "<group>"; };
 		E277E24F1CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeInitializedArray+Copyable.swift"; sourceTree = "<group>"; };
+		E277E2511CE7A14C009737C3 /* ParallelEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallelEvaluator.swift; sourceTree = "<group>"; };
 		E27ECAA01C9D65BE00BF6CEB /* Mutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutation.swift; sourceTree = "<group>"; };
 		E27ECAA21C9D65E100BF6CEB /* GeneticOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticOperator.swift; sourceTree = "<group>"; };
 		E27ECAA51C9D66FB00BF6CEB /* Individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				E28981091CD9443700B00749 /* SequentialEvaluator.swift */,
 				E28980DC1CD4F98E00B00749 /* SequentialEvaluatorExample.swift */,
 				E289810D1CD945CF00B00749 /* CyclicEvaluator.swift */,
+				E277E2511CE7A14C009737C3 /* ParallelEvaluator.swift */,
 			);
 			name = Evaluators;
 			sourceTree = "<group>";
@@ -771,6 +774,7 @@
 				E284A71E1C8E3B6B00648A2E /* DrandGenerator.swift in Sources */,
 				E28980D01CD4E05E00B00749 /* GeneticAlgorithm.swift in Sources */,
 				E28980C31CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift in Sources */,
+				E277E2521CE7A14C009737C3 /* ParallelEvaluator.swift in Sources */,
 				E28980E51CD50CAA00B00749 /* GeneticOperatorPipeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

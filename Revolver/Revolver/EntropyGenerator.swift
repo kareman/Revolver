@@ -1,9 +1,10 @@
+
 /**
  *  Generator of pseudorandom values.
  */
 public protocol EntropyGenerator {
     /**
-     Generates new pseudorandom floating point-value.
+     Generate new pseudorandom floating point-value.
      
      - returns: Decimal number between zero and one.
      */
