@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A4A0D2BC45CB5B13F6AA35C94081062F9EA77D5F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2ED904CF563CF5A876522755968039F06CAC19AC" : 0,
+    "A4A0D2BC45CB5B13F6AA35C94081062F9EA77D5F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CC390367-BA1E-4766-90A4-3BA955DF6E9C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2ED904CF563CF5A876522755968039F06CAC19AC" : "Revolver\/Pantry\/",
+    "A4A0D2BC45CB5B13F6AA35C94081062F9EA77D5F" : "Revolver\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Workspace",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Workspace.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:nickoneill\/Pantry.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2ED904CF563CF5A876522755968039F06CAC19AC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:petrmanek\/Revolver.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4A0D2BC45CB5B13F6AA35C94081062F9EA77D5F"
+    }
+  ]
+}

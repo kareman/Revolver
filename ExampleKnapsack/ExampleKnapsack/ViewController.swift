@@ -16,13 +16,27 @@ class ViewController: NSViewController {
     }
     
     @IBAction func runAlgorithmClicked(sender: AnyObject) {
-        runAlgorithm()
+        // You can play with David Pisinger's problem instances.
+        // Download them here:
+        //   1. http://www.diku.dk/~pisinger/smallcoeff_pisinger.tgz
+        //   2. http://www.diku.dk/~pisinger/largecoeff_pisinger.tgz
+        //   3. http://www.diku.dk/~pisinger/hardinstances_pisinger.tgz
+        
+        // To load the instances, uncomment this code.
+        // Don't forget to change the initializationRange to match the number of things in KnapsackChromosome.swift!
+        
+        // let loadedInstances = CSVParser.parseCSV("/path/to/the/instance/file.csv")
+        // let instance = loadedInstances[0]
+        
+        // Here's a hardcoded testing instance:
+        let instance = ProblemInstance.testingInstance
+        runAlgorithm(instance)
     }
     
-    func runAlgorithm() {
+    func runAlgorithm(instance: ProblemInstance) {
         // Configuration of the algorithm.
         let twister = MersenneTwister(seed: 4242)
-        let evaluator = KnapsackEvaluator()
+        let evaluator = KnapsackEvaluator(instance: instance)
         
         let reproduction = Reproduction<KnapsackChromosome>(RandomSelection())
         let mutation = Mutation<KnapsackChromosome>(RouletteSelection())
@@ -56,11 +70,11 @@ class ViewController: NSViewController {
             print("\n\n---\nBEST FITNESS:\t\t\(bestIndividual.fitness!)\t\tCHROMOSOME: \(bestIndividual.chromosome.array)")
             
             // Print the optimal solution.
-            let optimalIndividual = ProblemInstance.optimalSolution
+            let optimalIndividual = instance.optimalSolution
             let optimalFitness = evaluator.evaluateChromosome(optimalIndividual)
             print("OPTIMAL FITNESS:\t\(optimalFitness)\t\tCHROMOSOME: \(optimalIndividual.array)")
             
-            if ProblemInstance.optimalSolution.array == bestIndividual.chromosome.array {
+            if instance.optimalSolution.array == bestIndividual.chromosome.array {
                 print("\nYAY, SOLUTIONS MATCH!")
             } else {
                 print("\nSOLUTIONS DO NOT MATCH!")

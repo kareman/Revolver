@@ -28,7 +28,7 @@ class ViewController: NSViewController {
         let mutation = Mutation<MaxOneChromosome>(RouletteSelection())
         let crossover = OnePointCrossover<MaxOneChromosome>(TournamentSelection(order: 5))
         
-        let elitism = Reproduction<MaxOneChromosome>(BestSelection())
+        let elitism = Elitism<MaxOneChromosome>()
         
         let alg = GeneticAlgorithm<MaxOneChromosome>(
             generator: twister,

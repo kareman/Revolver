@@ -39,9 +39,16 @@ public class RouletteSelection<Chromosome: ChromosomeType>: Selection<Chromosome
         
         var foundIndexSet = IndexSet()
         for _ in 0..<numberOfIndividuals {
-            // Spin the roulette.
-            let roulette: Double = generator.nextInRange(min: 0, max: weightsSum)
-            let foundIndex = findIndexOnWheel(roulette, population: population)
+            let foundIndex: Int
+            
+            if weightsSum >= REVOLVER_EPSILON {
+                // Spin the roulette.
+                let roulette: Double = generator.nextInRange(min: 0, max: weightsSum)
+                foundIndex = findIndexOnWheel(roulette, population: population)
+            } else {
+                // If the sum is zero, roulette selection behaves uniformly.
+                foundIndex = generator.nextInRange(min: 0, max: population.populationSize - 1)
+            }
             
             // Add the index corresponding to the selected interval.
             foundIndexSet.append(foundIndex)

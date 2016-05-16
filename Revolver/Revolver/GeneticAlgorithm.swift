@@ -1,6 +1,6 @@
 
 /// A simple genetic algorithm running in sequential (non-distributed) environment.
-public class GeneticAlgorithm<Chromosome: ChromosomeType> {
+public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
     public typealias Hook = GeneticAlgorithm<Chromosome> -> ()
     
     public let entropyGenerator: EntropyGenerator
@@ -17,7 +17,7 @@ public class GeneticAlgorithm<Chromosome: ChromosomeType> {
     public var hookRunFinished: Hook?
     public var hookGenerationAdvanced: Hook?
     
-    public init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: Pipeline<Chromosome>?, executeInLoop: Pipeline<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
+    public required init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: Pipeline<Chromosome>?, executeInLoop: Pipeline<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
         // Copy some values
         self.populationSize = populationSize
         self.entropyGenerator = generator
@@ -145,6 +145,5 @@ public class GeneticAlgorithm<Chromosome: ChromosomeType> {
         
         // Call the evaluator to do stuff.
         evaluator.evaluateIndividuals(population, individualEvaluated: self.processIndividualEvaluationAtIndex)
-    }
-    
+    }    
 }

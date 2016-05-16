@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2174BF71CEA041C00B0BC54 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BF61CEA041C00B0BC54 /* CSVParser.swift */; };
+		E2174BF91CEA055D00B0BC54 /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BF81CEA055D00B0BC54 /* StreamReader.swift */; };
 		E28981371CDE7E3600B00749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981361CDE7E3600B00749 /* AppDelegate.swift */; };
 		E28981391CDE7E3600B00749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28981381CDE7E3600B00749 /* ViewController.swift */; };
 		E289813B1CDE7E3600B00749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E289813A1CDE7E3600B00749 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E2174BF61CEA041C00B0BC54 /* CSVParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
+		E2174BF81CEA055D00B0BC54 /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		E28981331CDE7E3600B00749 /* ExampleKnapsack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleKnapsack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28981361CDE7E3600B00749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E28981381CDE7E3600B00749 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		E289815B1CDEA07900B00749 /* Boring Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				E2174BF61CEA041C00B0BC54 /* CSVParser.swift */,
+				E2174BF81CEA055D00B0BC54 /* StreamReader.swift */,
 				E28981361CDE7E3600B00749 /* AppDelegate.swift */,
 				E289813A1CDE7E3600B00749 /* Assets.xcassets */,
 				E289813C1CDE7E3700B00749 /* Main.storyboard */,
@@ -217,7 +223,9 @@
 				E28981571CDE800000B00749 /* KnapsackEvaluator.swift in Sources */,
 				E28981371CDE7E3600B00749 /* AppDelegate.swift in Sources */,
 				E28981591CDE800000B00749 /* ProblemInstance.swift in Sources */,
+				E2174BF91CEA055D00B0BC54 /* StreamReader.swift in Sources */,
 				E289815A1CDE800000B00749 /* Thing.swift in Sources */,
+				E2174BF71CEA041C00B0BC54 /* CSVParser.swift in Sources */,
 				E28981581CDE800000B00749 /* KnapsackChromosome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +411,7 @@
 				E289814F1CDE7E3700B00749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E28981501CDE7E3700B00749 /* Build configuration list for PBXNativeTarget "ExampleKnapsackTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +420,7 @@
 				E28981521CDE7E3700B00749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

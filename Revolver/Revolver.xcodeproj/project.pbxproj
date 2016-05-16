@@ -17,6 +17,13 @@
 		E20488B71C9D91FD00BABC62 /* RandomSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488B61C9D91FD00BABC62 /* RandomSelection.swift */; };
 		E20488B91C9D92B700BABC62 /* RankSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488B81C9D92B700BABC62 /* RankSelection.swift */; };
 		E20488BB1C9DB0EA00BABC62 /* MatingPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */; };
+		E2174BE01CE9C51D00B0BC54 /* PersistentChromosomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BDF1CE9C51D00B0BC54 /* PersistentChromosomeType.swift */; };
+		E2174BE21CE9CD4500B0BC54 /* Elitism.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BE11CE9CD4500B0BC54 /* Elitism.swift */; };
+		E2174BE41CE9DD6E00B0BC54 /* PersistentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BE31CE9DD6E00B0BC54 /* PersistentType.swift */; };
+		E2174BEF1CE9E80000B0BC54 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2174BEE1CE9E7FF00B0BC54 /* SwiftyJSON.framework */; };
+		E2174BF31CE9EAC000B0BC54 /* PersistentRangeInitializedArray+PersistentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BF21CE9EAC000B0BC54 /* PersistentRangeInitializedArray+PersistentType.swift */; };
+		E2174BF51CE9EBE500B0BC54 /* PersistentRangeInitializedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BF41CE9EBE500B0BC54 /* PersistentRangeInitializedArray.swift */; };
+		E2174BFB1CEA0CDC00B0BC54 /* Epsilon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BFA1CEA0CDC00B0BC54 /* Epsilon.swift */; };
 		E277E23F1CE782D4009737C3 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E23E1CE782D4009737C3 /* Copyable.swift */; };
 		E277E2411CE78313009737C3 /* Reproducible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2401CE78313009737C3 /* Reproducible.swift */; };
 		E277E2431CE783C7009737C3 /* ChromosomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2421CE783C7009737C3 /* ChromosomeType.swift */; };
@@ -76,11 +83,6 @@
 		E291644A1C8E0704002879C0 /* Revolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E291643F1C8E0704002879C0 /* Revolver.framework */; };
 		E291644F1C8E0704002879C0 /* RevolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291644E1C8E0704002879C0 /* RevolverTests.swift */; };
 		E29164651C8E3713002879C0 /* EntropyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29164641C8E3713002879C0 /* EntropyGenerator.swift */; };
-		E29F9DB21CA9438100FE4BEF /* XMLWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB11CA9438100FE4BEF /* XMLWriter.swift */; };
-		E29F9DB41CA9454A00FE4BEF /* XMLSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB31CA9454A00FE4BEF /* XMLSerializable.swift */; };
-		E29F9DB71CA945E300FE4BEF /* XMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB61CA945E300FE4BEF /* XMLElement.swift */; };
-		E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */; };
-		E29F9DC31CA94EC500FE4BEF /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */; };
 		E29F9DC71CA9539C00FE4BEF /* TreeProgram+Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC61CA9539C00FE4BEF /* TreeProgram+Mutable.swift */; };
 		E29F9DC91CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F9DC81CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift */; };
 		E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */; };
@@ -132,6 +134,13 @@
 		E20488B61C9D91FD00BABC62 /* RandomSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSelection.swift; sourceTree = "<group>"; };
 		E20488B81C9D92B700BABC62 /* RankSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankSelection.swift; sourceTree = "<group>"; };
 		E20488BA1C9DB0EA00BABC62 /* MatingPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatingPool.swift; sourceTree = "<group>"; };
+		E2174BDF1CE9C51D00B0BC54 /* PersistentChromosomeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentChromosomeType.swift; sourceTree = "<group>"; };
+		E2174BE11CE9CD4500B0BC54 /* Elitism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elitism.swift; sourceTree = "<group>"; };
+		E2174BE31CE9DD6E00B0BC54 /* PersistentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentType.swift; sourceTree = "<group>"; };
+		E2174BEE1CE9E7FF00B0BC54 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Workspace-axefejvpinxtzwalahtnkekcgrks/Build/Products/Debug/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		E2174BF21CE9EAC000B0BC54 /* PersistentRangeInitializedArray+PersistentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentRangeInitializedArray+PersistentType.swift"; sourceTree = "<group>"; };
+		E2174BF41CE9EBE500B0BC54 /* PersistentRangeInitializedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentRangeInitializedArray.swift; sourceTree = "<group>"; };
+		E2174BFA1CEA0CDC00B0BC54 /* Epsilon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Epsilon.swift; sourceTree = "<group>"; };
 		E277E23E1CE782D4009737C3 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
 		E277E2401CE78313009737C3 /* Reproducible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reproducible.swift; sourceTree = "<group>"; };
 		E277E2421CE783C7009737C3 /* ChromosomeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromosomeType.swift; sourceTree = "<group>"; };
@@ -195,11 +204,6 @@
 		E291644E1C8E0704002879C0 /* RevolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolverTests.swift; sourceTree = "<group>"; };
 		E29164501C8E0704002879C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E29164641C8E3713002879C0 /* EntropyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntropyGenerator.swift; sourceTree = "<group>"; };
-		E29F9DB11CA9438100FE4BEF /* XMLWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLWriter.swift; sourceTree = "<group>"; };
-		E29F9DB31CA9454A00FE4BEF /* XMLSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLSerializable.swift; sourceTree = "<group>"; };
-		E29F9DB61CA945E300FE4BEF /* XMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElement.swift; sourceTree = "<group>"; };
-		E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttribute.swift; sourceTree = "<group>"; };
-		E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		E29F9DC61CA9539C00FE4BEF /* TreeProgram+Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TreeProgram+Mutable.swift"; sourceTree = "<group>"; };
 		E29F9DC81CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TreeProgram+OnePointCrossoverable.swift"; sourceTree = "<group>"; };
 		E2B9ED8E1CA6FE500071EE18 /* TreeProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeProgram.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2174BEF1CE9E80000B0BC54 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +259,7 @@
 			children = (
 				E277E2401CE78313009737C3 /* Reproducible.swift */,
 				E20488AC1C9D800000BABC62 /* Reproduction.swift */,
+				E2174BE11CE9CD4500B0BC54 /* Elitism.swift */,
 			);
 			name = Reproduction;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 			children = (
 				E277E2421CE783C7009737C3 /* ChromosomeType.swift */,
 				E277E2441CE783E9009737C3 /* CommonChromosomeType.swift */,
+				E2174BDF1CE9C51D00B0BC54 /* PersistentChromosomeType.swift */,
 				E2E71A651CA5DF21002E34DD /* Arrays */,
 				E2E71A661CA5DF2B002E34DD /* Trees */,
 			);
@@ -397,6 +404,7 @@
 		E29164351C8E0704002879C0 = {
 			isa = PBXGroup;
 			children = (
+				E2174BEE1CE9E7FF00B0BC54 /* SwiftyJSON.framework */,
 				E29164411C8E0704002879C0 /* Revolver */,
 				E291644D1C8E0704002879C0 /* RevolverTests */,
 				E29164401C8E0704002879C0 /* Products */,
@@ -440,24 +448,13 @@
 			path = RevolverTests;
 			sourceTree = "<group>";
 		};
-		E29F9DB51CA9455600FE4BEF /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				E29F9DB11CA9438100FE4BEF /* XMLWriter.swift */,
-				E29F9DB61CA945E300FE4BEF /* XMLElement.swift */,
-				E29F9DB81CA946E200FE4BEF /* XMLAttribute.swift */,
-				E29F9DB31CA9454A00FE4BEF /* XMLSerializable.swift */,
-			);
-			name = Persistence;
-			sourceTree = "<group>";
-		};
 		E29F9DC41CA9522F00FE4BEF /* Compatibility */ = {
 			isa = PBXGroup;
 			children = (
-				E29F9DC21CA94EC500FE4BEF /* OperationQueue.swift */,
-				E29F9DB51CA9455600FE4BEF /* Persistence */,
+				E2174BE31CE9DD6E00B0BC54 /* PersistentType.swift */,
 				E28980F61CD53A9300B00749 /* DateComparison.swift */,
 				E277E23E1CE782D4009737C3 /* Copyable.swift */,
+				E2174BFA1CEA0CDC00B0BC54 /* Epsilon.swift */,
 			);
 			name = Compatibility;
 			sourceTree = "<group>";
@@ -515,6 +512,8 @@
 				E28980C81CD3E33800B00749 /* RangeInitializedArray+CustomStringConvertible.swift */,
 				E28980CA1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift */,
 				E28980C61CD3CAD700B00749 /* RangeInitializedArrayExample.swift */,
+				E2174BF41CE9EBE500B0BC54 /* PersistentRangeInitializedArray.swift */,
+				E2174BF21CE9EAC000B0BC54 /* PersistentRangeInitializedArray+PersistentType.swift */,
 			);
 			name = Arrays;
 			sourceTree = "<group>";
@@ -679,6 +678,7 @@
 			files = (
 				E2F31C8D1CA86EAD00372B95 /* ModuloNode.swift in Sources */,
 				E20488B51C9D8A4500BABC62 /* TournamentSelection.swift in Sources */,
+				E2174BFB1CEA0CDC00B0BC54 /* Epsilon.swift in Sources */,
 				E277E24C1CE789E3009737C3 /* TwoPointCrossover.swift in Sources */,
 				E284A72E1C8E3FF200648A2E /* Discrete+Randomizable.swift in Sources */,
 				E20488B31C9D84B500BABC62 /* FitnessType.swift in Sources */,
@@ -696,6 +696,7 @@
 				E2F31C8B1CA86EA700372B95 /* DivisionNode.swift in Sources */,
 				E277E23F1CE782D4009737C3 /* Copyable.swift in Sources */,
 				E20488AD1C9D800000BABC62 /* Reproduction.swift in Sources */,
+				E2174BF51CE9EBE500B0BC54 /* PersistentRangeInitializedArray.swift in Sources */,
 				E28980DB1CD4F94B00B00749 /* GeneticAlgorithmExample.swift in Sources */,
 				E2F31C871CA86E9A00372B95 /* MultiplicationNode.swift in Sources */,
 				E277E24A1CE789AE009737C3 /* TwoPointCrossoverable.swift in Sources */,
@@ -726,19 +727,18 @@
 				E28980FF1CD53C3400B00749 /* OrCondition.swift in Sources */,
 				E2E71A701CA5E8CA002E34DD /* LoopNode.swift in Sources */,
 				E28980CB1CD3E3C400B00749 /* RangeInitializedArray+CustomDebugStringConvertible.swift in Sources */,
+				E2174BF31CE9EAC000B0BC54 /* PersistentRangeInitializedArray+PersistentType.swift in Sources */,
 				E28980E11CD5045500B00749 /* Mutable.swift in Sources */,
 				E20488B91C9D92B700BABC62 /* RankSelection.swift in Sources */,
 				E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */,
 				E28980DD1CD4F98E00B00749 /* SequentialEvaluatorExample.swift in Sources */,
 				E28980FD1CD53C2E00B00749 /* AndCondition.swift in Sources */,
 				E28980E91CD5126500B00749 /* BranchingPipeline.swift in Sources */,
-				E29F9DB91CA946E200FE4BEF /* XMLAttribute.swift in Sources */,
-				E29F9DB71CA945E300FE4BEF /* XMLElement.swift in Sources */,
+				E2174BE01CE9C51D00B0BC54 /* PersistentChromosomeType.swift in Sources */,
 				E20488B11C9D840F00BABC62 /* RouletteSelection.swift in Sources */,
 				E2E71A541CA5CBCB002E34DD /* TreeType.swift in Sources */,
-				E29F9DC31CA94EC500FE4BEF /* OperationQueue.swift in Sources */,
-				E29F9DB21CA9438100FE4BEF /* XMLWriter.swift in Sources */,
 				E289810E1CD945CF00B00749 /* CyclicEvaluator.swift in Sources */,
+				E2174BE41CE9DD6E00B0BC54 /* PersistentType.swift in Sources */,
 				E2F31C781CA868A900372B95 /* EquationNode.swift in Sources */,
 				E284A71A1C8E3A0000648A2E /* MersenneTwister.swift in Sources */,
 				E27ECAA11C9D65BF00BF6CEB /* Mutation.swift in Sources */,
@@ -758,7 +758,6 @@
 				E284A72C1C8E3FE100648A2E /* Discrete.swift in Sources */,
 				E284A71C1C8E3AEF00648A2E /* ArcGenerator.swift in Sources */,
 				E2F31C8F1CA86F0000372B95 /* NegationNode.swift in Sources */,
-				E29F9DB41CA9454A00FE4BEF /* XMLSerializable.swift in Sources */,
 				E28981081CD943CD00B00749 /* Evaluator.swift in Sources */,
 				E2E71A5A1CA5DE6B002E34DD /* ConstantNode.swift in Sources */,
 				E28980F31CD5397A00B00749 /* MaxNumberOfGenerations.swift in Sources */,
@@ -774,6 +773,7 @@
 				E284A71E1C8E3B6B00648A2E /* DrandGenerator.swift in Sources */,
 				E28980D01CD4E05E00B00749 /* GeneticAlgorithm.swift in Sources */,
 				E28980C31CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift in Sources */,
+				E2174BE21CE9CD4500B0BC54 /* Elitism.swift in Sources */,
 				E277E2521CE7A14C009737C3 /* ParallelEvaluator.swift in Sources */,
 				E28980E51CD50CAA00B00749 /* GeneticOperatorPipeline.swift in Sources */,
 			);

@@ -4,9 +4,9 @@ class KnapsackEvaluator: SequentialEvaluator<KnapsackChromosome> {
     let things: [Thing]
     let capacity: Double
     
-    override init() {
-        things = ProblemInstance.things
-        capacity = ProblemInstance.capacity
+    init(instance: ProblemInstance) {
+        things = instance.things
+        capacity = instance.capacity
         super.init()
     }
     

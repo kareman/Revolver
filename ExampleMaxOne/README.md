@@ -29,6 +29,9 @@ This example is distributed under the [MIT License](https://en.wikipedia.org/wik
 
 ## Example Ouptut
 When running this example, you should see similar output (provided that you don't change the seed or the configuration).
+
+![Fitness Convergence Chart](Resources/ConvergenceChart.png)
+
 ```
 ---
 Run started.
