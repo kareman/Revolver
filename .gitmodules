@@ -1,3 +1,6 @@
 [submodule "SwiftyJSON"]
 	path = SwiftyJSON
 	url = https://github.com/SwiftyJSON/SwiftyJSON.git
+[submodule "Swift-AI"]
+	path = Swift-AI
+	url = https://github.com/collinhundley/Swift-AI.git

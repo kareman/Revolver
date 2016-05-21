@@ -17,6 +17,9 @@
       location = "group:ExampleParallel/ExampleParallel.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ExampleCar/ExampleCar.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ExampleQwop/ExampleQwop.xcodeproj">
    </FileRef>
 </Workspace>
