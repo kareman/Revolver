@@ -24,6 +24,9 @@
 		E2174BF31CE9EAC000B0BC54 /* PersistentRangeInitializedArray+PersistentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BF21CE9EAC000B0BC54 /* PersistentRangeInitializedArray+PersistentType.swift */; };
 		E2174BF51CE9EBE500B0BC54 /* PersistentRangeInitializedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BF41CE9EBE500B0BC54 /* PersistentRangeInitializedArray.swift */; };
 		E2174BFB1CEA0CDC00B0BC54 /* Epsilon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2174BFA1CEA0CDC00B0BC54 /* Epsilon.swift */; };
+		E232A1441CF25F2A0024D902 /* EntropyGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E232A1431CF25F2A0024D902 /* EntropyGeneratorTests.swift */; };
+		E232A1461CF263160024D902 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E232A1451CF263160024D902 /* ArrayTests.swift */; };
+		E232A1481CF263240024D902 /* DoubleArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = E232A1471CF263240024D902 /* DoubleArray.swift */; };
 		E277E23F1CE782D4009737C3 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E23E1CE782D4009737C3 /* Copyable.swift */; };
 		E277E2411CE78313009737C3 /* Reproducible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2401CE78313009737C3 /* Reproducible.swift */; };
 		E277E2431CE783C7009737C3 /* ChromosomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E277E2421CE783C7009737C3 /* ChromosomeType.swift */; };
@@ -141,6 +144,9 @@
 		E2174BF21CE9EAC000B0BC54 /* PersistentRangeInitializedArray+PersistentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersistentRangeInitializedArray+PersistentType.swift"; sourceTree = "<group>"; };
 		E2174BF41CE9EBE500B0BC54 /* PersistentRangeInitializedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentRangeInitializedArray.swift; sourceTree = "<group>"; };
 		E2174BFA1CEA0CDC00B0BC54 /* Epsilon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Epsilon.swift; sourceTree = "<group>"; };
+		E232A1431CF25F2A0024D902 /* EntropyGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntropyGeneratorTests.swift; sourceTree = "<group>"; };
+		E232A1451CF263160024D902 /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		E232A1471CF263240024D902 /* DoubleArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleArray.swift; sourceTree = "<group>"; };
 		E277E23E1CE782D4009737C3 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
 		E277E2401CE78313009737C3 /* Reproducible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reproducible.swift; sourceTree = "<group>"; };
 		E277E2421CE783C7009737C3 /* ChromosomeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromosomeType.swift; sourceTree = "<group>"; };
@@ -254,6 +260,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E232A1421CF25ED30024D902 /* Auxiliary Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E232A1471CF263240024D902 /* DoubleArray.swift */,
+			);
+			name = "Auxiliary Classes";
+			sourceTree = "<group>";
+		};
 		E277E2461CE78566009737C3 /* Reproduction */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,8 +456,11 @@
 		E291644D1C8E0704002879C0 /* RevolverTests */ = {
 			isa = PBXGroup;
 			children = (
+				E232A1421CF25ED30024D902 /* Auxiliary Classes */,
 				E291644E1C8E0704002879C0 /* RevolverTests.swift */,
 				E29164501C8E0704002879C0 /* Info.plist */,
+				E232A1431CF25F2A0024D902 /* EntropyGeneratorTests.swift */,
+				E232A1451CF263160024D902 /* ArrayTests.swift */,
 			);
 			path = RevolverTests;
 			sourceTree = "<group>";
@@ -783,7 +800,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E232A1461CF263160024D902 /* ArrayTests.swift in Sources */,
+				E232A1481CF263240024D902 /* DoubleArray.swift in Sources */,
 				E291644F1C8E0704002879C0 /* RevolverTests.swift in Sources */,
+				E232A1441CF25F2A0024D902 /* EntropyGeneratorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
