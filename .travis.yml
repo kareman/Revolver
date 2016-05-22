@@ -9,5 +9,5 @@ before_install:
 
 script: 
 - xctool clean build -workspace Workspace.xcworkspace -scheme Revolver
-- xctool test -workspace Workspace.xcworkspace -scheme RevolverTests
+- xctool test -workspace Workspace.xcworkspace -scheme Revolver
 
