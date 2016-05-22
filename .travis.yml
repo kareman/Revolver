@@ -9,5 +9,5 @@ before_install:
 
 script: 
 - xctool clean build -workspace Workspace.xcworkspace -scheme Revolver
-#- xctool clean build -project Revolver/Revolver.xcodeproj -scheme Revolver
-#- xctool test -project Revolver/Revolver.xcodeproj -scheme RevolverTests
+- xctool test -workspace Workspace.xcodeproj -scheme RevolverTests
+
