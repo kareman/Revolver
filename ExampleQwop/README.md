@@ -31,7 +31,7 @@ This is the output of the algorithm after 18 hours of continuous running.
  - Best Chromosome: `oQqpqQWWPqQqWoOwqOqoPpQOwPWo+oowOqWqwWqwOp+qoPOwpoWWOQwowqW+WOP+qqwpo+QqwpqPwp`
  - Best Chromosome Fitness: 0.224 (100 meters in 152 seconds)
  
-Here's a short recording of the run: *(click the image to watch the full video)*
+Here's a [short recording](http://youtu.be/Rf9DKOTF1oA) of the run:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Rf9DKOTF1oA
 " target="_blank"><img src="best_strategy.gif" 
