@@ -1,5 +1,6 @@
 import Revolver
 
+/// MAX-ONE chromosome is a conventional bit string.
 final class MaxOneChromosome: RangeInitializedArray {
     typealias Element = Bool
     static let initializationRange = 10...Configuration.maxNumberOfOnes
