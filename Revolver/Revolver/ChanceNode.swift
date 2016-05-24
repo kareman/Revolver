@@ -1,6 +1,6 @@
 
-/// A branching pipeline non-deterministically selects one of multiple choices.
-public class BranchingPipeline<Chromosome: ChromosomeType>: Pipeline<Chromosome> {
+/// A chance node non-deterministically selects one of multiple choices.
+public class ChanceNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome> {
     
     private var choices: [Choice<Chromosome>]
     private var sum: Double

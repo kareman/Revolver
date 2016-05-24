@@ -7,8 +7,8 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
     public let population: MatingPool<Chromosome>
     public let populationSize: Int
     
-    public let pipelineExecutedEveryGeneration: Pipeline<Chromosome>?
-    public let pipelineExecutedInLoop: Pipeline<Chromosome>
+    public let treeExecutedEveryGeneration: DecisionTreeNode<Chromosome>?
+    public let treeExecutedInLoop: DecisionTreeNode<Chromosome>
     
     public let evaluator: Evaluator<Chromosome>
     public let termination: TerminationCondition<Chromosome>
@@ -17,12 +17,12 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
     public var hookRunFinished: Hook?
     public var hookGenerationAdvanced: Hook?
     
-    public required init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: Pipeline<Chromosome>?, executeInLoop: Pipeline<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
+    public required init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: DecisionTreeNode<Chromosome>?, executeInLoop: DecisionTreeNode<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
         // Copy some values
         self.populationSize = populationSize
         self.entropyGenerator = generator
-        self.pipelineExecutedEveryGeneration = executeEveryGeneration
-        self.pipelineExecutedInLoop = executeInLoop
+        self.treeExecutedEveryGeneration = executeEveryGeneration
+        self.treeExecutedInLoop = executeInLoop
         self.evaluator = evaluator
         self.termination = termination
         
@@ -47,29 +47,29 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
         self.init(
             generator: generator,
             populationSize: populationSize,
-            executeEveryGeneration: GeneticOperatorPipeline<Chromosome>(executeEveryGeneration),
-            executeInLoop: GeneticOperatorPipeline<Chromosome>(executeInLoop),
+            executeEveryGeneration: GeneticOperatorNode<Chromosome>(executeEveryGeneration),
+            executeInLoop: GeneticOperatorNode<Chromosome>(executeInLoop),
             evaluator: evaluator,
             termination: termination
         )
     }
     
-    public convenience init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: Pipeline<Chromosome>?, executeInLoop: GeneticOperator<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
+    public convenience init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: DecisionTreeNode<Chromosome>?, executeInLoop: GeneticOperator<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
         self.init(
             generator: generator,
             populationSize: populationSize,
             executeEveryGeneration: executeEveryGeneration,
-            executeInLoop: GeneticOperatorPipeline<Chromosome>(executeInLoop),
+            executeInLoop: GeneticOperatorNode<Chromosome>(executeInLoop),
             evaluator: evaluator,
             termination: termination
         )
     }
     
-    public convenience init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: GeneticOperator<Chromosome>, executeInLoop: Pipeline<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
+    public convenience init(generator: EntropyGenerator, populationSize: Int, executeEveryGeneration: GeneticOperator<Chromosome>, executeInLoop: DecisionTreeNode<Chromosome>, evaluator: Evaluator<Chromosome>, termination: TerminationCondition<Chromosome>) {
         self.init(
             generator: generator,
             populationSize: populationSize,
-            executeEveryGeneration: GeneticOperatorPipeline<Chromosome>(executeEveryGeneration),
+            executeEveryGeneration: GeneticOperatorNode<Chromosome>(executeEveryGeneration),
             executeInLoop: executeInLoop,
             evaluator: evaluator,
             termination: termination
@@ -123,10 +123,10 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
         }
         
         population.beginReproduction()
-        pipelineExecutedEveryGeneration?.execute(entropyGenerator, pool: population)
+        treeExecutedEveryGeneration?.execute(entropyGenerator, pool: population)
         
         while population.offspringSize! < populationSize {
-            pipelineExecutedInLoop.execute(entropyGenerator, pool: population)
+            treeExecutedInLoop.execute(entropyGenerator, pool: population)
         }
         
         population.advanceGeneration()

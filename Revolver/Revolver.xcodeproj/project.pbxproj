@@ -63,11 +63,11 @@
 		E28980DF1CD4FFA800B00749 /* IndexSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980DE1CD4FFA800B00749 /* IndexSet.swift */; };
 		E28980E11CD5045500B00749 /* Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E01CD5045500B00749 /* Mutable.swift */; };
 		E28980E31CD5049A00B00749 /* OnePointCrossoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E21CD5049A00B00749 /* OnePointCrossoverable.swift */; };
-		E28980E51CD50CAA00B00749 /* GeneticOperatorPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E41CD50CAA00B00749 /* GeneticOperatorPipeline.swift */; };
+		E28980E51CD50CAA00B00749 /* GeneticOperatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E41CD50CAA00B00749 /* GeneticOperatorNode.swift */; };
 		E28980E71CD5124E00B00749 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E61CD5124E00B00749 /* Choice.swift */; };
-		E28980E91CD5126500B00749 /* BranchingPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E81CD5126500B00749 /* BranchingPipeline.swift */; };
-		E28980EC1CD5137E00B00749 /* PipelineOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980EB1CD5137E00B00749 /* PipelineOperators.swift */; };
-		E28980EE1CD5143C00B00749 /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980ED1CD5143C00B00749 /* Pipeline.swift */; };
+		E28980E91CD5126500B00749 /* ChanceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980E81CD5126500B00749 /* ChanceNode.swift */; };
+		E28980EC1CD5137E00B00749 /* DecisionTreeOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980EB1CD5137E00B00749 /* DecisionTreeOperators.swift */; };
+		E28980EE1CD5143C00B00749 /* DecisionTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980ED1CD5143C00B00749 /* DecisionTreeNode.swift */; };
 		E28980F11CD529C300B00749 /* TerminationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980F01CD529C300B00749 /* TerminationCondition.swift */; };
 		E28980F31CD5397A00B00749 /* MaxNumberOfGenerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980F21CD5397A00B00749 /* MaxNumberOfGenerations.swift */; };
 		E28980F51CD53A1100B00749 /* AfterDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980F41CD53A1100B00749 /* AfterDate.swift */; };
@@ -184,11 +184,11 @@
 		E28980DE1CD4FFA800B00749 /* IndexSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexSet.swift; sourceTree = "<group>"; };
 		E28980E01CD5045500B00749 /* Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutable.swift; sourceTree = "<group>"; };
 		E28980E21CD5049A00B00749 /* OnePointCrossoverable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePointCrossoverable.swift; sourceTree = "<group>"; };
-		E28980E41CD50CAA00B00749 /* GeneticOperatorPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticOperatorPipeline.swift; sourceTree = "<group>"; };
+		E28980E41CD50CAA00B00749 /* GeneticOperatorNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticOperatorNode.swift; sourceTree = "<group>"; };
 		E28980E61CD5124E00B00749 /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
-		E28980E81CD5126500B00749 /* BranchingPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchingPipeline.swift; sourceTree = "<group>"; };
-		E28980EB1CD5137E00B00749 /* PipelineOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipelineOperators.swift; sourceTree = "<group>"; };
-		E28980ED1CD5143C00B00749 /* Pipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipeline.swift; sourceTree = "<group>"; };
+		E28980E81CD5126500B00749 /* ChanceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanceNode.swift; sourceTree = "<group>"; };
+		E28980EB1CD5137E00B00749 /* DecisionTreeOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionTreeOperators.swift; sourceTree = "<group>"; };
+		E28980ED1CD5143C00B00749 /* DecisionTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionTreeNode.swift; sourceTree = "<group>"; };
 		E28980F01CD529C300B00749 /* TerminationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminationCondition.swift; sourceTree = "<group>"; };
 		E28980F21CD5397A00B00749 /* MaxNumberOfGenerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxNumberOfGenerations.swift; sourceTree = "<group>"; };
 		E28980F41CD53A1100B00749 /* AfterDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterDate.swift; sourceTree = "<group>"; };
@@ -378,10 +378,10 @@
 		E28980EA1CD512E300B00749 /* Syntax Sugar */ = {
 			isa = PBXGroup;
 			children = (
-				E28980EB1CD5137E00B00749 /* PipelineOperators.swift */,
-				E28980ED1CD5143C00B00749 /* Pipeline.swift */,
-				E28980E41CD50CAA00B00749 /* GeneticOperatorPipeline.swift */,
-				E28980E81CD5126500B00749 /* BranchingPipeline.swift */,
+				E28980EB1CD5137E00B00749 /* DecisionTreeOperators.swift */,
+				E28980ED1CD5143C00B00749 /* DecisionTreeNode.swift */,
+				E28980E41CD50CAA00B00749 /* GeneticOperatorNode.swift */,
+				E28980E81CD5126500B00749 /* ChanceNode.swift */,
 				E28980E61CD5124E00B00749 /* Choice.swift */,
 			);
 			name = "Syntax Sugar";
@@ -702,7 +702,7 @@
 				E28980E71CD5124E00B00749 /* Choice.swift in Sources */,
 				E28981031CD5496200B00749 /* BestSelection.swift in Sources */,
 				E28980F11CD529C300B00749 /* TerminationCondition.swift in Sources */,
-				E28980EC1CD5137E00B00749 /* PipelineOperators.swift in Sources */,
+				E28980EC1CD5137E00B00749 /* DecisionTreeOperators.swift in Sources */,
 				E277E2411CE78313009737C3 /* Reproducible.swift in Sources */,
 				E2E71A5E1CA5DEAE002E34DD /* SequenceNode.swift in Sources */,
 				E284A7241C8E3E9100648A2E /* Randomizable.swift in Sources */,
@@ -750,7 +750,7 @@
 				E2B9ED8F1CA6FE500071EE18 /* TreeProgram.swift in Sources */,
 				E28980DD1CD4F98E00B00749 /* SequentialEvaluatorExample.swift in Sources */,
 				E28980FD1CD53C2E00B00749 /* AndCondition.swift in Sources */,
-				E28980E91CD5126500B00749 /* BranchingPipeline.swift in Sources */,
+				E28980E91CD5126500B00749 /* ChanceNode.swift in Sources */,
 				E2174BE01CE9C51D00B0BC54 /* PersistentChromosomeType.swift in Sources */,
 				E20488B11C9D840F00BABC62 /* RouletteSelection.swift in Sources */,
 				E2E71A541CA5CBCB002E34DD /* TreeType.swift in Sources */,
@@ -765,7 +765,7 @@
 				E2E71A641CA5DEFE002E34DD /* ConditionalNode.swift in Sources */,
 				E29F9DC91CA953A900FE4BEF /* TreeProgram+OnePointCrossoverable.swift in Sources */,
 				E20488AF1C9D81DB00BABC62 /* Selection.swift in Sources */,
-				E28980EE1CD5143C00B00749 /* Pipeline.swift in Sources */,
+				E28980EE1CD5143C00B00749 /* DecisionTreeNode.swift in Sources */,
 				E29F9DC71CA9539C00FE4BEF /* TreeProgram+Mutable.swift in Sources */,
 				E277E2501CE7A0A0009737C3 /* RangeInitializedArray+Copyable.swift in Sources */,
 				E20488A51C9D73EA00BABC62 /* RangeInitializedArray+OnePointCrossoverable.swift in Sources */,
@@ -792,7 +792,7 @@
 				E28980C31CD3C7C800B00749 /* RangeInitializedArray+Randomizable.swift in Sources */,
 				E2174BE21CE9CD4500B0BC54 /* Elitism.swift in Sources */,
 				E277E2521CE7A14C009737C3 /* ParallelEvaluator.swift in Sources */,
-				E28980E51CD50CAA00B00749 /* GeneticOperatorPipeline.swift in Sources */,
+				E28980E51CD50CAA00B00749 /* GeneticOperatorNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

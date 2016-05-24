@@ -7,7 +7,7 @@ internal class GeneticAlgorithmExample {
     // It's useful to define types in advance. Helps sweep away repeated portions (such as generic types).
     internal typealias MyChromosome = RangeInitializedArrayExample
     internal typealias MyEvaluator = SequentialEvaluatorExample
-    internal typealias MyPipeline = Pipeline<MyChromosome>
+    internal typealias MyDecisionTree = DecisionTreeNode<MyChromosome>
     internal typealias MyAlgorithm = GeneticAlgorithm<MyChromosome>
     internal typealias MyTermination = TerminationCondition<MyChromosome>
     
@@ -31,9 +31,9 @@ internal class GeneticAlgorithmExample {
          * EXAMPLE: Here we use elitism as #1 to clone the best 5 individuals when creating new generations.
          *          This helps us maintain the best solution so far.
          */
-        let elitism = Reproduction<MyChromosome>(BestSelection(), numberOfIndividuals: 5)
+        let elitism = Elitism<MyChromosome>(numberOfIndividuals: 5)
         
-        /* In pipelines, you can use some cool symbols to combine operators effortlessly:
+        /* In decision trees, you can use some cool symbols to combine operators effortlessly:
          *     e.g. "op1 ---> op2 ---> op3" produces a sequence, in which operators are applied sequentially
          *     e.g. "Choice(op1, p: 0.5) ||| Choice(op2, p: 0.5)" produces a fair coin toss between two operators.
          *     e.g. "op1 ---> (Choice(op2a, p: 0.5) ||| Choice(op2b, p: 0.5)) ---> op3" is a combination of the previous two.
@@ -44,8 +44,8 @@ internal class GeneticAlgorithmExample {
          *
          * EXAMPLE: As #2, we use a 1:3 combination of reproduction and mutation with roulette selection.
          */
-        let loopOperators: MyPipeline = Choice(Reproduction(RouletteSelection()), p: 0.25)
-                                    ||| Choice(Mutation(RouletteSelection()), p: 0.75)
+        let loopOperators: MyDecisionTree = Choice(Reproduction(RouletteSelection()), p: 0.25)
+                                        ||| Choice(Mutation(RouletteSelection()), p: 0.75)
         
         /* Lastly, define a termination condition, which will stop the algorithm once the solution is satisfactory.
          * In a similar way to pipelines, you can join conditions together with the !, || and && operators to get more complex behavior.

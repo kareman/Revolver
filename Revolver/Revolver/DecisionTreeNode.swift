@@ -1,8 +1,8 @@
 
-/// A pipeline describes a series of actions applied in sequence on a population.
-public class Pipeline<Chromosome: ChromosomeType> {
+/// A decision tree describes a chained series of actions applied in sequence on a population.
+public class DecisionTreeNode<Chromosome: ChromosomeType> {
     
-    private var next: Pipeline<Chromosome>?
+    private var next: DecisionTreeNode<Chromosome>?
     
     public init() {
         self.next = nil
@@ -13,7 +13,7 @@ public class Pipeline<Chromosome: ChromosomeType> {
         op.execute(generator, pool: pool)
     }
     
-    public func chain(next: Pipeline<Chromosome>) {
+    public func chain(next: DecisionTreeNode<Chromosome>) {
         self.next = next
     }
     
