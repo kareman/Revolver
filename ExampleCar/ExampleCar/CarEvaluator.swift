@@ -9,9 +9,9 @@ class CarEvaluator: SequentialEvaluator<CarChromosome> {
     let generator = MersenneTwister(seed: 4242)
     let sim = CarSimulation()
     
-    override func evaluateChromosome(individual: CarChromosome) -> Fitness {
+    override func evaluateChromosome(chromosome: CarChromosome) -> Fitness {
         sim.reset()
-        sim.controlProgram = NetDriver(net: individual.toFFNN())
+        sim.controlProgram = NetDriver(net: chromosome.toFFNN())
         
         var sumDistance = Double(0)
         

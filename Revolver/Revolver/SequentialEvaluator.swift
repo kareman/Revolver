@@ -34,12 +34,12 @@ public class SequentialEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromoso
     /**
      Evaluate a single chromosome.
      
-     - parameter individual: Chromosome to evaluate.
+     - parameter chromosome: Chromosome to evaluate.
      
      - returns: Fitness function value.
      - warning: This method is abstract. You **must** override it in subclasses.
      */
-    public func evaluateChromosome(individual: Chromosome) -> Fitness {
+    public func evaluateChromosome(chromosome: Chromosome) -> Fitness {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

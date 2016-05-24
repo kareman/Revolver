@@ -14,13 +14,13 @@ class KnapsackEvaluator: SequentialEvaluator<KnapsackChromosome> {
         return self.things.reduce(0) { $0 + $1.value }
     }()
     
-    override func evaluateChromosome(individual: KnapsackChromosome) -> Fitness {
-        let totalSize = zip(things, individual.array).reduce(0) { $0 + (!$1.1 ? 0 : $1.0.size) }
+    override func evaluateChromosome(chromosome: KnapsackChromosome) -> Fitness {
+        let totalSize = zip(things, chromosome.array).reduce(0) { $0 + (!$1.1 ? 0 : $1.0.size) }
         if totalSize > capacity {
             return 0
         }
         
-        let totalValue = zip(things, individual.array).reduce(0) { $0 + (!$1.1 ? 0 : $1.0.value) }
+        let totalValue = zip(things, chromosome.array).reduce(0) { $0 + (!$1.1 ? 0 : $1.0.value) }
         return totalValue / maxValue
     }    
 }

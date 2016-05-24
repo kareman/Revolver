@@ -18,7 +18,7 @@ class UnpredictableEvalutator: SequentialEvaluator<EmptyChromosome> {
         super.init()
     }
     
-    override func evaluateChromosome(individual: EmptyChromosome) -> Fitness {
+    override func evaluateChromosome(chromosome: EmptyChromosome) -> Fitness {
         // Generate some random numbers.
         let timeToWait = NSTimeInterval(entropyGenerator.nextInRange(min: 0.0, max: 3.0))
         let ratingToReturn: Double = entropyGenerator.next()
