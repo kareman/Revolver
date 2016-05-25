@@ -199,6 +199,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
         return population.maxElement { $0.fitness! < $1.fitness! }!.fitness!
     }
     
+    /// The best individual in the population (by fitness). If the population is empty, it might not exist.
     public var bestIndividual: IndividualType? {
         guard let index = populationIndicesSortedByFitness.last else {
             return nil
@@ -207,6 +208,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
         return population[index]
     }
     
+    /// The worst individual in the population (by fitness). If the population is empty, it might not exist.
     public var worstIndividual: IndividualType? {
         guard let index = populationIndicesSortedByFitness.first else {
             return nil

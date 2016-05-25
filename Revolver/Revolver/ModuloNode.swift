@@ -54,4 +54,9 @@ public final class ModuloNode<ChildType where ChildType: Randomizable, ChildType
         return ModuloNode<ChildType>(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(mod \(leftSide.lispString) \(rightSide.lispString))"
+    }
+    
 }

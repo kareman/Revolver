@@ -1,6 +1,6 @@
 
 /**
- *  Copyable types can generate deep copies of themselves.
+ *  Copyable type can generate deep copies of itself.
  */
 public protocol Copyable {
     

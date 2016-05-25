@@ -51,4 +51,9 @@ public final class NegationNode: UnaryNode<Bool, Bool> {
         return NegationNode(id: id, maximumDepth: maximumDepth, operand: operand)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(not \(operand.lispString))"
+    }
+    
 }

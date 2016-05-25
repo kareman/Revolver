@@ -1,6 +1,6 @@
 
 /**
- *  Type can be slightly non-deterministically altered.
+ *  Mutable type can be slightly non-deterministically altered.
  */
 public protocol Mutable: ChromosomeType {
     

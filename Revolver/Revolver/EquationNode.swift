@@ -54,4 +54,9 @@ public final class EquationNode<ChildType where ChildType: Randomizable, ChildTy
         return EquationNode<ChildType>(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(eq \(leftSide.lispString) \(rightSide.lispString))"
+    }
+    
 }

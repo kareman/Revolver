@@ -2,7 +2,10 @@
 /// A chance node non-deterministically selects one of multiple choices.
 public class ChanceNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome> {
     
+    /// Choices to select from.
     private var choices: [Choice<Chromosome>]
+    
+    /// The sum of choice probabilities.
     private var sum: Double
     
     public override init() {
@@ -10,11 +13,22 @@ public class ChanceNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome
         choices = []
     }
     
+    /**
+     Add new choice to the node.
+     
+     - parameter choice: Choice to add.
+     */
     public func split(choice: Choice<Chromosome>) {
         choices.append(choice)
         sum += choice.probability
     }
     
+    /**
+     Execute tree represented by a choice.
+     
+     - parameter generator: Provider of randomness.
+     - parameter pool:      The population to work on.
+     */
     private func executeChoice(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         guard !choices.isEmpty else { return }
         

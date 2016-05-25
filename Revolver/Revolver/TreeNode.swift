@@ -65,4 +65,9 @@ public class TreeNode: TreeType {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public var lispString: String {
+        return "unsupported-node"
+    }
+    
 }

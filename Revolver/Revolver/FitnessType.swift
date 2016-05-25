@@ -1,10 +1,10 @@
 
 /**
- *  Objects with fitness value, most likely individuals.
+ *  Object with fitness value.
  */
 public protocol FitnessType {
     
-    /// Floating-point value between 0 (unfit) and 1 (perfectly fit).
+    /// The fitness evaluation of this instance.
     var fitness: Fitness? { get }
     
 }

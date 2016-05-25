@@ -54,4 +54,9 @@ public final class EquivalenceNode: BinaryNode<Bool, Bool, Bool> {
         return EquivalenceNode(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(equiv \(leftSide.lispString) \(rightSide.lispString))"
+    }
+    
 }

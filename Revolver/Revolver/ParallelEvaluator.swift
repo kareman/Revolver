@@ -1,4 +1,3 @@
-
 import Foundation
 
 /// Parallel evaluator evaluates all individuals concurrently in parallel.
@@ -7,13 +6,24 @@ import Foundation
 ///         Be advised that you can use it without subclassing.
 public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome> {
     
+    /// Sequential threads used for parallel evaluation.
     public let threads: [SequentialEvaluator<Chromosome>]
+    
+    /// Dispatch queues used to facilitate the execution of sequential evaluators.
     public let queues: [NSOperationQueue]
     
+    /**
+     Instantiate a parallel evaluator with sequential evaluators.
+     
+     - parameter threads: Threads which are used to perform sequential evaluation. This array **must not** be empty.
+     
+     - returns: New instance of parallel evaluator.
+     */
     public required init(threads: [SequentialEvaluator<Chromosome>]) {
         precondition(!threads.isEmpty, "There has to be at least one evaluator in \"threads\".")
         self.threads = threads
         
+        // Create queue for every thread.
         var createdQueues = [NSOperationQueue]()
         createdQueues.reserveCapacity(threads.count)
         
@@ -27,6 +37,14 @@ public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
         super.init()
     }
     
+    /**
+     Instantiate parallel evaluator with a block.
+     
+     - parameter numberOfThreads: How many threads to create.
+     - parameter createThread:    Thread creator. This block receives a thread number and is supposed to return a new evaluator for the particular thread.
+     
+     - returns: New instance of parallel evaluator.
+     */
     public convenience init(numberOfThreads: Int? = nil, createThread: Int -> SequentialEvaluator<Chromosome>) {
         let effectiveNumberOfThreads = numberOfThreads ?? ParallelEvaluator<Chromosome>.recommendedNumberOfThreads
         var threads = [SequentialEvaluator<Chromosome>]()
@@ -40,6 +58,7 @@ public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
         self.init(threads: threads)
     }
     
+    /// The recommended number of threads for parallel evaluation based on the current hardware.
     public static var recommendedNumberOfThreads: Int {
         return NSProcessInfo.processInfo().activeProcessorCount
     }

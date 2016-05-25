@@ -68,4 +68,9 @@ public final class TreeProgram<FactoryType: RandomTreeFactory>: TreeType {
         }
     }
     
+    /// Serialize the program into LISP along with its subtree.
+    public var lispString: String {
+        return root.lispString
+    }
+    
 }

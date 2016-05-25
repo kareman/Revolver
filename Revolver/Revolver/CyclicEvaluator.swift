@@ -1,5 +1,5 @@
 
-/// Cyclic evaluator uses another evaluator multiple times over.
+/// Cyclic evaluator uses another evaluator multiple times over to produce aggregate results.
 public final class CyclicEvaluator<Chromosome: ChromosomeType>: SequentialEvaluator<Chromosome> {
     
     /// The evaluator to call multiple times.

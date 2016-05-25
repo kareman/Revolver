@@ -1,11 +1,11 @@
 
 /**
- *  Instance of this type can be randomly combined with instance to produce two new offspring instances.
+ *  Crossoverable type can be randomly combined with another instance to produce two new offspring instances.
  */
 public protocol TwoPointCrossoverable: ChromosomeType {
     
     /**
-     Performs two-point crossover between the receiver and `other`.
+     Perform two-point crossover between the receiver and `other`.
      
      - parameter generator: Provider of randomness.
      - parameter other:     The second parent, with which the receiver's data is combined.

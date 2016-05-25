@@ -54,4 +54,9 @@ public final class ConjunctionNode: BinaryNode<Bool, Bool, Bool> {
         return ConjunctionNode(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(and \(leftSide.lispString) \(rightSide.lispString))"
+    }
+    
 }

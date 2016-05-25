@@ -69,7 +69,7 @@ public final class SequenceNode: ActionNode {
      - warning: Do NOT use this method. It will not work!
      */
     public required init(id: Int, maximumDepth: Int) {
-        // FIXME: This is an ugly solution. Why does not ConstantNode need it and this class does?
+        // TODO: This is an ugly solution. Why does not ConstantNode need it and this class does? Compiler applies double standards.
         fatalError("init(id:maximumDepth:) has not been implemented")
     }
     
@@ -113,6 +113,22 @@ public final class SequenceNode: ActionNode {
         }
         
         return SequenceNode(id: id, maximumDepth: maximumDepth, actionSequence: newSequence)
+    }
+    
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        if actionSequence.isEmpty {
+            return "empty-sequence"
+        } else {
+            var string = "(sequence"
+            
+            for action in actionSequence {
+                string += " \(action.lispString)"
+            }
+            
+            string += ")"
+            return string
+        }
     }
     
 }

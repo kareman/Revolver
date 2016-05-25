@@ -54,7 +54,7 @@ public final class LoopNode: ActionNode {
      - warning: Do NOT use this method. It will not work!
      */
     public required init(id: Int, maximumDepth: Int) {
-        // FIXME: This is an ugly solution. Why does not ConstantNode need it and this class does?
+        // TODO: This is an ugly solution. Why does not ConstantNode need it and this class does? Compiler applies double standards.
         fatalError("init(id:maximumDepth:) has not been implemented")
     }
     
@@ -83,6 +83,11 @@ public final class LoopNode: ActionNode {
         let actionClone = action.clone(factory, mutateNodeId: id)
         
         return LoopNode(id: id, maximumDepth: maximumDepth, terminationCondition: terminationConditionClone, action: actionClone)
+    }
+    
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(while (not \(terminationCondition.lispString)) \(action.lispString))"
     }
     
 }

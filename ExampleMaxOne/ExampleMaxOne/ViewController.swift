@@ -22,7 +22,7 @@ class ViewController: NSViewController {
     func runAlgorithm() {
         // Configuration of the algorithm.
         let twister = MersenneTwister(seed: 4242)
-        let evaluator = ParallelEvaluator<MaxOneChromosome>() { _ in MaxOneEvaluator() }
+        let evaluator = MaxOneEvaluator()
         
         let reproduction = Reproduction<MaxOneChromosome>(RandomSelection())
         let mutation = Mutation<MaxOneChromosome>(RouletteSelection())

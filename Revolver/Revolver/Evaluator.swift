@@ -15,6 +15,7 @@ public class Evaluator<Chromosome: ChromosomeType> {
      - parameter individuals:         Population to evaluate.
      - parameter individualEvaluated: Handler to call when an individual is evaluated.
      - warning: This method is abstract. You **must** override it in subclasses.
+     - note: This method is expected to be *synchronous*. It **must not** return to its caller until all individuals are evaluated.
      */
     public func evaluateIndividuals(individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
         preconditionFailure("This method must be implemented in a subclass.")

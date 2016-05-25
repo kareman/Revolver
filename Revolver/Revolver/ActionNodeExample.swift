@@ -9,4 +9,8 @@ internal class ActionNodeExample: ActionNode {
         // No descendants to propagate the clone to.
         return clone
     }
+    
+    override var lispString: String {
+        return "action-example"
+    }
 }

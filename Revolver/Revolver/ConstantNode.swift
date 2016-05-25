@@ -56,4 +56,9 @@ public final class ConstantNode<ValueType: Randomizable>: ValueNode<ValueType> {
         return ConstantNode<ValueType>(id: self.id, maximumDepth: self.maximumDepth, constant: self.constant)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "\(constant)"
+    }
+    
 }

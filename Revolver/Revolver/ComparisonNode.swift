@@ -54,4 +54,9 @@ public final class ComparisonNode<ResultType where ResultType: Randomizable, Res
         return ComparisonNode<ResultType>(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(< \(leftSide.lispString) \(rightSide.lispString))"
+    }
+    
 }

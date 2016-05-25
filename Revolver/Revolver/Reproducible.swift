@@ -1,6 +1,6 @@
 
 /**
- *  Reproducible chromosomes can be used in conjunction with the `Reproduction` operator.
+ *  Reproducible chromosome can be used in conjunction with the `Reproduction` operator.
  */
 public protocol Reproducible: ChromosomeType {
     

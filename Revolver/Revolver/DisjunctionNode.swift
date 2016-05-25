@@ -54,4 +54,9 @@ public final class DisjunctionNode: BinaryNode<Bool, Bool, Bool> {
         return DisjunctionNode(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(or \(leftSide.lispString) \(rightSide.lispString))"
+    }
+    
 }

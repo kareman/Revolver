@@ -61,7 +61,7 @@ public final class ConditionalNode: ActionNode {
      - warning: Do NOT use this method. It will not work!
      */
     public required init(id: Int, maximumDepth: Int) {
-        // FIXME: This is an ugly solution. Why does not ConstantNode need it and this class does?
+        // TODO: This is an ugly solution. Why does not ConstantNode need it and this class does? Compiler applies double standards.
         fatalError("init(id:maximumDepth:) has not been implemented")
     }
     
@@ -101,6 +101,11 @@ public final class ConditionalNode: ActionNode {
         let falseActionClone = falseAction.clone(factory, mutateNodeId: id)
         
         return ConditionalNode(id: id, maximumDepth: maximumDepth, predicate: predicateClone, trueAction: trueActionClone, falseAction: falseActionClone)
+    }
+    
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(if \(predicate.lispString) \(trueAction.lispString) \(falseAction.lispString))"
     }
     
 }

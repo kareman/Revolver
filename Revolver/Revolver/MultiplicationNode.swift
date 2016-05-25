@@ -54,4 +54,9 @@ public final class MultiplicationNode<ChildType where ChildType: Randomizable, C
         return MultiplicationNode<ChildType>(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     
+    /// Serialize the node into LISP along with its subtree.
+    public override var lispString: String {
+        return "(* \(leftSide.lispString) \(rightSide.lispString))"
+    }
+    
 }
