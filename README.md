@@ -17,6 +17,7 @@ Revolver is a framework for building fast genetic algorithms in [Swift 2.2][swif
 - [x] Random generators: Mersenne Twister, arc4random, drand48
 - [x] Everything listed above is ready-to-run, yet easily extensible. By subclassing base classes and conforming to protocols, you can customize almost anything.
 - [x] Well-documented API and many usage examples.
+- [x] Unit tests.
 
 ## Compatibility
 Revolver was built with the open-source implementation of Swift in mind. For that reason, a great deal of effort was put into making it compile on Linux.
@@ -26,6 +27,7 @@ Revolver is dependent on:
  - Swift 2.2 standard library
  - Foundation
  - libdispatch
+ - SwiftyJSON
 
 Revolver can run on:
 
