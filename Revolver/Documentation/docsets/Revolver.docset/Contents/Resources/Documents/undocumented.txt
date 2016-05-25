@@ -1,9 +1,37 @@
-Array+OnePointCrossoverable.swift
-	public func onePointCrossover(generator: EntropyGenerator, other: Array) -> (first: Array, second: Array)
+TournamentSelection.swift
+	public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet
+TwoPointCrossover.swift
+	public override init(_ selection: Selection<Chromosome>)
+	public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>)
 Discrete+Randomizable.swift
 	public init(generator: EntropyGenerator)
+BestSelection.swift
+	public override init() { }
+	public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet
+TerminationCondition.swift
+	public init() { }
+DecisionTreeOperators.swift
+	public func ---><Chromosome: Randomizable>(lhs: GeneticOperator<Chromosome>, rhs: GeneticOperator<Chromosome>) -> DecisionTreeNode<Chromosome>
+	public func ---><Chromosome: Randomizable>(lhs: DecisionTreeNode<Chromosome>, rhs: GeneticOperator<Chromosome>) -> DecisionTreeNode<Chromosome>
+	public func ---><Chromosome: Randomizable>(lhs: DecisionTreeNode<Chromosome>, rhs: ChanceNode<Chromosome>) -> DecisionTreeNode<Chromosome>
+	public func ---><Chromosome: Randomizable>(lhs: ChanceNode<Chromosome>, rhs: DecisionTreeNode<Chromosome>) -> DecisionTreeNode<Chromosome>
+	public func |||<Chromosome: Randomizable>(lhs: Choice<Chromosome>, rhs: Choice<Chromosome>) -> ChanceNode<Chromosome>
+	public func |||<Chromosome: Randomizable>(lhs: ChanceNode<Chromosome>, rhs: Choice<Chromosome>) -> ChanceNode<Chromosome>
 Randomizable.swift
 	init(generator: EntropyGenerator)
+DateComparison.swift
+	public func ==(lhs: NSDate, rhs: NSDate) -> Bool
+	public func <(lhs: NSDate, rhs: NSDate) -> Bool
+Reproduction.swift
+	public let numberOfIndividuals: Int
+	public init(_ selection: Selection<Chromosome>, numberOfIndividuals: Int = 1)
+	public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>)
+PersistentRangeInitializedArray.swift
+	public protocol PersistentRangeInitializedArray: RangeInitializedArray, PersistentChromosomeType
+	public protocol PersistentRangeInitializedArray : RangeInitializedArray, PersistentChromosomeType
+WorstSelection.swift
+	public override init() { }
+	public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet
 NumericType.swift
 	func +(lhs: Self, rhs: Self) -> Self
 	func -(lhs: Self, rhs: Self) -> Self
@@ -15,16 +43,82 @@ Bool+Randomizable.swift
 	public init(generator: EntropyGenerator)
 Double+Randomizable.swift
 	public init(generator: EntropyGenerator)
-RangeInitializedArray+Mutable.swift
-	public func mutate(generator: EntropyGenerator) -> RangeInitializedArray
+NotCondition.swift
+	public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool
+	public prefix func !<Chromosome: ChromosomeType>(lhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome>
+FitnessThreshold.swift
+	public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool
+GeneticOperator.swift
+	public init(_ selection: Selection<Chromosome>)
+AfterDate.swift
+	public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool
 Float+Randomizable.swift
 	public init(generator: EntropyGenerator)
+SequentialEvaluator.swift
+	public override init()
+	public final override func evaluateIndividuals(individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler)
+OrCondition.swift
+	public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool
+	public func ||<Chromosome: ChromosomeType>(lhs: TerminationCondition<Chromosome>, rhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome>
+PersistentRangeInitializedArray+PersistentType.swift
+	init(json: JSON)
+	public func toJSON() -> JSON
+RankSelection.swift
+	public override init() { }
+	public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet
+TreeProgram.swift
+	public let descendantIds: [Int]
+	public required init(original: TreeProgram<FactoryType>)
+AndCondition.swift
+	public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool
+	public func &&<Chromosome: ChromosomeType>(lhs: TerminationCondition<Chromosome>, rhs: TerminationCondition<Chromosome>) -> TerminationCondition<Chromosome>
+ChanceNode.swift
+	public override init()
+	public override func execute(generator: EntropyGenerator, pool: MatingPool<Chromosome>)
+RouletteSelection.swift
+	public override init() { }
+	public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet
+CyclicEvaluator.swift
+	public override func evaluateChromosome(individual: Chromosome) -> Fitness
 MersenneTwister.swift
 	public init(seed: Int)
 	public func next() -> Double
+Mutation.swift
+	public override init(_ selection: Selection<Chromosome>)
+	public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>)
+Selection.swift
+	public init() { }
+TreeProgram+Mutable.swift
+	public func mutate(generator: EntropyGenerator) -> TreeProgram
+RangeInitializedArray+Copyable.swift
+	public init(original: Self)
 RangeInitializedArray+OnePointCrossoverable.swift
-	public func onePointCrossover(generator: EntropyGenerator, other: RangeInitializedArray) -> (first: RangeInitializedArray, second: RangeInitializedArray)
+	public func onePointCrossover(generator: EntropyGenerator, other: Self) -> (first: Self, second: Self)
 ArcGenerator.swift
+	public init() { }
 	public func next() -> Double
+Evaluator.swift
+	public init() { }
+MaxNumberOfGenerations.swift
+	public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool
+RangeInitializedArray+TwoPointCrossoverable.swift
+	public func twoPointCrossover(generator: EntropyGenerator, other: Self) -> (first: Self, second: Self)
+RandomSelection.swift
+	public override init() { }
+	public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet
+OnePointCrossover.swift
+	public override init(_ selection: Selection<Chromosome>)
+	public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>)
+RangeInitializedArray+Mutable.swift
+	public func mutate(generator: EntropyGenerator) -> Self
 DrandGenerator.swift
+	public init() { }
 	public func next() -> Double
+RangeInitializedArray+Randomizable.swift
+	public init(generator: EntropyGenerator)
+Elitism.swift
+	public init(numberOfIndividuals: Int = 1)
+ParallelEvaluator.swift
+	public final override func evaluateIndividuals(individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler)
+GeneticOperatorNode.swift
+	public override func execute(generator: EntropyGenerator, pool: MatingPool<Chromosome>)
