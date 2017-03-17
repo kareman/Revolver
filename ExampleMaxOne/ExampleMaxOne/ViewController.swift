@@ -9,13 +9,13 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
     }
     
-    @IBAction func runAlgorithmClicked(sender: AnyObject) {
+    @IBAction func runAlgorithmClicked(_ sender: AnyObject) {
         runAlgorithm()
     }
     
@@ -59,12 +59,12 @@ class ViewController: NSViewController {
         }
         
         // Just do it!
-        let tic = NSDate()
+        let tic = Date()
         alg.run()
-        let toc = NSDate()
+        let toc = Date()
         
         // A simple time benchmark.
-        let time = toc.timeIntervalSinceDate(tic)
+        let time = toc.timeIntervalSince(tic)
         print("TIME:\t\t\t\t\(time) seconds")
     }
 }
