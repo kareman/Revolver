@@ -38,7 +38,7 @@ class EntropyGeneratorTests: XCTestCase {
         
         for generator in generators {
             for _ in 1...100 {
-                let randomValue1: Double = generator.nextInRange(val...val)
+                let randomValue1: Double = generator.nextInRange(Range(val...val))
                 let randomValue2: Double = generator.nextInRange(min: Double(val), max: Double(val))
                 
                 XCTAssertEqualWithAccuracy(randomValue1, Double(val), accuracy: 1e-5)
@@ -53,7 +53,7 @@ class EntropyGeneratorTests: XCTestCase {
         
         for generator in generators {
             for _ in 1...100 {
-                let randomValue1: Double = generator.nextInRange(min...max)
+                let randomValue1: Double = generator.nextInRange(Range(min...max))
                 let randomValue2: Double = generator.nextInRange(min: Double(min), max: Double(max))
                 
                 XCTAssertGreaterThanOrEqual(randomValue1, Double(min))
@@ -70,7 +70,7 @@ class EntropyGeneratorTests: XCTestCase {
         
         for generator in generators {
             for _ in 1...100 {
-                let randomValue1: Int = generator.nextInRange(val...val)
+                let randomValue1: Int = generator.nextInRange(Range(val...val))
                 let randomValue2: Int = generator.nextInRange(min: val, max: val)
                 
                 XCTAssertEqual(randomValue1, val)
@@ -85,7 +85,7 @@ class EntropyGeneratorTests: XCTestCase {
         
         for generator in generators {
             for _ in 1...100 {
-                let randomValue1: Int = generator.nextInRange(min...max)
+                let randomValue1: Int = generator.nextInRange(Range(min...max))
                 let randomValue2: Int = generator.nextInRange(min: min, max: max)
                 
                 XCTAssertGreaterThanOrEqual(randomValue1, min)

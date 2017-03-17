@@ -3,9 +3,9 @@
 ///
 /// This is an abstract class. You **cannot** instantate it directly.
 /// When subclassing it, be sure to implement the `evaluateIndividuals()` method.
-public class Evaluator<Chromosome: ChromosomeType> {
+open class Evaluator<Chromosome: ChromosomeType> {
     
-    public typealias EvaluationHandler = (index: Int) -> ()
+    public typealias EvaluationHandler = (_ index: Int) -> ()
     
     public init() { }
     
@@ -17,7 +17,7 @@ public class Evaluator<Chromosome: ChromosomeType> {
      - warning: This method is abstract. You **must** override it in subclasses.
      - note: This method is expected to be *synchronous*. It **must not** return to its caller until all individuals are evaluated.
      */
-    public func evaluateIndividuals(individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
+    open func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

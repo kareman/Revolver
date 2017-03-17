@@ -1,6 +1,6 @@
 
 /// A method of selecting individuals from the population.
-public class Selection<Chromosome: ChromosomeType> {
+open class Selection<Chromosome: ChromosomeType> {
     
     public init() { }
     
@@ -15,7 +15,7 @@ public class Selection<Chromosome: ChromosomeType> {
      - warning: This method is abstract. You **must** implement it in a subclass.
      - precondition: `numberOfIndividuals <= population.populationSize`
      */
-    public func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
+    open func select(_ generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

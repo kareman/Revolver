@@ -3,7 +3,7 @@
 public final class CyclicEvaluator<Chromosome: ChromosomeType>: SequentialEvaluator<Chromosome> {
     
     /// The evaluator to call multiple times.
-    private let innerEvaluator: SequentialEvaluator<Chromosome>
+    fileprivate let innerEvaluator: SequentialEvaluator<Chromosome>
     
     /// Number of evaluations to perform.
     public let attempts: Int
@@ -31,7 +31,7 @@ public final class CyclicEvaluator<Chromosome: ChromosomeType>: SequentialEvalua
         self.useWorstFitness = useWorstFitness
     }
     
-    public override func evaluateChromosome(individual: Chromosome) -> Fitness {
+    public override func evaluateChromosome(_ individual: Chromosome) -> Fitness {
         // Perform multiple evaluations.
         var results = [Fitness]()
         results.reserveCapacity(attempts)
@@ -43,16 +43,16 @@ public final class CyclicEvaluator<Chromosome: ChromosomeType>: SequentialEvalua
         
         // Sort those evaluations from the worst to the best or the other way.
         if useWorstFitness {
-            results.sortInPlace { $0 < $1 }
+            results.sort { $0 < $1 }
         } else {
-            results.sortInPlace { $0 > $1 }
+            results.sort { $0 > $1 }
         }        
         
         // Select some in the beginning.
         let selected = results[0..<select]
         
         // Return the average from the selected.
-        let average = selected.reduce(0, combine: +) / Fitness(selected.count)
+        let average = selected.reduce(0, +) / Fitness(selected.count)
         return average
     }
     

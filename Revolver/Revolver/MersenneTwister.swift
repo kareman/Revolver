@@ -38,36 +38,36 @@ matumoto@math.keio.ac.jp
 */
 
 /// Implementation of Mersenne Twister ported from Python.
-public class MersenneTwister: EntropyGenerator {
+open class MersenneTwister: EntropyGenerator {
     // MARK: - Period parameters
-    private let N = 624
-    private let M = 397
-    private let MATRIX_A = 0x9908b0df   // constant vector a
-    private let UPPER_MASK = 0x80000000 // most significant w-r bits
-    private let LOWER_MASK = 0x7fffffff // least significant r bits
+    fileprivate let N = 624
+    fileprivate let M = 397
+    fileprivate let MATRIX_A = 0x9908b0df   // constant vector a
+    fileprivate let UPPER_MASK = 0x80000000 // most significant w-r bits
+    fileprivate let LOWER_MASK = 0x7fffffff // least significant r bits
     
     // MARK: - Tempering parameters
-    private let TEMPERING_MASK_B = 0x9d2c5680
-    private let TEMPERING_MASK_C = 0xefc60000
+    fileprivate let TEMPERING_MASK_B = 0x9d2c5680
+    fileprivate let TEMPERING_MASK_C = 0xefc60000
     
-    private func TEMPERING_SHIFT_U(y: Int) -> Int {
+    fileprivate func TEMPERING_SHIFT_U(_ y: Int) -> Int {
         return y >> 11
     }
     
-    private func TEMPERING_SHIFT_S(y: Int) -> Int {
+    fileprivate func TEMPERING_SHIFT_S(_ y: Int) -> Int {
         return y << 7
     }
     
-    private func TEMPERING_SHIFT_T(y: Int) -> Int {
+    fileprivate func TEMPERING_SHIFT_T(_ y: Int) -> Int {
         return y << 15
     }
     
-    private func TEMPERING_SHIFT_L(y: Int) -> Int {
+    fileprivate func TEMPERING_SHIFT_L(_ y: Int) -> Int {
         return y >> 18
     }
     
-    private var mt: [Int]
-    private var mti: Int
+    fileprivate var mt: [Int]
+    fileprivate var mti: Int
     
     // MARK: - Initialization
     public init(seed: Int) {
@@ -76,7 +76,7 @@ public class MersenneTwister: EntropyGenerator {
         sgenrand(seed)
     }
     
-    private func sgenrand(seed: Int) {
+    fileprivate func sgenrand(_ seed: Int) {
         mt = []
         
         mt.append(seed & 0xffffffff)
@@ -87,7 +87,7 @@ public class MersenneTwister: EntropyGenerator {
         mti = N+1
     }
     
-    public func next() -> Double {
+    open func next() -> Double {
         var mag01 = [0x0, MATRIX_A]
         // mag01[x] = x * MATRIX_A  for x=0,1
         var y = 0

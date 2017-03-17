@@ -5,10 +5,10 @@ extension RangeInitializedArray {
         // Determine the length of the array.
         let size: Int
             
-        if Self.initializationRange.startIndex + 1 == Self.initializationRange.endIndex {
-            size = Self.initializationRange.startIndex
+        if Self.initializationRange.lowerBound + 1 == Self.initializationRange.upperBound {
+            size = Self.initializationRange.lowerBound
         } else {
-            size = generator.nextInRange(Self.initializationRange)
+            size = generator.nextInRange(Range(Self.initializationRange))
         }
 
         // Prepare the underlying data structure.

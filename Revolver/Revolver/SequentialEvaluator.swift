@@ -3,20 +3,20 @@
 ///
 /// This class is abstract. You **cannot** instantiate it directly.
 /// When subclassing it, be sure to override the `evaluateChromosome()` method.
-public class SequentialEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome> {
+open class SequentialEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome> {
     
     public override init() {
         super.init()
     }
     
-    public final override func evaluateIndividuals(individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
+    public final override func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
         for individualIndex in 0..<individuals.populationSize {
             // Go through the population and make sure all individuals are evaluated.
             
             guard individuals.individualAtIndex(individualIndex).fitness == nil else {
                 // The individual has been already evaluated once.
                 // We don't need to evaluate it twice.
-                individualEvaluated(index: individualIndex)
+                individualEvaluated(individualIndex)
                 
                 continue
             }
@@ -27,7 +27,7 @@ public class SequentialEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromoso
             
             // Save the evaluation for later.
             individuals.individualAtIndex(individualIndex).fitness = fitness
-            individualEvaluated(index: individualIndex)
+            individualEvaluated(individualIndex)
         }
     }
     
@@ -39,7 +39,7 @@ public class SequentialEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromoso
      - returns: Fitness function value.
      - warning: This method is abstract. You **must** override it in subclasses.
      */
-    public func evaluateChromosome(chromosome: Chromosome) -> Fitness {
+    open func evaluateChromosome(_ chromosome: Chromosome) -> Fitness {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

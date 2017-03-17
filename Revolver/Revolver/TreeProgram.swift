@@ -60,7 +60,7 @@ public final class TreeProgram<FactoryType: RandomTreeFactory>: TreeType {
      - parameter indices:     Array to store identifiers.
      - parameter currentNode: Current node to process.
      */
-    private class func enumerateIds(inout indices: [Int], currentNode: TreeNode) {
+    fileprivate class func enumerateIds(_ indices: inout [Int], currentNode: TreeNode) {
         indices.append(currentNode.id)
         
         for descendant in currentNode.treeNodeDescendants {

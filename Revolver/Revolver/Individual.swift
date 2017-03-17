@@ -1,12 +1,12 @@
 
 /// A single individual of a population.
-public class Individual<Chromosome: ChromosomeType>: Randomizable, FitnessType, ChromosomeType, Copyable {
+open class Individual<Chromosome: ChromosomeType>: Randomizable, FitnessType, ChromosomeType, Copyable {
     
     /// Genetic information of the individual.
-    public let chromosome: Chromosome
+    open let chromosome: Chromosome
     
     /// Fitness evaluation of the individual.
-    public var fitness: Fitness?
+    open var fitness: Fitness?
     
     /**
      Construct a new random individual.

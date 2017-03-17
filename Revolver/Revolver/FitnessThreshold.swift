@@ -7,20 +7,20 @@
  */
 public enum FitnessKind {
     /// The best fitness value in the population.
-    case BestFitness
+    case bestFitness
     
     /// The average fitness value in the population.
-    case AverageFitness
+    case averageFitness
 }
 
 /// Terminate the genetic algorithm after a certain fitness value is reached.
-public class FitnessThreshold<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
+open class FitnessThreshold<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// The fitness value to reach.
-    public let fitness: Double
+    open let fitness: Double
     
     /// Type of fitness values, with which the constant is compared.
-    public let fitnessKind: FitnessKind
+    open let fitnessKind: FitnessKind
     
     /**
      Terminate the genetic algorithm after a certain fitness value is reached.
@@ -30,18 +30,18 @@ public class FitnessThreshold<Chromosome: ChromosomeType>: TerminationCondition<
      
      - returns: New termination condition.
      */
-    public init(_ fitness: Double, kind: FitnessKind = .BestFitness) {
+    public init(_ fitness: Double, kind: FitnessKind = .bestFitness) {
         self.fitness = fitness
         self.fitnessKind = kind
         super.init()
     }
     
-    public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {
+    open override func shouldTerminate(_ population: MatingPool<Chromosome>) -> Bool {
         switch fitnessKind {
-        case .BestFitness:
+        case .bestFitness:
             return population.bestFitness >= fitness
             
-        case .AverageFitness:
+        case .averageFitness:
             return population.averageFitness >= fitness
             
         }

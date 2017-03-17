@@ -36,7 +36,7 @@ public final class EquivalenceNode: BinaryNode<Bool, Bool, Bool> {
      
      - returns: `leftValue` <=> `rightValue`
      */
-    public override func evaluate(leftValue leftValue: Bool, rightValue: Bool) -> Bool {
+    public override func evaluate(leftValue: Bool, rightValue: Bool) -> Bool {
         return (leftValue && rightValue) || (!leftValue && !rightValue)
     }
     
@@ -50,7 +50,7 @@ public final class EquivalenceNode: BinaryNode<Bool, Bool, Bool> {
      
      - remark: This method is used to specialize a general `BinaryNode` instance into one of its subclasses.
      */
-    public override func callInitializer(leftSide leftSide: ValueNode<Bool>, rightSide: ValueNode<Bool>) -> EquivalenceNode {
+    public override func callInitializer(leftSide: ValueNode<Bool>, rightSide: ValueNode<Bool>) -> EquivalenceNode {
         return EquivalenceNode(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     

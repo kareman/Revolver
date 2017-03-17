@@ -71,7 +71,6 @@
 		E28980F11CD529C300B00749 /* TerminationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980F01CD529C300B00749 /* TerminationCondition.swift */; };
 		E28980F31CD5397A00B00749 /* MaxNumberOfGenerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980F21CD5397A00B00749 /* MaxNumberOfGenerations.swift */; };
 		E28980F51CD53A1100B00749 /* AfterDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980F41CD53A1100B00749 /* AfterDate.swift */; };
-		E28980F71CD53A9300B00749 /* DateComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980F61CD53A9300B00749 /* DateComparison.swift */; };
 		E28980F91CD53B3C00B00749 /* FitnessThreshold.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980F81CD53B3C00B00749 /* FitnessThreshold.swift */; };
 		E28980FD1CD53C2E00B00749 /* AndCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980FC1CD53C2E00B00749 /* AndCondition.swift */; };
 		E28980FF1CD53C3400B00749 /* OrCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28980FE1CD53C3400B00749 /* OrCondition.swift */; };
@@ -192,7 +191,6 @@
 		E28980F01CD529C300B00749 /* TerminationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminationCondition.swift; sourceTree = "<group>"; };
 		E28980F21CD5397A00B00749 /* MaxNumberOfGenerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxNumberOfGenerations.swift; sourceTree = "<group>"; };
 		E28980F41CD53A1100B00749 /* AfterDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterDate.swift; sourceTree = "<group>"; };
-		E28980F61CD53A9300B00749 /* DateComparison.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateComparison.swift; sourceTree = "<group>"; };
 		E28980F81CD53B3C00B00749 /* FitnessThreshold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessThreshold.swift; sourceTree = "<group>"; };
 		E28980FC1CD53C2E00B00749 /* AndCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndCondition.swift; sourceTree = "<group>"; };
 		E28980FE1CD53C3400B00749 /* OrCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrCondition.swift; sourceTree = "<group>"; };
@@ -469,7 +467,6 @@
 			isa = PBXGroup;
 			children = (
 				E2174BE31CE9DD6E00B0BC54 /* PersistentType.swift */,
-				E28980F61CD53A9300B00749 /* DateComparison.swift */,
 				E277E23E1CE782D4009737C3 /* Copyable.swift */,
 				E2174BFA1CEA0CDC00B0BC54 /* Epsilon.swift */,
 			);
@@ -642,14 +639,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Petr Manek";
 				TargetAttributes = {
 					E291643E1C8E0704002879C0 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 					};
 					E29164481C8E0704002879C0 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -707,7 +706,6 @@
 				E2E71A5E1CA5DEAE002E34DD /* SequenceNode.swift in Sources */,
 				E284A7241C8E3E9100648A2E /* Randomizable.swift in Sources */,
 				E2F31C7A1CA86A8300372B95 /* ComparisonNode.swift in Sources */,
-				E28980F71CD53A9300B00749 /* DateComparison.swift in Sources */,
 				E28980CD1CD4B4AE00B00749 /* ActionNodeExample.swift in Sources */,
 				E2E71A521CA5CAED002E34DD /* TreeNode.swift in Sources */,
 				E2F31C8B1CA86EA700372B95 /* DivisionNode.swift in Sources */,
@@ -831,8 +829,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -878,8 +878,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -899,6 +901,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -921,6 +924,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -940,6 +944,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.petrmanek.Revolver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -951,6 +956,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.petrmanek.RevolverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -962,6 +968,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.petrmanek.RevolverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

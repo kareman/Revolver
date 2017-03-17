@@ -3,7 +3,7 @@
 ///
 /// This class is **abstract**, you cannot instantiate it directly.
 /// When overriding it, you will need to subclass the `shouldTerminate()` function.
-public class TerminationCondition<Chromosome: ChromosomeType> {
+open class TerminationCondition<Chromosome: ChromosomeType> {
     
     public init() { }
     
@@ -15,7 +15,7 @@ public class TerminationCondition<Chromosome: ChromosomeType> {
      - returns: True whether the algorithm should be terminated.
      - warning: This method is abstract. You **must** override it in a subclass.
      */
-    public func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {
+    open func shouldTerminate(_ population: MatingPool<Chromosome>) -> Bool {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

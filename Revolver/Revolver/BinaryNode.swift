@@ -1,12 +1,12 @@
 
 /// Binary node represents any binary operation (function of two arguments).
-public class BinaryNode<LeftSideType: Randomizable, RightSideType: Randomizable, ResultType: Randomizable>: ValueNode<ResultType> {
+open class BinaryNode<LeftSideType: Randomizable, RightSideType: Randomizable, ResultType: Randomizable>: ValueNode<ResultType> {
     
     /// The first argument of the binary operation (can be also thought of as the left-hand side).
-    public let leftSide: ValueNode<LeftSideType>
+    open let leftSide: ValueNode<LeftSideType>
     
     /// The second argument of the binary operation (can be also though of as the right-hand side).
-    public let rightSide: ValueNode<RightSideType>
+    open let rightSide: ValueNode<RightSideType>
     
     /// Next-level descendant nodes of this node, not necessarily of the same type.
     public final override var treeNodeDescendants: [TreeNode] {
@@ -42,7 +42,7 @@ public class BinaryNode<LeftSideType: Randomizable, RightSideType: Randomizable,
         self.rightSide = rightSide
         super.init(id: id, maximumDepth: maximumDepth)
     }
-    
+
     /**
      Calculate the value represented by the node.
      
@@ -50,7 +50,7 @@ public class BinaryNode<LeftSideType: Randomizable, RightSideType: Randomizable,
      
      - returns: Value calculated by calling the `evaluate()` function on values produced by `leftSide` and `rightSide`.
      */
-    public final override func evaluate(interpreter: TreeInterpreter) -> ResultType {
+    public final override func evaluate(_ interpreter: TreeInterpreter) -> ResultType {
         let leftValue = leftSide.evaluate(interpreter)
         let rightValue = rightSide.evaluate(interpreter)
         return evaluate(leftValue: leftValue, rightValue: rightValue)
@@ -66,7 +66,7 @@ public class BinaryNode<LeftSideType: Randomizable, RightSideType: Randomizable,
      
      - warning: This method is abstract. You *must* override it in a subclass.
      */
-    public func evaluate(leftValue leftValue: LeftSideType, rightValue: RightSideType) -> ResultType {
+    open func evaluate(leftValue: LeftSideType, rightValue: RightSideType) -> ResultType {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     
@@ -78,7 +78,7 @@ public class BinaryNode<LeftSideType: Randomizable, RightSideType: Randomizable,
      
      - returns: A clone of this node with a subtree, which is possibly mutated.
      */
-    public override func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ResultType> {
+    open override func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ResultType> {
         // Clone the operand.
         let leftSideClone = leftSide.clone(factory, mutateNodeId: id)
         let rightSideClone = rightSide.clone(factory, mutateNodeId: id)
@@ -99,7 +99,7 @@ public class BinaryNode<LeftSideType: Randomizable, RightSideType: Randomizable,
      
      - remark: This method is used to specialize a general `BinaryNode` instance into one of its subclasses.
      */
-    public func callInitializer(leftSide leftSide: ValueNode<LeftSideType>, rightSide: ValueNode<RightSideType>) -> Self {
+    open func callInitializer(leftSide: ValueNode<LeftSideType>, rightSide: ValueNode<RightSideType>) -> Self {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

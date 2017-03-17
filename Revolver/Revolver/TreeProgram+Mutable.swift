@@ -1,7 +1,7 @@
 
 extension TreeProgram: Mutable {
     
-    public func mutate(generator: EntropyGenerator) -> TreeProgram {
+    public func mutate(_ generator: EntropyGenerator) -> TreeProgram {
         // Select a random node by its index.
         let randomNodeIndex = generator.nextInRange(min: 0, max: descendantIds.count - 1)
         let randomNodeId = descendantIds[randomNodeIndex]

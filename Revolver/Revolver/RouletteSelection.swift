@@ -1,6 +1,6 @@
 
 /// Roulette selection is a simple fitness-proportional selection method.
-public class RouletteSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
+open class RouletteSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
     
     public override init() { }
     
@@ -12,7 +12,7 @@ public class RouletteSelection<Chromosome: ChromosomeType>: Selection<Chromosome
      
      - returns: Index of the interval, where the value belongs.
      */
-    private func findIndexOnWheel(roulette: Double, population: MatingPool<Chromosome>) -> Int {
+    fileprivate func findIndexOnWheel(_ roulette: Double, population: MatingPool<Chromosome>) -> Int {
         var incrementalWeight = Double(0)
         
         for index in 0..<population.populationSize {
@@ -31,7 +31,7 @@ public class RouletteSelection<Chromosome: ChromosomeType>: Selection<Chromosome
         return population.populationSize - 1
     }
     
-    public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
+    open override func select(_ generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
         precondition(numberOfIndividuals <= population.populationSize, "The number of individuals to select is greater than the number of individuals available.")
         
         // Maximum of the random generation.

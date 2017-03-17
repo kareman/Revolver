@@ -1,15 +1,15 @@
 
 /// Reproduction copies individuals across generations, while maintaining their chromosome values without alteration.
-public class Reproduction<Chromosome: Reproducible>: GeneticOperator<Chromosome> {
+open class Reproduction<Chromosome: Reproducible>: GeneticOperator<Chromosome> {
     
-    public let numberOfIndividuals: Int
+    open let numberOfIndividuals: Int
     
     public init(_ selection: Selection<Chromosome>, numberOfIndividuals: Int = 1) {
         self.numberOfIndividuals = numberOfIndividuals
         super.init(selection)
     }
     
-    public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+    open override func apply(_ generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         // Select some individuals.
         let selectedIndividuals = selection.select(generator, population: pool, numberOfIndividuals: numberOfIndividuals)
         

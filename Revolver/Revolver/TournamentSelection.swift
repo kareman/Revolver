@@ -1,13 +1,13 @@
 
 /// Tournament selection.
 /// For more information, see [the article on Wikipedia](https://en.wikipedia.org/wiki/Tournament_selection).
-public class TournamentSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
+open class TournamentSelection<Chromosome: ChromosomeType>: Selection<Chromosome> {
     
     /// Random selection used for the subselection within every tournament.
-    private var randomSelection: RandomSelection<Chromosome>
+    fileprivate var randomSelection: RandomSelection<Chromosome>
     
     /// Order of the tournament, also known as the *Tour*.
-    public let tournamentOrder: Int
+    open let tournamentOrder: Int
     
     /**
      Constructs new tournament selection object.
@@ -22,7 +22,7 @@ public class TournamentSelection<Chromosome: ChromosomeType>: Selection<Chromoso
         super.init()
     }
     
-    public override func select(generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
+    open override func select(_ generator: EntropyGenerator, population: MatingPool<Chromosome>, numberOfIndividuals: Int) -> IndexSet {
         precondition(numberOfIndividuals <= population.populationSize, "The number of individuals to select is greater than the number of individuals available.")
 
         var winners = IndexSet()
@@ -31,7 +31,7 @@ public class TournamentSelection<Chromosome: ChromosomeType>: Selection<Chromoso
             let competitors = randomSelection.select(generator, population: population, numberOfIndividuals: tournamentOrder)
             
             // Add the winner to selection.
-            let winner = competitors.maxElement { population.individualAtIndex($0).fitness! < population.individualAtIndex($1).fitness! }
+            let winner = competitors.max { population.individualAtIndex($0).fitness! < population.individualAtIndex($1).fitness! }
             winners.append(winner!)
         }
         

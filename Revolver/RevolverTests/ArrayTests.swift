@@ -23,7 +23,7 @@ class ArrayTests: XCTestCase {
     func testReproducible() {
         let generator = ArcGenerator()
         let randomArray: DoubleArray = generator.next()
-        let reproduction = DoubleArray(original: randomArray)
+        let reproduction = DoubleArray(array: randomArray.array)
         
         XCTAssertEqual(randomArray.array, reproduction.array)
     }
@@ -40,13 +40,13 @@ class ArrayTests: XCTestCase {
     
     func testOnePointCrossoverable() {
         let generator = ArcGenerator()
-        let array1 = DoubleArray(array: [Double](count: 42, repeatedValue: 0))
-        let array2 = DoubleArray(array: [Double](count: 42, repeatedValue: 1))
+        let array1 = DoubleArray(array: [Double](repeating: 0, count: 42))
+        let array2 = DoubleArray(array: [Double](repeating: 1, count: 42))
         
         let crossovered = array1.onePointCrossover(generator, other: array2)
         
-        let ones1 = crossovered.first.array.reduce(0, combine: +)
-        let ones2 = crossovered.second.array.reduce(0, combine: +)
+        let ones1 = crossovered.first.array.reduce(0, +)
+        let ones2 = crossovered.second.array.reduce(0, +)
         let totalOnes = ones1 + ones2
         
         XCTAssertEqualWithAccuracy(totalOnes, 42, accuracy: 1e-5)
@@ -54,13 +54,13 @@ class ArrayTests: XCTestCase {
     
     func testTwoPointCrossoverable() {
         let generator = ArcGenerator()
-        let array1 = DoubleArray(array: [Double](count: 42, repeatedValue: 0))
-        let array2 = DoubleArray(array: [Double](count: 42, repeatedValue: 1))
+        let array1 = DoubleArray(array: [Double](repeating: 0, count: 42))
+        let array2 = DoubleArray(array: [Double](repeating: 1, count: 42))
         
         let crossovered = array1.twoPointCrossover(generator, other: array2)
         
-        let ones1 = crossovered.first.array.reduce(0, combine: +)
-        let ones2 = crossovered.second.array.reduce(0, combine: +)
+        let ones1 = crossovered.first.array.reduce(0, +)
+        let ones2 = crossovered.second.array.reduce(0, +)
         let totalOnes = ones1 + ones2
         
         XCTAssertEqualWithAccuracy(totalOnes, 42, accuracy: 1e-5)

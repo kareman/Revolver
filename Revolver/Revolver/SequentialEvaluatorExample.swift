@@ -7,7 +7,7 @@ internal class SequentialEvaluatorExample: SequentialEvaluator<RangeInitializedA
     // CONFIGURATION: Here you need to reference the chromosome type, on which the evaluations are based.
     internal typealias Chromosome = RangeInitializedArrayExample
     
-    internal override func evaluateChromosome(individual: Chromosome) -> Fitness {
+    internal override func evaluateChromosome(_ individual: Chromosome) -> Fitness {
         /* IMPLEMENT ME: Here will probably rest the most time-expensive portion of your application.
          * This code is responsible for reading the chromosome and rating it with a [0;1] value.
          *

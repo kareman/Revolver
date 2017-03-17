@@ -2,13 +2,13 @@
 /// Combine two termination conditions together by the AND operation.
 ///
 /// **Pro Tip:** You can use this class with nicer syntax by combining conditions with the `&&` operator.
-public class AndCondition<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
+open class AndCondition<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// The first operand of the AND operation.
-    public let firstOperand: TerminationCondition<Chromosome>
+    open let firstOperand: TerminationCondition<Chromosome>
     
     /// The second operand of the AND operation.
-    public let secondOperand: TerminationCondition<Chromosome>
+    open let secondOperand: TerminationCondition<Chromosome>
     
     /**
      Combine two termination conditions together by the AND operation.
@@ -26,7 +26,7 @@ public class AndCondition<Chromosome: ChromosomeType>: TerminationCondition<Chro
         super.init()
     }
     
-    public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {
+    open override func shouldTerminate(_ population: MatingPool<Chromosome>) -> Bool {
         return firstOperand.shouldTerminate(population) && secondOperand.shouldTerminate(population)
     }
     

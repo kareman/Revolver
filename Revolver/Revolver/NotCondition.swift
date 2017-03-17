@@ -2,10 +2,10 @@
 /// Invert a termination condition.
 ///
 /// **Pro Tip:** You can use this class with nicer syntax through the `!` prefix operator.
-public class NotCondition<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
+open class NotCondition<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// The condition to invert.
-    public let operand: TerminationCondition<Chromosome>
+    open let operand: TerminationCondition<Chromosome>
     
     /**
      Invert a termination condition.
@@ -20,7 +20,7 @@ public class NotCondition<Chromosome: ChromosomeType>: TerminationCondition<Chro
         self.operand = operand
     }
     
-    public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {
+    open override func shouldTerminate(_ population: MatingPool<Chromosome>) -> Bool {
         return !operand.shouldTerminate(population)
     }
     

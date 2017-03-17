@@ -11,6 +11,6 @@ public protocol Mutable: ChromosomeType {
      
      - returns: New mutated instance.
      */
-    func mutate(generator: EntropyGenerator) -> Self
+    func mutate(_ generator: EntropyGenerator) -> Self
     
 }

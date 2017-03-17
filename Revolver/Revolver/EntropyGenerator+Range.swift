@@ -7,7 +7,7 @@ extension EntropyGenerator {
      
      - returns: A new pseudorandom value.
      */
-    public func nextInRange(min min: Double, max: Double) -> Double {
+    public func nextInRange(min: Double, max: Double) -> Double {
         if abs(max - min) < REVOLVER_EPSILON { return max }
         precondition(max > min, "The range is not valid.")
         return min + self.next() * (max - min)
@@ -21,7 +21,7 @@ extension EntropyGenerator {
      
      - returns: A new pseudorandom value.
      */
-    public func nextInRange(min min: Float, max: Float) -> Float {
+    public func nextInRange(min: Float, max: Float) -> Float {
         if abs(max - min) < Float(REVOLVER_EPSILON) { return max }
         precondition(max > min, "The range is not valid.")
         return min + Float(self.next()) * (max - min)
@@ -35,7 +35,7 @@ extension EntropyGenerator {
      
      - returns: A new pseudorandom value.
      */
-    public func nextInRange(min min: Int, max: Int) -> Int {
+    public func nextInRange(min: Int, max: Int) -> Int {
         if max == min { return max }
         precondition(max > min, "The range is not valid.")
         return min + Int(self.next() * Double(max - min + 1))
@@ -48,8 +48,8 @@ extension EntropyGenerator {
      
      - returns: A new pseudorandom value.
      */
-    public func nextInRange(range: Range<Int>) -> Double {
-        return nextInRange(min: Double(range.startIndex), max: Double(range.endIndex - 1))
+    public func nextInRange(_ range: Range<Int>) -> Double {
+        return nextInRange(min: Double(range.lowerBound), max: Double(range.upperBound - 1))
     }
     
     /**
@@ -59,8 +59,8 @@ extension EntropyGenerator {
      
      - returns: A new pseudorandom value.
      */
-    public func nextInRange(range: Range<Int>) -> Float {
-        return nextInRange(min: Float(range.startIndex), max: Float(range.endIndex - 1))
+    public func nextInRange(_ range: Range<Int>) -> Float {
+        return nextInRange(min: Float(range.lowerBound), max: Float(range.upperBound - 1))
     }
     
     /**
@@ -70,7 +70,7 @@ extension EntropyGenerator {
      
      - returns: A new pseudorandom value.
      */
-    public func nextInRange(range: Range<Int>) -> Int {
-        return nextInRange(min: range.startIndex, max: range.endIndex - 1)
+    public func nextInRange(_ range: Range<Int>) -> Int {
+        return nextInRange(min: range.lowerBound, max: range.upperBound - 1)
     }
 }

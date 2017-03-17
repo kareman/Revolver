@@ -7,7 +7,7 @@
 /// properties which are descendant nodes of the current node must be also referenced in the `descendants` array. This
 /// array is used for quick enumeration and random generation and if there were any disconnects between its contents and
 /// the real state of the data structure, algorithms working on it might produce undefined results.
-public class TreeNode: TreeType {
+open class TreeNode: TreeType {
     
     /// Next-level descendant nodes of this node, not necessarily of the same type.
     public final var descendants: [TreeType] {
@@ -15,15 +15,15 @@ public class TreeNode: TreeType {
     }
     
     /// Next-level descendant nodes of this node, guaranteed to be of the same type.
-    public var treeNodeDescendants: [TreeNode] {
+    open var treeNodeDescendants: [TreeNode] {
         return []
     }
     
     /// Unique identifier of the node within the tree.
-    public let id: Int
+    open let id: Int
     
     /// Longest path between this node and a leaf node. Stored for purposes of later modifications of the tree.
-    public let maximumDepth: Int
+    open let maximumDepth: Int
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -46,7 +46,7 @@ public class TreeNode: TreeType {
      
      - returns: New subtree with set values.
      */
-    public required init(id: Int, maximumDepth: Int) {
+    public init(id: Int, maximumDepth: Int) {
         self.id = id
         self.maximumDepth = maximumDepth
     }
@@ -61,12 +61,12 @@ public class TreeNode: TreeType {
      
      - warning: This method is abstract and *must* be implemented in a subclass.
      */
-    public func clone(factory: RandomTreeFactory, mutateNodeId id: Int) -> Self {
+    open func clone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> Self {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     
     /// Serialize the node into LISP along with its subtree.
-    public var lispString: String {
+    open var lispString: String {
         return "unsupported-node"
     }
     

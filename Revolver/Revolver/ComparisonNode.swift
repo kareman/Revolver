@@ -1,6 +1,6 @@
 
 /// Comparison node encapsulates the operation of comparison between two `Comparable` nodes.
-public final class ComparisonNode<ResultType where ResultType: Randomizable, ResultType: Comparable>: BinaryNode<ResultType, ResultType, Bool> {
+public final class ComparisonNode<ResultType>: BinaryNode<ResultType, ResultType, Bool> where ResultType: Randomizable, ResultType: Comparable {
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -36,7 +36,7 @@ public final class ComparisonNode<ResultType where ResultType: Randomizable, Res
      
      - returns: True if `leftValue` is lower than `rightValue`.
      */
-    public override func evaluate(leftValue leftValue: ResultType, rightValue: ResultType) -> Bool {
+    public override func evaluate(leftValue: ResultType, rightValue: ResultType) -> Bool {
         return leftValue < rightValue
     }
     
@@ -50,7 +50,7 @@ public final class ComparisonNode<ResultType where ResultType: Randomizable, Res
      
      - remark: This method is used to specialize a general `BinaryNode` instance into one of its subclasses.
      */
-    public override func callInitializer(leftSide leftSide: ValueNode<ResultType>, rightSide: ValueNode<ResultType>) -> ComparisonNode<ResultType> {
+    public override func callInitializer(leftSide: ValueNode<ResultType>, rightSide: ValueNode<ResultType>) -> ComparisonNode<ResultType> {
         return ComparisonNode<ResultType>(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     

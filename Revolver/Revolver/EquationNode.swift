@@ -1,6 +1,6 @@
 
 /// Equation node encapsulates the operation of comparison between two `Equatable` values.
-public final class EquationNode<ChildType where ChildType: Randomizable, ChildType: Equatable>: BinaryNode<ChildType, ChildType, Bool> {
+public final class EquationNode<ChildType>: BinaryNode<ChildType, ChildType, Bool> where ChildType: Randomizable, ChildType: Equatable {
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -36,7 +36,7 @@ public final class EquationNode<ChildType where ChildType: Randomizable, ChildTy
      
      - returns: True if the arguments are equal.
      */
-    public override func evaluate(leftValue leftValue: ChildType, rightValue: ChildType) -> Bool {
+    public override func evaluate(leftValue: ChildType, rightValue: ChildType) -> Bool {
         return leftValue == rightValue
     }
     
@@ -50,7 +50,7 @@ public final class EquationNode<ChildType where ChildType: Randomizable, ChildTy
      
      - remark: This method is used to specialize a general `BinaryNode` instance into one of its subclasses.
      */
-    public override func callInitializer(leftSide leftSide: ValueNode<ChildType>, rightSide: ValueNode<ChildType>) -> EquationNode<ChildType> {
+    public override func callInitializer(leftSide: ValueNode<ChildType>, rightSide: ValueNode<ChildType>) -> EquationNode<ChildType> {
         return EquationNode<ChildType>(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     
