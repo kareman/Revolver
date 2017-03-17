@@ -1,7 +1,7 @@
 
 // Here is some syntax sugar for decision trees.
-infix operator ---> { associativity left precedence 140 }
-infix operator ||| { associativity left precedence 150 }
+infix operator ---> : AdditionPrecedence
+infix operator ||| : MultiplicationPrecedence
 
 public func ---><Chromosome: Randomizable>(lhs: GeneticOperator<Chromosome>, rhs: GeneticOperator<Chromosome>) -> DecisionTreeNode<Chromosome> {
     let leftPipeline = GeneticOperatorNode(lhs)
