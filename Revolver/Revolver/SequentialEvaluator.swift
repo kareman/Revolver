@@ -9,7 +9,7 @@ open class SequentialEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
         super.init()
     }
     
-    public final override func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
+    public final override func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: @escaping EvaluationHandler) {
         for individualIndex in 0..<individuals.populationSize {
             // Go through the population and make sure all individuals are evaluated.
             
