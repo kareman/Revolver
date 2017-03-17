@@ -18,9 +18,9 @@ class UnpredictableEvalutator: SequentialEvaluator<EmptyChromosome> {
         super.init()
     }
     
-    override func evaluateChromosome(chromosome: EmptyChromosome) -> Fitness {
+    override func evaluateChromosome(_ chromosome: EmptyChromosome) -> Fitness {
         // Generate some random numbers.
-        let timeToWait = NSTimeInterval(entropyGenerator.nextInRange(min: 0.0, max: 3.0))
+        let timeToWait = TimeInterval(entropyGenerator.nextInRange(min: 0.0, max: 3.0))
         let ratingToReturn: Double = entropyGenerator.next()
         
         if let thread = threadNumber {
@@ -30,7 +30,7 @@ class UnpredictableEvalutator: SequentialEvaluator<EmptyChromosome> {
         }
         
         // Wait some time.
-        NSThread.sleepForTimeInterval(timeToWait)
+        Thread.sleep(forTimeInterval: timeToWait)
         
         // Return random rating.
         return Fitness(ratingToReturn)
