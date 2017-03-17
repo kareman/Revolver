@@ -1,6 +1,6 @@
 
 /// Action node represents a course of action.
-public class ActionNode: TreeNode {
+open class ActionNode: TreeNode {
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -22,7 +22,7 @@ public class ActionNode: TreeNode {
      
      - returns: New subtree with set values.
      */
-    public required init(id: Int, maximumDepth: Int) {
+    public required override init(id: Int, maximumDepth: Int) {
         super.init(id: id, maximumDepth: maximumDepth)
     }
     
@@ -33,7 +33,7 @@ public class ActionNode: TreeNode {
      
      - warning: This method is abstract. You *must* override it in a subclass.
      */
-    public func perform(interpreter: TreeInterpreter) {
+    open func perform(_ interpreter: TreeInterpreter) {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     
@@ -47,7 +47,7 @@ public class ActionNode: TreeNode {
      
      - remark: This method implements an abstract method of the superclass. You don't need to worry about it in subclasses.
      */
-    public final override func clone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
+    public final override func clone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
         if id == self.id {
             return factory.createRandomActionNode(self.maximumDepth)
         } else {
@@ -65,7 +65,7 @@ public class ActionNode: TreeNode {
      
      - warning: This method is abstract. You *must* override it in a subclass.
      */
-    public func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
+    open func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

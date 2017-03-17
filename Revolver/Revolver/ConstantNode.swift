@@ -31,7 +31,7 @@ public final class ConstantNode<ValueType: Randomizable>: ValueNode<ValueType> {
         self.constant = constant
         super.init(id: id, maximumDepth: maximumDepth)
     }
-    
+
     /**
      Calculate the value represented by the node.
      
@@ -39,7 +39,7 @@ public final class ConstantNode<ValueType: Randomizable>: ValueNode<ValueType> {
      
      - returns: Value of the constant.
      */
-    public override func evaluate(interpreter: TreeInterpreter) -> ValueType {
+    public override func evaluate(_ interpreter: TreeInterpreter) -> ValueType {
         return constant
     }
     
@@ -51,7 +51,7 @@ public final class ConstantNode<ValueType: Randomizable>: ValueNode<ValueType> {
      
      - returns: A clone of this node with a subtree, which is possibly mutated.
      */
-    public override func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ValueType> {
+    public override func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ValueType> {
         // There are no descendants, duh. Just clone the darn thing.
         return ConstantNode<ValueType>(id: self.id, maximumDepth: self.maximumDepth, constant: self.constant)
     }

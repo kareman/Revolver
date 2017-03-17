@@ -3,7 +3,7 @@
 ///
 /// - warning: This class is abstract meaning you probably don't want to instatiate it directly. Instead, subclass it
 ///            and be sure to override the `evaluate()` method.
-public class ValueNode<ValueType: Randomizable>: TreeNode {
+open class ValueNode<ValueType: Randomizable>: TreeNode {
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -25,7 +25,7 @@ public class ValueNode<ValueType: Randomizable>: TreeNode {
      
      - returns: New subtree with set values.
      */
-    public required init(id: Int, maximumDepth: Int) {
+    public override init(id: Int, maximumDepth: Int) {
         super.init(id: id, maximumDepth: maximumDepth)
     }
     
@@ -38,7 +38,7 @@ public class ValueNode<ValueType: Randomizable>: TreeNode {
      
      - warning: This method is abstract. You *must* override it in a subclass.
      */
-    public func evaluate(interpreter: TreeInterpreter) -> ValueType {
+    open func evaluate(_ interpreter: TreeInterpreter) -> ValueType {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     
@@ -52,7 +52,7 @@ public class ValueNode<ValueType: Randomizable>: TreeNode {
      
      - remark: This method implements an abstract method of the superclass. You don't need to worry about it in subclasses.
      */
-    public final override func clone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ValueType>  {
+    public final override func clone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ValueType>  {
         if id == self.id {
             return factory.createRandomValueNode(self.maximumDepth)
         } else {
@@ -70,7 +70,7 @@ public class ValueNode<ValueType: Randomizable>: TreeNode {
      
      - warning: This method is abstract. You *must* override it in a subclass.
      */
-    public func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ValueType> {
+    open func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ValueType> {
         preconditionFailure("This method must be implemented in a subclass.")        
     }
     

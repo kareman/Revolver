@@ -70,7 +70,7 @@ public final class ConditionalNode: ActionNode {
      
      - parameter interpreter: Current evaluation context.
      */
-    public override func perform(interpreter: TreeInterpreter) {
+    public override func perform(_ interpreter: TreeInterpreter) {
         guard interpreter.running else {
             // If the program has stopped, terminate as soon as possible.
             return
@@ -95,7 +95,7 @@ public final class ConditionalNode: ActionNode {
      
      - returns: A clone of this node with a subtree, which is possibly mutated.
      */
-    public override func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
+    public override func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
         let predicateClone = predicate.clone(factory, mutateNodeId: id)
         let trueActionClone = trueAction.clone(factory, mutateNodeId: id)
         let falseActionClone = falseAction.clone(factory, mutateNodeId: id)

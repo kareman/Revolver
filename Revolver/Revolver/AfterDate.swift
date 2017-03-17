@@ -1,9 +1,9 @@
 
 /// Terminate the genetic algorithm after a point in time is reached.
-public class AfterDate<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
+open class AfterDate<Chromosome: ChromosomeType>: TerminationCondition<Chromosome> {
     
     /// Point in time, after which to terminate the algorithm.
-    public let date: NSDate
+    open let date: Date
     
     /**
      Terminate the genetic algorithm after a point in time is reached.
@@ -12,13 +12,13 @@ public class AfterDate<Chromosome: ChromosomeType>: TerminationCondition<Chromos
      
      - returns: New termination condition.
      */
-    public init(_ date: NSDate) {
+    public init(_ date: Date) {
         self.date = date
         super.init()
     }
     
-    public override func shouldTerminate(population: MatingPool<Chromosome>) -> Bool {
-        let now = NSDate()
+    open override func shouldTerminate(_ population: MatingPool<Chromosome>) -> Bool {
+        let now = Date()
         return now > date
     }
     

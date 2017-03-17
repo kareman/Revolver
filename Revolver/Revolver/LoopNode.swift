@@ -63,7 +63,7 @@ public final class LoopNode: ActionNode {
      
      - parameter interpreter: Current evaluation context.
      */
-    public override func perform(interpreter: TreeInterpreter) {
+    public override func perform(_ interpreter: TreeInterpreter) {
         while interpreter.running && !terminationCondition.evaluate(interpreter) {
             // Perform action in the loop.
             action.perform(interpreter)
@@ -78,7 +78,7 @@ public final class LoopNode: ActionNode {
      
      - returns: A clone of this node with a subtree, which is possibly mutated.
      */
-    public override func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
+    public override func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
         let terminationConditionClone = terminationCondition.clone(factory, mutateNodeId: id)
         let actionClone = action.clone(factory, mutateNodeId: id)
         

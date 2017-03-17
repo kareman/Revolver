@@ -1,9 +1,9 @@
 
 /// Unary node represents any unary operation (function of one argument).
-public class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: ValueNode<ResultType> {
+open class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: ValueNode<ResultType> {
     
     /// Argument of the function.
-    public let operand: ValueNode<OperandType>
+    open let operand: ValueNode<OperandType>
     
     /// Next-level descendant nodes of this node, not necessarily of the same type.
     public final override var treeNodeDescendants: [TreeNode] {
@@ -36,7 +36,7 @@ public class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: Val
         self.operand = operand
         super.init(id: id, maximumDepth: maximumDepth)
     }
-    
+
     /**
      Calculate the value represented by the node.
      
@@ -44,7 +44,7 @@ public class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: Val
      
      - returns: Value of the `operand`, altered by the `evaluate()` function.
      */
-    public final override func evaluate(interpreter: TreeInterpreter) -> ResultType {
+    public final override func evaluate(_ interpreter: TreeInterpreter) -> ResultType {
         let operandValue = operand.evaluate(interpreter)
         return evaluate(operandValue)
     }
@@ -58,7 +58,7 @@ public class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: Val
      
      - warning: This method is abstract. You *must* override it in a subclass.
      */
-    public func evaluate(operandValue: OperandType) -> ResultType {
+    open func evaluate(_ operandValue: OperandType) -> ResultType {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     
@@ -70,7 +70,7 @@ public class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: Val
      
      - returns: A clone of this node with a subtree, which is possibly mutated.
      */
-    public final override func propagateClone(factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ResultType> {
+    public final override func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ResultType> {
         // Clone the operand.
         let operandClone = operand.clone(factory, mutateNodeId: id)
         
@@ -89,7 +89,7 @@ public class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: Val
      
      - remark: This method is used to specialize a general `UnaryNode` instance into one of its subclasses.
      */
-    public func callInitializer(operand: ValueNode<OperandType>) -> Self {
+    open func callInitializer(_ operand: ValueNode<OperandType>) -> Self {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     

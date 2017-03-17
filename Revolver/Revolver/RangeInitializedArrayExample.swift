@@ -7,10 +7,9 @@
  */
 
 internal struct RangeInitializedArrayExample: RangeInitializedArray {
-    
     // CONFIGURATION: You will want to change this. Currently it's set to array of N booleans, where N is from the [26;42] interval.
     internal typealias Element = Bool
-    internal static let initializationRange = 26...42
+    internal static let initializationRange = CountableRange<Int>(26...42)
     // END CONFIGURATION
     
     // The rest of the file you can just ⌘C, ⌘V into your app.

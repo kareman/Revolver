@@ -36,7 +36,7 @@ public final class ImplicationNode: BinaryNode<Bool, Bool, Bool> {
      
      - returns: `leftValue` => `rightValue`
      */
-    public override func evaluate(leftValue leftValue: Bool, rightValue: Bool) -> Bool {
+    public override func evaluate(leftValue: Bool, rightValue: Bool) -> Bool {
         return !leftValue || rightValue
     }
     
@@ -50,7 +50,7 @@ public final class ImplicationNode: BinaryNode<Bool, Bool, Bool> {
      
      - remark: This method is used to specialize a general `BinaryNode` instance into one of its subclasses.
      */
-    public override func callInitializer(leftSide leftSide: ValueNode<Bool>, rightSide: ValueNode<Bool>) -> ImplicationNode {
+    public override func callInitializer(leftSide: ValueNode<Bool>, rightSide: ValueNode<Bool>) -> ImplicationNode {
         return ImplicationNode(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     

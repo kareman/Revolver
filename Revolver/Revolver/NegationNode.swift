@@ -34,7 +34,7 @@ public final class NegationNode: UnaryNode<Bool, Bool> {
      
      - returns: Negated value of the operand.
      */
-    public override func evaluate(operandValue: Bool) -> Bool {
+    public override func evaluate(_ operandValue: Bool) -> Bool {
         return !operandValue
     }
     
@@ -47,7 +47,7 @@ public final class NegationNode: UnaryNode<Bool, Bool> {
      
      - remark: This method is used to specialize a general `UnaryNode` instance into one of its subclasses.
      */
-    public override func callInitializer(operand: ValueNode<Bool>) -> NegationNode {
+    public override func callInitializer(_ operand: ValueNode<Bool>) -> NegationNode {
         return NegationNode(id: id, maximumDepth: maximumDepth, operand: operand)
     }
     

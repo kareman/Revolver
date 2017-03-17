@@ -16,29 +16,29 @@
 /// or accepting the offspring as a new generation respectively.
 ///
 /// If the offspring or any of the methods mentioned above are accessed in the wrong state, a precondition failure occurs.
-public class MatingPool<Chromosome: ChromosomeType> {
+open class MatingPool<Chromosome: ChromosomeType> {
     
     /// Type of individual stored in the mating pool.
     public typealias IndividualType = Individual<Chromosome>
     
     /// Index of the current generation, incremented after each reproduction event.
-    public private(set) var currentGeneration: Int = 0
+    open fileprivate(set) var currentGeneration: Int = 0
     
-    private var population: [IndividualType] = []
-    private var offspring: [IndividualType]? = nil
+    fileprivate var population: [IndividualType] = []
+    fileprivate var offspring: [IndividualType]? = nil
     
     /// Number of individuals in the current generation.
-    public var populationSize: Int {
+    open var populationSize: Int {
         return population.count
     }
     
     /// Number of individuals in the next generation.
-    public var offspringSize: Int? {
+    open var offspringSize: Int? {
         return offspring?.count
     }
     
     /// Returns whether the mating pool is in reproducing state.
-    public var reproducing: Bool {
+    open var reproducing: Bool {
         return offspring != nil
     }
     
@@ -48,7 +48,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
      - precondition: The pool must not already be in the *reproducing* state. You can verify this by checking
                      the `reproducing` property.
      */
-    public func beginReproduction() {
+    open func beginReproduction() {
         guard !reproducing else {
             preconditionFailure("This method can be called only when not in the reproducing state.")
         }
@@ -61,7 +61,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
      
      - precondition: The pool must be in the *reproducing* state. You can verify this by checking the `reproducing` property.
      */
-    public func cancelReproduction() {
+    open func cancelReproduction() {
         guard reproducing else {
             preconditionFailure("This method can be called only in the reproducing state.")
         }
@@ -74,7 +74,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
      
      - precondition: The pool must be in the *reproducing* state. You can verify this by checking the `reproducing` property.
      */
-    public func advanceGeneration() {
+    open func advanceGeneration() {
         guard reproducing else {
             preconditionFailure("This method can be called only in the reproducing state.")
         }
@@ -94,7 +94,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
      
      - returns: Individual at the requested index.
      */
-    public func individualAtIndex(index: Int) -> IndividualType {
+    open func individualAtIndex(_ index: Int) -> IndividualType {
         return population[index]
     }
     
@@ -107,7 +107,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
      
      - precondition: The pool must be in the *reproducing* state. You can verify this by checking the `reproducing` property.
      */
-    public func offspringAtIndex(index: Int) -> IndividualType {
+    open func offspringAtIndex(_ index: Int) -> IndividualType {
         guard reproducing else {
             preconditionFailure("This method can be called only in the reproducing state.")
         }
@@ -122,12 +122,12 @@ public class MatingPool<Chromosome: ChromosomeType> {
      
      - precondition: The pool must be in the *reproducing* state. You can verify this by checking the `reproducing` property.
      */
-    public func removeOffspringAtIndex(index: Int) {
+    open func removeOffspringAtIndex(_ index: Int) {
         guard reproducing else {
             preconditionFailure("This method can be called only in the reproducing state.")
         }
         
-        offspring!.removeAtIndex(index)
+        offspring!.remove(at: index)
     }
     
     /**
@@ -137,7 +137,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
      
      - precondition: The pool must be in the *reproducing* state. You can verify this by checking the `reproducing` property.
      */
-    public func addOffspring(individual: IndividualType) {
+    open func addOffspring(_ individual: IndividualType) {
         guard reproducing else {
             preconditionFailure("This method can be called only in the reproducing state.")
         }
@@ -146,7 +146,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
     }
     
     /// Indices of individuals in the population, sorted ascending according to their fitness. *(lazy loaded)*
-    public var populationIndicesSortedByFitness: IndexSet {
+    open var populationIndicesSortedByFitness: IndexSet {
         if let indices = privateSortedIndices {
             return indices
         }
@@ -156,14 +156,14 @@ public class MatingPool<Chromosome: ChromosomeType> {
         return indices
     }
     
-    private var privateSortedIndices: IndexSet?
-    private func sortIndividualsByFitness() -> IndexSet {
+    fileprivate var privateSortedIndices: IndexSet?
+    fileprivate func sortIndividualsByFitness() -> IndexSet {
         let indices = 0..<population.count
-        return indices.sort { population[$0].fitness! < population[$1].fitness! }
+        return indices.sorted { population[$0].fitness! < population[$1].fitness! }
     }
     
     /// Sum of all fitness values of individuals in the population. *(lazy loaded)*
-    public var fitnessSum: Double {
+    open var fitnessSum: Double {
         if let sum = privateFitnessSum {
             return sum
         }
@@ -173,18 +173,18 @@ public class MatingPool<Chromosome: ChromosomeType> {
         return sum
     }
     
-    private var privateFitnessSum: Double?
-    private func calculateFitnessSum() -> Double {
-        return population.reduce(0, combine: { $0 + $1.fitness!})
+    fileprivate var privateFitnessSum: Double?
+    fileprivate func calculateFitnessSum() -> Double {
+        return population.reduce(0, { $0 + $1.fitness!})
     }
     
     /// Average fitness of the individuals in the population.
-    public var averageFitness: Double {
+    open var averageFitness: Double {
         return fitnessSum / Double(populationSize)
     }
     
     /// Best fitness value in the population. *(lazy loaded)*
-    public var bestFitness: Double {
+    open var bestFitness: Double {
         if let best = privateBestFitness {
             return best
         }
@@ -194,13 +194,13 @@ public class MatingPool<Chromosome: ChromosomeType> {
         return best
     }
     
-    private var privateBestFitness: Double?
-    private func calculateBestFitness() -> Double {
-        return population.maxElement { $0.fitness! < $1.fitness! }!.fitness!
+    fileprivate var privateBestFitness: Double?
+    fileprivate func calculateBestFitness() -> Double {
+        return population.max { $0.fitness! < $1.fitness! }!.fitness!
     }
     
     /// The best individual in the population (by fitness). If the population is empty, it might not exist.
-    public var bestIndividual: IndividualType? {
+    open var bestIndividual: IndividualType? {
         guard let index = populationIndicesSortedByFitness.last else {
             return nil
         }
@@ -209,7 +209,7 @@ public class MatingPool<Chromosome: ChromosomeType> {
     }
     
     /// The worst individual in the population (by fitness). If the population is empty, it might not exist.
-    public var worstIndividual: IndividualType? {
+    open var worstIndividual: IndividualType? {
         guard let index = populationIndicesSortedByFitness.first else {
             return nil
         }

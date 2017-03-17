@@ -29,7 +29,7 @@ public protocol RandomTreeFactory {
      
      - returns: New random instance of a `ActionNode` subclass.
      */
-    func createRandomActionNode(maximumDepth: Int) -> ActionNode
+    func createRandomActionNode(_ maximumDepth: Int) -> ActionNode
     
     /**
      Generate new random `ValueNode` instance specialized to given `ValueType`.
@@ -38,7 +38,7 @@ public protocol RandomTreeFactory {
      
      - returns: New random instance of `ValueNode` subclass.
      */
-    func createRandomValueNode<ValueType: Randomizable>(maximumDepth: Int) -> ValueNode<ValueType>
+    func createRandomValueNode<ValueType: Randomizable>(_ maximumDepth: Int) -> ValueNode<ValueType>
     
     /**
      Generates unique identifier for a new `TreeNode` instance.

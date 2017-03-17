@@ -1,9 +1,9 @@
 
 /// A genetic operator node applies a genetic operator on population upon execution.
-public class GeneticOperatorNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome> {
+open class GeneticOperatorNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome> {
     
     /// The operator to apply.
-    private var currentOperator: GeneticOperator<Chromosome>
+    fileprivate var currentOperator: GeneticOperator<Chromosome>
     
     /**
      Create new genetic operator node.
@@ -17,7 +17,7 @@ public class GeneticOperatorNode<Chromosome: ChromosomeType>: DecisionTreeNode<C
         super.init()
     }
     
-    public override func execute(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+    open override func execute(_ generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         currentOperator.apply(generator, pool: pool)
         super.execute(generator, pool: pool)
     }

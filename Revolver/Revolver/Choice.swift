@@ -1,9 +1,9 @@
 
 /// A choice is a non-deterministically selected decision of a chance node.
-public class Choice<Chromosome: ChromosomeType>: GeneticOperatorNode<Chromosome> {
+open class Choice<Chromosome: ChromosomeType>: GeneticOperatorNode<Chromosome> {
     
     /// Statistical probability of the choice.
-    public let probability: Double
+    open let probability: Double
     
     /**
      Instantiate new choice.

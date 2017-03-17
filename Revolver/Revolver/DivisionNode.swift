@@ -1,6 +1,6 @@
 
 /// Division node encapsulates the operation of division of two numeric values.
-public final class DivisionNode<ChildType where ChildType: Randomizable, ChildType: NumericType>: BinaryNode<ChildType, ChildType, ChildType> {
+public final class DivisionNode<ChildType>: BinaryNode<ChildType, ChildType, ChildType> where ChildType: Randomizable, ChildType: NumericType {
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -36,7 +36,7 @@ public final class DivisionNode<ChildType where ChildType: Randomizable, ChildTy
      
      - returns: `leftValue` divided by `rightValue`.
      */
-    public override func evaluate(leftValue leftValue: ChildType, rightValue: ChildType) -> ChildType {
+    public override func evaluate(leftValue: ChildType, rightValue: ChildType) -> ChildType {
         return leftValue / rightValue
     }
     
@@ -50,7 +50,7 @@ public final class DivisionNode<ChildType where ChildType: Randomizable, ChildTy
      
      - remark: This method is used to specialize a general `BinaryNode` instance into one of its subclasses.
      */
-    public override func callInitializer(leftSide leftSide: ValueNode<ChildType>, rightSide: ValueNode<ChildType>) -> DivisionNode<ChildType> {
+    public override func callInitializer(leftSide: ValueNode<ChildType>, rightSide: ValueNode<ChildType>) -> DivisionNode<ChildType> {
         return DivisionNode<ChildType>(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     

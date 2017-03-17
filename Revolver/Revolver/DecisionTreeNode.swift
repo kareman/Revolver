@@ -1,9 +1,9 @@
 
 /// A decision tree describes a chained series of actions applied in sequence on a population.
-public class DecisionTreeNode<Chromosome: ChromosomeType> {
+open class DecisionTreeNode<Chromosome: ChromosomeType> {
     
     /// The next node in the sequence.
-    private var next: DecisionTreeNode<Chromosome>?
+    fileprivate var next: DecisionTreeNode<Chromosome>?
     
     /**
      Create new decision tree node.
@@ -20,7 +20,7 @@ public class DecisionTreeNode<Chromosome: ChromosomeType> {
      - parameter generator: Provider of randomness.
      - parameter pool:      Population on which to execute the tree.
      */
-    public func execute(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+    open func execute(_ generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         guard let op = next else { return }
         op.execute(generator, pool: pool)
     }
@@ -30,7 +30,7 @@ public class DecisionTreeNode<Chromosome: ChromosomeType> {
      
      - parameter next: The new value of `next`.
      */
-    public func chain(next: DecisionTreeNode<Chromosome>) {
+    open func chain(_ next: DecisionTreeNode<Chromosome>) {
         self.next = next
     }
     

@@ -1,13 +1,13 @@
 
 /// Two-point crossover simulates sexual reproduction of individuals within the population.
 /// It combines their chromosomes to create new offspring chromosomes, which are then inserted into the next generation.
-public class TwoPointCrossover<Chromosome: TwoPointCrossoverable>: GeneticOperator<Chromosome> {
+open class TwoPointCrossover<Chromosome: TwoPointCrossoverable>: GeneticOperator<Chromosome> {
     
     public override init(_ selection: Selection<Chromosome>) {
         super.init(selection)
     }
     
-    public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+    open override func apply(_ generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         // Select 2 individuals.
         let selectedIndividuals = selection.select(generator, population: pool, numberOfIndividuals: 2)
         

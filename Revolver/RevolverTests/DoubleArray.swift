@@ -1,8 +1,9 @@
 import Revolver
 
 final class DoubleArray: RangeInitializedArray {
+
     typealias Element = Double
-    static let initializationRange = 42...42
+    static let initializationRange = CountableRange<Int>(42...42)
     
     let array: [Double]
     

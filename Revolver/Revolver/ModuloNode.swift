@@ -1,6 +1,6 @@
 
 /// Modulo node encapsulates the modulo operation carried out on two numeric values.
-public final class ModuloNode<ChildType where ChildType: Randomizable, ChildType: NumericType>: BinaryNode<ChildType, ChildType, ChildType> {
+public final class ModuloNode<ChildType>: BinaryNode<ChildType, ChildType, ChildType> where ChildType: Randomizable, ChildType: NumericType {
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -36,7 +36,7 @@ public final class ModuloNode<ChildType where ChildType: Randomizable, ChildType
      
      - returns: `leftValue` modulo `rightValue`.
      */
-    public override func evaluate(leftValue leftValue: ChildType, rightValue: ChildType) -> ChildType {
+    public override func evaluate(leftValue: ChildType, rightValue: ChildType) -> ChildType {
         return leftValue % rightValue
     }
     
@@ -50,7 +50,7 @@ public final class ModuloNode<ChildType where ChildType: Randomizable, ChildType
      
      - remark: This method is used to specialize a general `BinaryNode` instance into one of its subclasses.
      */
-    public override func callInitializer(leftSide leftSide: ValueNode<ChildType>, rightSide: ValueNode<ChildType>) -> ModuloNode<ChildType> {
+    public override func callInitializer(leftSide: ValueNode<ChildType>, rightSide: ValueNode<ChildType>) -> ModuloNode<ChildType> {
         return ModuloNode<ChildType>(id: id, maximumDepth: maximumDepth, leftSide: leftSide, rightSide: rightSide)
     }
     

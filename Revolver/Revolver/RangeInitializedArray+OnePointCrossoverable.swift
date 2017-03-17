@@ -1,7 +1,7 @@
 
 extension RangeInitializedArray {
     
-    public func onePointCrossover(generator: EntropyGenerator, other: Self) -> (first: Self, second: Self) {
+    public func onePointCrossover(_ generator: EntropyGenerator, other: Self) -> (first: Self, second: Self) {
         // Choose one point in both arrays.
         let maxIndex = min(self.array.count, other.array.count) - 1
         let crossoverIndex = generator.nextInRange(min: 0, max: maxIndex)
@@ -26,8 +26,8 @@ extension RangeInitializedArray {
         secondOffspring.reserveCapacity(self.array.count)
         
         // Append the crossed segment.
-        firstOffspring.appendContentsOf(other.array[crossoverIndex..<other.array.count])
-        secondOffspring.appendContentsOf(self.array[crossoverIndex..<self.array.count])
+        firstOffspring.append(contentsOf: other.array[crossoverIndex..<other.array.count])
+        secondOffspring.append(contentsOf: self.array[crossoverIndex..<self.array.count])
         
         return (first: Self(array: firstOffspring), second: Self(array: secondOffspring))
     }

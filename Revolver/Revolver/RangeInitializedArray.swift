@@ -14,7 +14,7 @@ public protocol RangeInitializedArray: CustomStringConvertible, CustomDebugStrin
     
     /// Constant range from, which the size is chosen at random.
     /// PRO TIP: Set the range to a single number (e. g. 42...42) to get array of a fixed size.
-    static var initializationRange: Range<Int> { get }
+    static var initializationRange: CountableRange<Int> { get }
     
     /// Provides direct access to the generated values.
     var array: [Element] { get }

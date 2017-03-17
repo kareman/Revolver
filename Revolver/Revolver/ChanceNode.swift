@@ -1,12 +1,12 @@
 
 /// A chance node non-deterministically selects one of multiple choices.
-public class ChanceNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome> {
+open class ChanceNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome> {
     
     /// Choices to select from.
-    private var choices: [Choice<Chromosome>]
+    fileprivate var choices: [Choice<Chromosome>]
     
     /// The sum of choice probabilities.
-    private var sum: Double
+    fileprivate var sum: Double
     
     public override init() {
         sum = 0
@@ -18,7 +18,7 @@ public class ChanceNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome
      
      - parameter choice: Choice to add.
      */
-    public func split(choice: Choice<Chromosome>) {
+    open func split(_ choice: Choice<Chromosome>) {
         choices.append(choice)
         sum += choice.probability
     }
@@ -29,7 +29,7 @@ public class ChanceNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome
      - parameter generator: Provider of randomness.
      - parameter pool:      The population to work on.
      */
-    private func executeChoice(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+    fileprivate func executeChoice(_ generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         guard !choices.isEmpty else { return }
         
         // Choose a value at random.
@@ -53,7 +53,7 @@ public class ChanceNode<Chromosome: ChromosomeType>: DecisionTreeNode<Chromosome
         choices.last!.execute(generator, pool: pool)
     }
     
-    public override func execute(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+    open override func execute(_ generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         executeChoice(generator, pool: pool)
         super.execute(generator, pool: pool)
     }

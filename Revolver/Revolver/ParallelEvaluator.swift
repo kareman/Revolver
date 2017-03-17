@@ -4,13 +4,13 @@ import Foundation
 ///
 /// - note: Unlike `SequentialEvaluator<Chromosome>`, this class is *not* abstract.
 ///         Be advised that you can use it without subclassing.
-public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome> {
+open class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome> {
     
     /// Sequential threads used for parallel evaluation.
-    public let threads: [SequentialEvaluator<Chromosome>]
+    open let threads: [SequentialEvaluator<Chromosome>]
     
     /// Dispatch queues used to facilitate the execution of sequential evaluators.
-    public let queues: [NSOperationQueue]
+    open let queues: [OperationQueue]
     
     /**
      Instantiate a parallel evaluator with sequential evaluators.
@@ -24,11 +24,11 @@ public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
         self.threads = threads
         
         // Create queue for every thread.
-        var createdQueues = [NSOperationQueue]()
+        var createdQueues = [OperationQueue]()
         createdQueues.reserveCapacity(threads.count)
         
         for _ in 0..<threads.count {
-            let newQueue = NSOperationQueue()
+            let newQueue = OperationQueue()
             newQueue.maxConcurrentOperationCount = 1
             createdQueues.append(newQueue)
         }
@@ -45,7 +45,7 @@ public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
      
      - returns: New instance of parallel evaluator.
      */
-    public convenience init(numberOfThreads: Int? = nil, createThread: Int -> SequentialEvaluator<Chromosome>) {
+    public convenience init(numberOfThreads: Int? = nil, createThread: (Int) -> SequentialEvaluator<Chromosome>) {
         let effectiveNumberOfThreads = numberOfThreads ?? ParallelEvaluator<Chromosome>.recommendedNumberOfThreads
         var threads = [SequentialEvaluator<Chromosome>]()
         
@@ -59,11 +59,11 @@ public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
     }
     
     /// The recommended number of threads for parallel evaluation based on the current hardware.
-    public static var recommendedNumberOfThreads: Int {
-        return NSProcessInfo.processInfo().activeProcessorCount
+    open static var recommendedNumberOfThreads: Int {
+        return ProcessInfo.processInfo.activeProcessorCount
     }
     
-    public final override func evaluateIndividuals(individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
+    public final func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: @escaping EvaluationHandler) {
         var nextIndividualToEvaluate = 0
         let lock = NSLock()
         
@@ -71,12 +71,12 @@ public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
         for queue in queues {
             queue.cancelAllOperations()
             queue.waitUntilAllOperationsAreFinished()
-            queue.suspended = true
+            queue.isSuspended = true
         }
         
         // Add consumer operation to every queue.
         for index in 0..<queues.count {
-            queues[index].addOperationWithBlock {
+            queues[index].addOperation {
                 while true {
                     // Find the next individual to evaluate.
                     lock.lock()
@@ -92,7 +92,7 @@ public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
                     guard individuals.individualAtIndex(individualIndex).fitness == nil else {
                         // The individual has been already evaluated once.
                         // We don't need to evaluate it twice.
-                        individualEvaluated(index: individualIndex)
+                        individualEvaluated(individualIndex)
                         continue
                     }
                     
@@ -102,14 +102,14 @@ public class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome
                     
                     // Save the evaluation for later.
                     individuals.individualAtIndex(individualIndex).fitness = fitness
-                    individualEvaluated(index: individualIndex)
+                    individualEvaluated(individualIndex)
                 }
             }
         }
         
         // Set all queues loose.
         for queue in queues {
-            queue.suspended = false
+            queue.isSuspended = false
         }
         
         // Block the current thread until all queues are done.

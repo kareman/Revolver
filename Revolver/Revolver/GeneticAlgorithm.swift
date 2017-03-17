@@ -3,7 +3,7 @@
 public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
     
     /// Hook is a lambda function which is executed synchronously at important points through the run of the algorithm.
-    public typealias Hook = GeneticAlgorithm<Chromosome> -> ()
+    public typealias Hook = (GeneticAlgorithm<Chromosome>) -> ()
     
     /// Hook with individual is just like a regular hook, but contains an individual index.
     public typealias HookWithIndividual = (GeneticAlgorithm<Chromosome>, Int) -> ()
@@ -193,7 +193,7 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
      
      - parameter hook: The hook to execute.
      */
-    private func executeHook(hook: Hook?) {
+    fileprivate func executeHook(_ hook: Hook?) {
         guard let implementedHook = hook else { return }
         implementedHook(self)
     }
@@ -204,7 +204,7 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
      - parameter hook:       The hook to execute.
      - parameter individual: The individual to pass as a parameter.
      */
-    private func executeHook(hook: HookWithIndividual?, individual: Int) {
+    fileprivate func executeHook(_ hook: HookWithIndividual?, individual: Int) {
         guard let implementedHook = hook else { return }
         implementedHook(self, individual)
     }
@@ -212,7 +212,7 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
     /**
      Randomly generate the population.
      */
-    private func seedRandomGeneration() {
+    fileprivate func seedRandomGeneration() {
         if population.reproducing {
             // Cancel any reproduction which has been going on.
             population.cancelReproduction()
@@ -230,7 +230,7 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
     /**
      Generate offspring population from the current population.
      */
-    private func produceOffspring() {
+    fileprivate func produceOffspring() {
         if population.reproducing {
             // Cancel any reproduction which has been going on.
             population.cancelReproduction()
@@ -252,7 +252,7 @@ public final class GeneticAlgorithm<Chromosome: ChromosomeType> {
     /**
      Ensure that all individuals are evaluated.
      */
-    private func evaluateNewIndividuals() {
+    fileprivate func evaluateNewIndividuals() {
         executeHook(hookEvaluationStarted)
         
         // Call the evaluator to do stuff synchronously.

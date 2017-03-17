@@ -4,10 +4,10 @@
 /// Feel free to subclass or extend this class based on the requirements of your simulation. Members of this class
 /// (or any of its subclasses) can be accessed through `ValueNode`'s `evaluate()` method or `ActionNode`'s `perform()`
 /// method.
-public class TreeInterpreter {
+open class TreeInterpreter {
     
     /// A boolean value indicating whether the interpreter is currently running a program.
-    public private(set) var running: Bool = false
+    open fileprivate(set) var running: Bool = false
     
     /**
      Main entry point to perform a program stored as a tree
@@ -20,7 +20,7 @@ public class TreeInterpreter {
      - precondition: No other program can be running at the same time. To verify that, check that the `running` property
                      is equal to `false`.
      */
-    public func run<FactoryType: RandomTreeFactory>(program: TreeProgram<FactoryType>) {
+    open func run<FactoryType: RandomTreeFactory>(_ program: TreeProgram<FactoryType>) {
         guard !running else {
             preconditionFailure("A program is already running. Cannot start a new one before it finishes.")
         }
@@ -35,7 +35,7 @@ public class TreeInterpreter {
      - precondition: There must be a program running when you call this method. To verify that, check that the `running`
                      property is equal to `true`.
      */
-    public func kill() {
+    open func kill() {
         guard running else {
             preconditionFailure("Called kill() but no program is running.")
         }

@@ -1,12 +1,12 @@
 
 /// Mutation operator introduces diversity in the population by slightly altering its individuals.
-public class Mutation<Chromosome: Mutable>: GeneticOperator<Chromosome> {
+open class Mutation<Chromosome: Mutable>: GeneticOperator<Chromosome> {
     
     public override init(_ selection: Selection<Chromosome>) {
         super.init(selection)
     }
     
-    public override func apply(generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
+    open override func apply(_ generator: EntropyGenerator, pool: MatingPool<Chromosome>) {
         // Select a single individual.
         let selectedIndividuals = selection.select(generator, population: pool, numberOfIndividuals: 1)
         let selectedIndividual = selectedIndividuals.first!
