@@ -9,7 +9,7 @@ class QwopEvaluator: SequentialEvaluator<QwopChromosome> {
         self.conditionVariable = NSCondition()
     }
     
-    override func evaluateChromosome(chromosome: QwopChromosome) -> Fitness {
+    override func evaluateChromosome(_ chromosome: QwopChromosome) -> Fitness {
         var returnValue: Fitness? = nil
         controller.evaluateChromosome(chromosome) { fitness in
             self.conditionVariable.lock()

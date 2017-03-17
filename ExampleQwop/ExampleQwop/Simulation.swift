@@ -2,20 +2,20 @@ import Foundation
 
 class Simulation {
     
-    private typealias ShellResult = (exitCode: Int32, output: String)
+    fileprivate typealias ShellResult = (exitCode: Int32, output: String)
     
-    private static func shell(executable: String, args: String...) -> ShellResult {
+    fileprivate static func shell(_ executable: String, args: String...) -> ShellResult {
         // Courtesy of StackOverflow.
         // http://stackoverflow.com/questions/26971240/how-do-i-run-an-terminal-command-in-a-swift-script-e-g-xcodebuild
         
-        let task = NSTask()
+        let task = Process()
         task.launchPath = executable
         task.arguments = args
         
-        let stderr = NSPipe()
+        let stderr = Pipe()
         task.standardError = stderr
         
-        let stdout = NSPipe()
+        let stdout = Pipe()
         task.standardOutput = stdout
         
         task.launch()
@@ -29,25 +29,25 @@ class Simulation {
         return (exitCode: task.terminationStatus, output: Simulation.readPipe(stdout))
     }
     
-    private static func readPipe(pipe: NSPipe) -> String {
+    fileprivate static func readPipe(_ pipe: Pipe) -> String {
         let outdata = pipe.fileHandleForReading.readDataToEndOfFile()
         var output = ""
-        if let string = String.fromCString(UnsafePointer(outdata.bytes)) {
-            output = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+        if let string = String(data: outdata, encoding: .utf8) {
+            output = string.trimmingCharacters(in: CharacterSet.newlines)
         }
         
         return output
     }
     
-    private let app: String
+    fileprivate let app: String
     
     init() {
-        self.app = NSBundle.mainBundle().pathForResource("qwopper", ofType: "jar")!
+        self.app = Bundle.main.path(forResource: "qwopper", ofType: "jar")!
     }
     
-    func testChromosome(chromosome: QwopChromosome, tries: Int, time: NSTimeInterval) -> Double {
+    func testChromosome(_ chromosome: QwopChromosome, tries: Int, time: TimeInterval) -> Double {
         let progString: String        
-        if !chromosome.programString.containsString("+") {
+        if !chromosome.programString.contains("+") {
             // Safety measure. There has to be at least one "+" or the qwopper app will hang in an infinite loop.
             progString = chromosome.programString + "+"
         } else {
@@ -63,8 +63,8 @@ class Simulation {
             
             if out.exitCode == 0 {
                 // Simulation succeeded.
-                let distances = out.output.componentsSeparatedByString("\n").map(parseLine).filter { $0 != nil }.map { !$0!.success ? 0 : $0!.distance }
-                let meanDistance = distances.count == 0 ? 0 : distances.reduce(0, combine: +) / Double(distances.count)
+                let distances = out.output.components(separatedBy: "\n").map(parseLine).filter { $0 != nil }.map { !$0!.success ? 0 : $0!.distance }
+                let meanDistance = distances.count == 0 ? 0 : distances.reduce(0, +) / Double(distances.count)
                 let maxDistance = Double(100) // meters
                 
                 // The fitness function is fraction of total distance (100m) traveled in constant time interval (or until crash).
@@ -76,18 +76,18 @@ class Simulation {
         return 0
     }
     
-    private typealias RunInfo = (success: Bool, duration: Int, distance: Double)
-    private func parseLine(line: String) -> RunInfo? {
-        let components = line.componentsSeparatedByString(";")
+    fileprivate typealias RunInfo = (success: Bool, duration: Int, distance: Double)
+    fileprivate func parseLine(_ line: String) -> RunInfo? {
+        let components = line.components(separatedBy: ";")
         guard components.count == 3 else { return nil }
         
         let success = components[0] == "1"
         let maybeDuration = Int(components[1])
         
-        let normalizedDistance = components[2].stringByReplacingOccurrencesOfString(",", withString: ".")
+        let normalizedDistance = components[2].replacingOccurrences(of: ",", with: ".")
         let maybeDistance = Double(normalizedDistance)
         
-        guard let duration = maybeDuration, distance = maybeDistance else { return nil }        
+        guard let duration = maybeDuration, let distance = maybeDistance else { return nil }        
         return (success: success, duration: duration, distance: distance)
     }
     

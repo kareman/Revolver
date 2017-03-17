@@ -3,11 +3,11 @@ import WebKit
 import Revolver
 
 class ViewController: NSViewController, WebFrameLoadDelegate {    
-    let simulationQueue = NSOperationQueue()
-    let algorithmQueue = NSOperationQueue()
+    let simulationQueue = OperationQueue()
+    let algorithmQueue = OperationQueue()
     
     let sim = Simulation()
-    let qwopURL = NSURL(string: "http://www.foddy.net/Athletics.html?webgl=true")!
+    let qwopURL = URL(string: "http://www.foddy.net/Athletics.html?webgl=true")!
 
     @IBOutlet weak var webView: WebView!
     @IBOutlet weak var statusLabel: NSTextField!
@@ -16,9 +16,9 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
     
     var chromosome: QwopChromosome!
     var tries: Int = 0
-    var time: NSTimeInterval = 0
+    var time: TimeInterval = 0
     
-    var completion: Fitness -> () = { _ in }
+    var completion: (Fitness) -> () = { _ in }
     
     var evaluator: QwopEvaluator!
     
@@ -31,11 +31,11 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
     func reloadBrowser() {
         statusLabel.stringValue = "loading website"
         
-        let request = NSURLRequest(URL: qwopURL)
-        webView.mainFrame.loadRequest(request)
+        let request = URLRequest(url: qwopURL)
+        webView.mainFrame.load(request)
     }
     
-    func evaluateChromosome(chromosome: QwopChromosome, completion: Fitness -> ()) {
+    func evaluateChromosome(_ chromosome: QwopChromosome, completion: @escaping (Fitness) -> ()) {
         print("   - evaluate: \(chromosome.programString)")
         
         // Settings
@@ -45,7 +45,7 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
         
         self.completion = completion
         
-        NSOperationQueue.mainQueue().addOperationWithBlock {
+        OperationQueue.main.addOperation {
             self.reloadBrowser()
         }
     }
@@ -53,23 +53,23 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
     func launchExternalApp() {
         statusLabel.stringValue = "running \(chromosome.programString)"
         
-        simulationQueue.addOperationWithBlock {
+        simulationQueue.addOperation {
             let fitness = self.sim.testChromosome(self.chromosome, tries: self.tries, time: self.time)
             print("      - fitness: \(fitness)")
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.statusLabel.stringValue = "fitness \(fitness)"
                 self.completion(fitness)
             }
         }
     }
     
-    func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
+    func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
         guard frame.isEqual(webView.mainFrame) else { return }
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC)))
+        let delayTime = DispatchTime.now() + Double(Int64(1.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         statusLabel.stringValue = "waiting for the game to load"
         
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
             // Give the browser some time to load the game.
             self.launchExternalApp()
         }
@@ -77,14 +77,14 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
     
     var alg: GeneticAlgorithm<QwopChromosome>!
     
-    @IBAction func runAlgorithmClicked(sender: AnyObject) {
+    @IBAction func runAlgorithmClicked(_ sender: AnyObject) {
         // Configuration of the algorithm.
         let reproduction = Reproduction<QwopChromosome>(RandomSelection())
         let mutation = Mutation<QwopChromosome>(RouletteSelection())
         let crossover = OnePointCrossover<QwopChromosome>(TournamentSelection(order: 5))
         
         let elitism = Reproduction<QwopChromosome>(BestSelection())
-        let tomorrow = NSDate().dateByAddingTimeInterval(18 * 60 * 60)
+        let tomorrow = Date().addingTimeInterval(18 * 60 * 60)
         
         alg = GeneticAlgorithm<QwopChromosome>(
             generator: twister,
@@ -114,14 +114,14 @@ class ViewController: NSViewController, WebFrameLoadDelegate {
             print("LENGTH:\t\t\t\(bestIndividual.chromosome.array.count)")
         }
         
-        algorithmQueue.addOperationWithBlock {
+        algorithmQueue.addOperation {
             // Just do it!
-            let tic = NSDate()
+            let tic = Date()
             self.alg.run()
-            let toc = NSDate()
+            let toc = Date()
             
             // A simple time benchmark.
-            let time = toc.timeIntervalSinceDate(tic)
+            let time = toc.timeIntervalSince(tic)
             print("TIME:\t\t\t\t\(time) seconds")
         }
     }
