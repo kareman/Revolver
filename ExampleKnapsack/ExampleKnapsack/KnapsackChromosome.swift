@@ -2,7 +2,7 @@ import Revolver
 
 final class KnapsackChromosome: RangeInitializedArray {
     typealias Element = Bool
-    static let initializationRange = 10...10
+    static let initializationRange = CountableRange<Int>(10...10)
     
     let array: [Bool]
     

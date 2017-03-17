@@ -9,13 +9,13 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
     }
     
-    @IBAction func runAlgorithmClicked(sender: AnyObject) {
+    @IBAction func runAlgorithmClicked(_ sender: AnyObject) {
         // You can play with David Pisinger's problem instances.
         // Download them here:
         //   1. http://www.diku.dk/~pisinger/smallcoeff_pisinger.tgz
@@ -33,7 +33,7 @@ class ViewController: NSViewController {
         runAlgorithm(instance)
     }
     
-    func runAlgorithm(instance: ProblemInstance) {
+    func runAlgorithm(_ instance: ProblemInstance) {
         // Configuration of the algorithm.
         let twister = MersenneTwister(seed: 4242)
         let evaluator = KnapsackEvaluator(instance: instance)
@@ -82,12 +82,12 @@ class ViewController: NSViewController {
         }
         
         // Just do it!
-        let tic = NSDate()
+        let tic = Date()
         alg.run()
-        let toc = NSDate()
+        let toc = Date()
         
         // A simple time benchmark.
-        let time = toc.timeIntervalSinceDate(tic)
+        let time = toc.timeIntervalSince(tic)
         print("TIME: \(time) seconds")
     }
 

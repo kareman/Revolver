@@ -1,10 +1,10 @@
 
 struct CSVParser {
     
-    private init() { }
+    fileprivate init() { }
     
     // This method parses David Pisinger's CSV format for knapsack instances.
-    static func parseCSV(path: String) -> [ProblemInstance] {
+    static func parseCSV(_ path: String) -> [ProblemInstance] {
         guard let reader = StreamReader(path: path) else {
             print("ERROR: Could not read file at path \(path)")
             return []
@@ -43,15 +43,15 @@ struct CSVParser {
                 } else {
                     // Add a thing.
                     
-                    let components = line.componentsSeparatedByString(",")
+                    let components = line.components(separatedBy: ",")
                     guard components.count == 4 else {
                         print("WARNING: Expected 4 tokens on the row: \(line)")
                         continue
                     }
                     
                     guard let value = Int(components[1]),
-                        size = Int(components[2]),
-                        optimal = Int(components[3]) else {
+                        let size = Int(components[2]),
+                        let optimal = Int(components[3]) else {
                             print("WARNING: Expected tokens of integer types on the row: \(line)")
                             continue
                     }
@@ -62,7 +62,7 @@ struct CSVParser {
             } else if line.hasPrefix("c ") {
                 // New problem instance.
                 
-                let components = line.componentsSeparatedByString(" ")
+                let components = line.components(separatedBy: " ")
                 guard components.count >= 2 else {
                     print("WARNING: Expected 2 tokens on the row: \(line)")
                     continue

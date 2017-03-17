@@ -14,7 +14,7 @@ class KnapsackEvaluator: SequentialEvaluator<KnapsackChromosome> {
         return self.things.reduce(0) { $0 + $1.value }
     }()
     
-    override func evaluateChromosome(chromosome: KnapsackChromosome) -> Fitness {
+    override func evaluateChromosome(_ chromosome: KnapsackChromosome) -> Fitness {
         let totalSize = zip(things, chromosome.array).reduce(0) { $0 + (!$1.1 ? 0 : $1.0.size) }
         if totalSize > capacity {
             return 0
