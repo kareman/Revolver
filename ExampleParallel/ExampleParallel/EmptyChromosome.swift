@@ -16,11 +16,11 @@ final class EmptyChromosome: CommonChromosomeType {
         // Do nothing.
     }
     
-    func mutate(generator: EntropyGenerator) -> EmptyChromosome {
+    func mutate(_ generator: EntropyGenerator) -> EmptyChromosome {
         return EmptyChromosome()
     }
     
-    func onePointCrossover(generator: EntropyGenerator, other: EmptyChromosome) -> (first: EmptyChromosome, second: EmptyChromosome) {
+    func onePointCrossover(_ generator: EntropyGenerator, other: EmptyChromosome) -> (first: EmptyChromosome, second: EmptyChromosome) {
         return (first: EmptyChromosome(), second: EmptyChromosome())
     }
     

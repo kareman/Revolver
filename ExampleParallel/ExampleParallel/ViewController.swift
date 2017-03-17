@@ -9,21 +9,21 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
     }
     
-    let algorithmQueue = NSOperationQueue()
+    let algorithmQueue = OperationQueue()
     
-    @IBAction func runSequentialAlgorithmClicked(sender: AnyObject) {
+    @IBAction func runSequentialAlgorithmClicked(_ sender: AnyObject) {
         let evaluator = UnpredictableEvalutator()
         
         runAlgorithm(evaluator)
     }
     
-    @IBAction func runParallelAlgorithmClicked(sender: AnyObject) {
+    @IBAction func runParallelAlgorithmClicked(_ sender: AnyObject) {
         let evaluator = ParallelEvaluator() { threadNumber in
             return UnpredictableEvalutator(threadNumber: threadNumber)
         }
@@ -31,7 +31,7 @@ class ViewController: NSViewController {
         runAlgorithm(evaluator)
     }
     
-    func runAlgorithm(evaluator: Evaluator<EmptyChromosome>) {
+    func runAlgorithm(_ evaluator: Evaluator<EmptyChromosome>) {
         // Configuration of the algorithm.
         let twister = MersenneTwister(seed: 4242)
         
@@ -68,12 +68,12 @@ class ViewController: NSViewController {
         }
         
         // Just do it!
-        let tic = NSDate()
+        let tic = Date()
         alg.run()
-        let toc = NSDate()
+        let toc = Date()
         
         // A simple time benchmark.
-        let time = toc.timeIntervalSinceDate(tic)
+        let time = toc.timeIntervalSince(tic)
         print("TIME: \(time) seconds")
     }
 
