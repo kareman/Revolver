@@ -5,7 +5,7 @@
 [![License][mit-badge]][mit-url]
 [![Travis][travis-badge]][travis-url]
 
-Revolver is a framework for building fast genetic algorithms in [Swift 2.2][swift-url].
+Revolver is a framework for building fast genetic algorithms in [Swift 3.0][swift-url].
 
 ## Features
 
@@ -24,21 +24,23 @@ Revolver was built with the open-source implementation of Swift in mind. For tha
 
 Revolver is dependent on:
 
- - Swift 2.2 standard library
+ - Swift 3.0 standard library
  - Foundation
  - libdispatch
  - SwiftyJSON
 
 Revolver can run on:
 
- - Mac OS X
+ - macOS
  - iOS
  - Linux (any distro capable of supporting the Swift runtime)
  
 Revolver can be compiled on:
 
- - Mac OS X
+ - macOS
  - Linux (any distro capable of supporting the Swift runtime)
+
+If you for some reason need Swift 2 compatibility, check out the [swift-2.2][swift-2.2-branch] branch. Fair warning though, the branch has been frozen and remains unmaintained.
 
 
 ## Documentation
@@ -121,7 +123,7 @@ If you'd like to contribute, let me first say thank you, you are made of awesome
 At the moment, there are no rules for contributing. However, before creating pull requests, please take some time to review [previous pull requests][pull-requests].
 
 
-[swift-badge]: https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat
+[swift-badge]: https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat
 [swift-url]: https://swift.org
 [platform-badge]: https://img.shields.io/badge/Platforms-OS%20X%20--%20Linux-lightgray.svg?style=flat
 [platform-url]: https://swift.org
@@ -133,6 +135,7 @@ At the moment, there are no rules for contributing. However, before creating pul
 [petrmanek-url]: https://github.com/petrmanek
 [pull-requests]: https://github.com/petrmanek/Revolver/pulls
 [issue-tracker]: https://github.com/petrmanek/Revolver/issues
+[swift-2.2-branch]: https://github.com/petrmanek/Revolver/tree/swift-2.2
 
 [jazzy]: https://github.com/realm/jazzy
 [html-doc]: Revolver/Documentation
