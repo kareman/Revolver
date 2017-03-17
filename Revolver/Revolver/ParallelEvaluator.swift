@@ -63,7 +63,7 @@ open class ParallelEvaluator<Chromosome: ChromosomeType>: Evaluator<Chromosome> 
         return ProcessInfo.processInfo.activeProcessorCount
     }
     
-    public final func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: @escaping EvaluationHandler) {
+    public final override func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: @escaping EvaluationHandler) {
         var nextIndividualToEvaluate = 0
         let lock = NSLock()
         

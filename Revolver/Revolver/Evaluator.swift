@@ -17,7 +17,7 @@ open class Evaluator<Chromosome: ChromosomeType> {
      - warning: This method is abstract. You **must** override it in subclasses.
      - note: This method is expected to be *synchronous*. It **must not** return to its caller until all individuals are evaluated.
      */
-    open func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: EvaluationHandler) {
+    open func evaluateIndividuals(_ individuals: MatingPool<Chromosome>, individualEvaluated: @escaping EvaluationHandler) {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     
