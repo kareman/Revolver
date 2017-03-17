@@ -2,21 +2,21 @@ import Foundation
 import Revolver
 
 enum QwopCommand: Character, Discrete, Randomizable {
-    case PressQ = "Q"
-    case ReleaseQ = "q"
-    case PressW = "W"
-    case ReleaseW = "w"
-    case PressO = "O"
-    case ReleaseO = "o"
-    case PressP = "P"
-    case ReleaseP = "p"
-    case Wait = "+"
+    case pressQ = "Q"
+    case releaseQ = "q"
+    case pressW = "W"
+    case releaseW = "w"
+    case pressO = "O"
+    case releaseO = "o"
+    case pressP = "P"
+    case releaseP = "p"
+    case wait = "+"
     
     static let allValues: [QwopCommand] = [
-        .PressQ, .ReleaseQ,
-        .PressW, .ReleaseW,
-        .PressO, .ReleaseO,
-        .PressP, .ReleaseP,
-        .Wait
+        .pressQ, .releaseQ,
+        .pressW, .releaseW,
+        .pressO, .releaseO,
+        .pressP, .releaseP,
+        .wait
     ]
 }

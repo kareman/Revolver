@@ -2,7 +2,7 @@ import Revolver
 
 final class QwopChromosome: RangeInitializedArray {
     typealias Element = QwopCommand
-    static let initializationRange = 1...200
+    static let initializationRange = CountableRange<Int>(1...200)
     
     let array: [QwopCommand]
     
@@ -14,6 +14,6 @@ final class QwopChromosome: RangeInitializedArray {
     var debugDescription: String { return array.debugDescription }
     
     var programString: String {
-        return array.reduce("", combine: { $0 + String($1.rawValue) })
+        return array.reduce("", { $0 + String($1.rawValue) })
     }
 }
